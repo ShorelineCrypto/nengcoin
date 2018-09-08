@@ -42,6 +42,10 @@ script: |
   export TZ=UTC
   ln -s $STAGING $HOME/qt
   $HOME/staging/host/bin/qmake -spec unsupported/win32-g++-cross MINIUPNPC_LIB_PATH=$STAGING MINIUPNPC_INCLUDE_PATH=$STAGING BDB_LIB_PATH=$STAGING BDB_INCLUDE_PATH=$STAGING BOOST_LIB_PATH=$STAGING BOOST_INCLUDE_PATH=$STAGING BOOST_LIB_SUFFIX=-mt-s BOOST_THREAD_LIB_SUFFIX=_win32-mt-s OPENSSL_LIB_PATH=$STAGING OPENSSL_INCLUDE_PATH=$STAGING QRENCODE_LIB_PATH=$STAGING QRENCODE_INCLUDE_PATH=$STAGING USE_QRCODE=1 INCLUDEPATH=$STAGING DEFINES=BOOST_THREAD_USE_LIB BITCOIN_NEED_QT_PLUGINS=1 QMAKE_LRELEASE=lrelease QMAKE_CXXFLAGS=-frandom-seed=newenglandcoin USE_BUILD_INFO=1 USE_SSE2=1
+
+  cd src/leveldb/ && CC=i686-w64-mingw32-gcc CXX=i686-w64-mingw32-g++ TARGET_OS=OS_WINDOWS_CROSSCOMPILE make OPT="-frandom-seed=lemanum -O2" libleveldb.a libmemenv.a && i686-w64-mingw32-ranlib /home/ubuntu/build/newenglandcoin/src/leveldb/libleveldb.a && i686-w64-mingw32-ranlib /home/ubuntu/build/newenglandcoin/src/leveldb/libmemenv.a
+  cd /home/ubuntu/build/newenglandcoin; /bin/sh share/genbuild.sh /home/ubuntu/build/newenglandcoin/build/build.h
+
   make $MAKEOPTS
   $HOST-strip release/newenglandcoin-qt.exe
   cp release/newenglandcoin-qt.exe $OUTDIR/
