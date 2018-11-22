@@ -1139,10 +1139,8 @@ unsigned int static GetNextWorkRequired(const CBlockIndex* pindexLast, const CBl
     // Only change once per interval
     if ((pindexLast->nHeight+1) % nInterval != 0)
     {
-        // Special difficulty rule for testnet:
-        if (fTestNet)
-        {
-            // If the new block's timestamp is more than 2* 10 minutes
+        // dynamically adjust network difficulty when miners suddenly left
+            // If the new block's timestamp is more than 2 * 1 minutes
             // then allow mining of a min-difficulty block.
             if (pblock->nTime > pindexLast->nTime + nTargetSpacing*2)
                 return nProofOfWorkLimit;
@@ -1154,7 +1152,7 @@ unsigned int static GetNextWorkRequired(const CBlockIndex* pindexLast, const CBl
                     pindex = pindex->pprev;
                 return pindex->nBits;
             }
-        }
+        
 
         return pindexLast->nBits;
     }
