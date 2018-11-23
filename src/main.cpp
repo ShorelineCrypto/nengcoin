@@ -1140,6 +1140,9 @@ unsigned int static GetNextWorkRequired(const CBlockIndex* pindexLast, const CBl
     if ((pindexLast->nHeight+1) % nInterval != 0)
     {
         // dynamically adjust network difficulty when miners suddenly left
+        const CBlockIndex* pindex = pindexLast;
+        if (fTestNet)
+        {
             // If the new block's timestamp is more than 2 * 1 minutes
             // then allow mining of a min-difficulty block.
             if (pblock->nTime > pindexLast->nTime + nTargetSpacing*2)
@@ -1147,13 +1150,28 @@ unsigned int static GetNextWorkRequired(const CBlockIndex* pindexLast, const CBl
             else
             {
                 // Return the last non-special-min-difficulty-rules-block
-                const CBlockIndex* pindex = pindexLast;
+                
                 while (pindex->pprev && pindex->nHeight % nInterval != 0 && pindex->nBits == nProofOfWorkLimit)
                     pindex = pindex->pprev;
                 return pindex->nBits;
             }
         
-
+        }
+        // fork after blocks 94772
+        else if (pindex->nHeight > 94771) {
+            // If the new block's timestamp is more than 2 * 1 minutes
+            // then allow mining of a min-difficulty block.
+            if (pblock->nTime > pindexLast->nTime + nTargetSpacing*2)
+                return nProofOfWorkLimit;
+            else
+            {
+                // Return the last non-special-min-difficulty-rules-block
+                
+                while (pindex->pprev && pindex->nHeight % nInterval != 0 && pindex->nBits == nProofOfWorkLimit)
+                    pindex = pindex->pprev;
+                return pindex->nBits;
+            }
+        }
         return pindexLast->nBits;
     }
 
