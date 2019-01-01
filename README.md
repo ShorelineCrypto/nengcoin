@@ -12,7 +12,9 @@ NewEnglandcoin is a clone of Bitcoin using scrypt as a proof-of-work algorithm.
  - 20000 coins per block
 
 Bitcointalk Ann: https://bitcointalk.org/index.php?topic=5027091.0
+
 Marinecoin Forum Ann: https://talk.marinecoin.info/index.php?topic=137.0
+
 DISCORD: https://discordapp.com/invite/UPeBwgs
 
 
