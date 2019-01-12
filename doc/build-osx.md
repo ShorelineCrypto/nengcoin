@@ -118,6 +118,7 @@ up in the folder. This is command line wallet
 
 ```
     cd ..
+    cp bitcoin-qt.pro.osx bitcoin-qt.pro
     qmake USE_UPNP=-
     make
 ```
@@ -154,7 +155,7 @@ Other commands:
 Running Qt wallet
 -------
 
-Use mouse to find the folder where the QT wallet sit,  double click
-and launch the GUI wallet.   QT wallet and command line wallet share
+Use mouse to find the folder "NewEnglandcoin-Qt.app",  double click
+and launch the GUI wallet "NewEnglandcoin-Qt.app".   QT wallet and command line wallet share
 the same folder for configuration file and synced blockchain files.  They can not be running
 together within same account, only one at a time.
