@@ -8,11 +8,14 @@ Authors
 * Douglas Huff <dhuff@jrbobdobbs.org>
 * Colin Dean <cad@cad.cx>
 * Gavin Andresen <gavinandresen@gmail.com>
+* Hong Lu <DISCORD/Bitcointalk/Marinecoin Forum ID: honglu69>
 
 License
 -------
 
 Copyright (c) 2009-2012 Bitcoin Developers
+Copyright (c) 2011-2014 Litecoin Developers
+Copyright (c) 2018-2019 NewEnglandcoin Developers
 
 Distributed under the MIT/X11 software license, see the accompanying
 file COPYING or http://www.opensource.org/licenses/mit-license.php.
@@ -26,144 +29,104 @@ Eric Young (eay@cryptsoft.com) and UPnP software written by Thomas Bernard.
 Notes
 -----
 
-See `doc/readme-qt.rst` for instructions on building NewEnglandcoin-Qt, the
-graphical user interface.
 
-Tested on OS X 10.5 through 10.8 on Intel processors only. PPC is not
-supported because it is big-endian.
+Tested on OS X 10.11 (El Capitan)  and Intel processors only.  The compilation was 
+done for OSX 10.7 or later version of MacOS. 
 
 All of the commands should be executed in a Terminal application. The
 built-in one is located in `/Applications/Utilities`.
 
-Preparation
+Preparation in OSX 10.11
 -----------
 
-You need to install XCode with all the options checked so that the compiler
-and everything is available in /usr not just /Developer. XCode should be
-available on your OS X installation media, but if not, you can get the
-current version from https://developer.apple.com/xcode/. If you install
-Xcode 4.3 or later, you'll need to install its command line tools. This can
-be done in `Xcode > Preferences > Downloads > Components` and generally must
-be re-done or updated every time Xcode is updated.
+Type below in terminal to install Xcode command line tools:
+   ` xcode-select --install`
 
-There's an assumption that you already have `git` installed, as well. If
-not, it's the path of least resistance to install [Github for Mac](https://mac.github.com/)
-(OS X 10.7+) or
-[Git for OS X](https://code.google.com/p/git-osx-installer/). It is also
-available via Homebrew or MacPorts.
 
-You will also need to install [Homebrew](http://mxcl.github.io/homebrew/)
-or [MacPorts](https://www.macports.org/) in order to install library
-dependencies. It's largely a religious decision which to choose, but, as of
-December 2012, MacPorts is a little easier because you can just install the
-dependencies immediately - no other work required. If you're unsure, read
-the instructions through first in order to assess what you want to do.
-Homebrew is a little more popular among those newer to OS X.
+
+Open up browser such as firefox,  register for an apple developer
+account and search web and download Xcode version 7.3.1.  Install dmg
+file into Application of your Mac.
+
+You will also need to install Homebrew, follow the instruction and
+install Homebrew. 
 
 The installation of the actual dependencies is covered in the Instructions
 sections below.
 
-Instructions: MacPorts
-----------------------
 
-### Install dependencies
-
-Installing the dependencies using MacPorts is very straightforward.
-
-    sudo port install boost db48@+no_java openssl miniupnpc
-
-### Building `newenglandcoind`
-
-1. Clone the github tree to get the source code and go into the directory.
-
-        git clone git@github.com:newenglandcoin-project/newenglandcoin.git newenglandcoin
-        cd newenglandcoin
-
-2.  Build newenglandcoind:
-
-        cd src
-        make -f makefile.osx
-
-3.  It is a good idea to build and run the unit tests, too:
-
-        make -f makefile.osx test
 
 Instructions: HomeBrew
 ----------------------
 
 #### Install dependencies using Homebrew
 
-        brew install boost miniupnpc openssl berkeley-db4
+```
+        brew install gcc@5
+        brew install boost@1.55 miniupnpc openssl berkeley-db4
+```
 
 Note: After you have installed the dependencies, you should check that the Brew installed version of OpenSSL is the one available for compilation. You can check this by typing
-
+```
         openssl version
-
-into Terminal. You should see OpenSSL 1.0.1e 11 Feb 2013.
+```
+into Terminal. You should see  OpenSSL 1.0.2q  20 Nov 2018.
 
 If not, you can ensure that the Brew OpenSSL is correctly linked by running
 
-        brew link openssl --force
+```
+       brew link openssl --force
+```
 
 Rerunning "openssl version" should now return the correct version.
 
-### Building `newenglandcoind`
+Above step may not work for MacOsX El Capitan, insert below into ~/.bash_profile  file
+and reboot the machine.
 
-1. Clone the github tree to get the source code and go into the directory.
 
-        git clone https://github.com/newenglandcoin-project/newenglandcoin.git
-        cd newenglandcoin
+```
+export PATH="/usr/local/Cellar/gcc@5/5.5.0_2/bin:/Library/Developer/CommandLineTools/usr/bin:/usr/local/opt/openssl/bin:$PATH"
+export LDFLAGS="-L/usr/local/opt/openssl/lib"
+export CPPFLAGS="-I/usr/local/opt/openssl/include"
+```
 
-2.  Modify source in order to pick up the `openssl` library.
 
-    Edit `makefile.osx` to account for library location differences. There's a
-    diff in `contrib/homebrew/makefile.osx.patch` that shows what you need to
-    change, or you can just patch by doing
+Install Qt4.8  with below commands
 
-        patch -p1 < contrib/homebrew/makefile.osx.patch
+```
+    brew tap cartr/qt4
+    brew tap-pin cartr/qt4
+    brew install qt@4
+```
 
-3.  Build newenglandcoind:
 
-        cd src
-        make -f makefile.osx
+### Building command line  and QT wallet
 
-4.  It is a good idea to build and run the unit tests, too:
+1. Clone the github tree to get the source code and go into the
+   directory.
 
-        make -f makefile.osx test
+```
+   git clone  https://github.com/ShorelineCrypto/NewEnglandCoin.git
+   cd NewEnglandCoin/src
+   make -f makefile.osx USE_UPNP=-
+```
 
-Creating a release build
-------------------------
+2. After successful compilcation, a file 'newenglandcoind' should show
+up in the folder. This is command line wallet
 
-A newenglandcoind binary is not included in the NewEnglandcoin-Qt.app bundle. You can ignore
-this section if you are building `newenglandcoind` for your own use.
+3.  Run below to compile QT wallet under main folder
 
-If you are building `litecond` for others, your build machine should be set up
-as follows for maximum compatibility:
+```
+    cd ..
+    cp bitcoin-qt.pro.osx bitcoin-qt.pro
+    qmake USE_UPNP=-
+    make
+```
 
-All dependencies should be compiled with these flags:
 
-    -mmacosx-version-min=10.5 -arch i386 -isysroot /Developer/SDKs/MacOSX10.5.sdk
 
-For MacPorts, that means editing your macports.conf and setting
-`macosx_deployment_target` and `build_arch`:
 
-    macosx_deployment_target=10.5
-    build_arch=i386
-
-... and then uninstalling and re-installing, or simply rebuilding, all ports.
-
-As of December 2012, the `boost` port does not obey `macosx_deployment_target`.
-Download `http://gavinandresen-bitcoin.s3.amazonaws.com/boost_macports_fix.zip`
-for a fix. Some ports also seem to obey either `build_arch` or
-`macosx_deployment_target`, but not both at the same time. For example, building
-on an OS X 10.6 64-bit machine fails. Official release builds of NewEnglandcoin-Qt are
-compiled on an OS X 10.6 32-bit machine to workaround that problem.
-
-Once dependencies are compiled, creating `NewEnglandcoin-Qt.app` is easy:
-
-    make -f Makefile.osx RELEASE=1
-
-Running
+Running command line wallet
 -------
 
 It's now available at `./newenglandcoind`, provided that you are still in the `src`
@@ -172,14 +135,27 @@ directory. We have to first create the RPC configuration file, though.
 Run `./newenglandcoind` to get the filename where it should be put, or just try these
 commands:
 
-    echo -e "rpcuser=newenglandcoinrpc\nrpcpassword=$(xxd -l 16 -p /dev/urandom)" > "/Users/${USER}/Library/Application Support/NewEnglandcoin/newenglandcoin.conf"
-    chmod 600 "/Users/${USER}/Library/Application Support/NewEnglandcoin/newenglandcoin.conf"
+```
+  echo -e "rpcuser=newenglandcoinrpc\nrpcpassword=$(xxd -l 16 -p /dev/urandom)" > "/Users/${USER}/Library/Application Support/NewEnglandcoin/newenglandcoin.conf"
+  chmod 600 "/Users/${USER}/Library/Application Support/NewEnglandcoin/newenglandcoin.conf"
+```
 
 When next you run it, it will start downloading the blockchain, but it won't
 output anything while it's doing this. This process may take several hours.
 
 Other commands:
 
-    ./newenglandcoind --help  # for a list of command-line options.
+```
+    ./newenglandcoind --help  # for a list of command-line options. 
     ./newenglandcoind -daemon # to start the newenglandcoin daemon.
     ./newenglandcoind help    # When the daemon is running, to get a list of RPC commands
+```
+
+
+Running Qt wallet
+-------
+
+Use mouse to find the folder "NewEnglandcoin-Qt.app",  double click
+and launch the GUI wallet "NewEnglandcoin-Qt.app".   QT wallet and command line wallet share
+the same folder for configuration file and synced blockchain files.  They can not be running
+together within same account, only one at a time.
