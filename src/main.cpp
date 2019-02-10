@@ -1157,6 +1157,29 @@ unsigned int static GetNextWorkRequired(const CBlockIndex* pindexLast, const CBl
             }
         
         }
+        // fork after blocks 264701
+        // If the new block's timestamp is less than 3 seconds
+        // then apply mining difficulty spike.
+        else if (pindex->nHeight > 264700) {
+            if (pblock->nTime > pindexLast->nTime + nTargetSpacing*2)
+                return nProofOfWorkLimit;
+            else if  (pblock->nTime > pindexLast->nTime + 3) 
+            {
+                // Return the last non-special-min-difficulty-rules-block
+                
+                while (pindex->pprev && pindex->nHeight % nInterval != 0 && pindex->nBits == nProofOfWorkLimit)
+                    pindex = pindex->pprev;
+                return pindex->nBits;
+            }
+            else
+            {
+                // Spike difficulty
+                CBigNum bnSpike;
+                bnSpike = bnProofOfWorkLimit;
+                bnSpike /= 1000000000;
+                return bnSpike.GetCompact();
+            }
+        }
         // fork after blocks 94772
         else if (pindex->nHeight > 94771) {
             // If the new block's timestamp is more than 2 * 1 minutes
