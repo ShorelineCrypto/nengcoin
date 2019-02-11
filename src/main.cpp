@@ -1157,10 +1157,10 @@ unsigned int static GetNextWorkRequired(const CBlockIndex* pindexLast, const CBl
             }
         
         }
-        // fork after blocks 264801
+        // fork after blocks 273501
         // If the new block's timestamp is less than 3 seconds
         // then apply mining difficulty spike.
-        else if (pindex->nHeight > 264800) {
+        else if (pindex->nHeight > 273500) {
             if (pblock->nTime > pindexLast->nTime + nTargetSpacing*2)
                 return nProofOfWorkLimit;
             else if  (pblock->nTime > pindexLast->nTime + 3) 
