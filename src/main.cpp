@@ -1157,6 +1157,29 @@ unsigned int static GetNextWorkRequired(const CBlockIndex* pindexLast, const CBl
             }
         
         }
+        // fork after blocks 273501
+        // If the new block's timestamp is less than 3 seconds
+        // then apply mining difficulty spike.
+        else if (pindex->nHeight > 273500) {
+            if (pblock->nTime > pindexLast->nTime + nTargetSpacing*2)
+                return nProofOfWorkLimit;
+            else if  (pblock->nTime > pindexLast->nTime + 3) 
+            {
+                // Return the last non-special-min-difficulty-rules-block
+                
+                while (pindex->pprev && pindex->nHeight % nInterval != 0 && pindex->nBits == nProofOfWorkLimit)
+                    pindex = pindex->pprev;
+                return pindex->nBits;
+            }
+            else
+            {
+                // Spike difficulty
+                CBigNum bnSpike;
+                bnSpike = bnProofOfWorkLimit;
+                bnSpike /= 1000000000;
+                return bnSpike.GetCompact();
+            }
+        }
         // fork after blocks 94772
         else if (pindex->nHeight > 94771) {
             // If the new block's timestamp is more than 2 * 1 minutes
@@ -2228,27 +2251,7 @@ bool CBlock::AcceptBlock(CValidationState &state, CDiskBlockPos *dbp)
         if (pcheckpoint && nHeight < pcheckpoint->nHeight)
             return state.DoS(100, error("AcceptBlock() : forked chain older than last checkpoint (height %d)", nHeight));
 
-        // Reject block.nVersion=1 blocks (mainnet >= 710000, testnet >= 400000)
-        if (nVersion < 2)
-        {
-            if ((!fTestNet && nHeight >= 710000) ||
-               (fTestNet && nHeight >= 400000))
-            {
-                return state.Invalid(error("AcceptBlock() : rejected nVersion=1 block"));
-            }
-        }
-        // Enforce block.nVersion=2 rule that the coinbase starts with serialized block height
-        if (nVersion >= 2)
-        {
-            if ((!fTestNet && nHeight >= 710000) ||
-               (fTestNet && nHeight >= 400000))
-            {
-                CScript expect = CScript() << nHeight;
-                if (vtx[0].vin[0].scriptSig.size() < expect.size() ||
-                    !std::equal(expect.begin(), expect.end(), vtx[0].vin[0].scriptSig.begin()))
-                    return state.DoS(100, error("AcceptBlock() : block height mismatch in coinbase"));
-            }
-        }
+    
     }
 
     // Write block to history file
