@@ -97,19 +97,39 @@ To Build
    make
    
 
-Ubuntu 18.04, Download gcc g++ to version 5 from default 7
+Ubuntu 18.04
+Versions used in this release in Ubuntu 18.04:
+-  GCC           5.5
+-  OpenSSL       1.1.0g
+-  Berkeley DB   4.8.30.NC
+-  Boost         1.55.0
+-  miniupnpc     1.9
+-  Qt 4.8
+
+#Download gcc g++ to version 5 from default 7
 sudo apt-get update
 sudo apt-get install gcc-5 g++-5
 
 
-To avoid conflic, might be good idea to at least temporarily remove gcc-7 g++-7
+#To avoid conflic, temporarily remove gcc-7 g++-7, which can be restored after completion
 sudo apt-get remove gcc-7 g++7
 
 Boost 1.55.0
 -----
-If you need to build Boost yourself:
 
-	sudo su
-	./bootstrap.sh  --prefix=/usr/local
-   ./b2
-	sudo ./b2 install 
+
+	./bootstrap.sh  --prefix=/usr/local/boost_1_55
+   ./b2 --with-chrono --with-filesystem --with-program_options --with-system --with-thread toolset=gcc variant=release link=static threading=multi runtime-link=static stage
+	./b2 install
+   
+   
+BUILD NewEnglandcoin
+
+   cd src/
+	make -f makefile.ubuntu18	
+   strip newenglandcoind
+
+# Qt GUI Wallet
+   cd ..
+   qmake
+   make
