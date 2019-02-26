@@ -5,16 +5,7 @@ file COPYING or http://www.opensource.org/licenses/mit-license.php.
 This product includes software developed by the OpenSSL Project for use in the [OpenSSL Toolkit](http://www.openssl.org/). This product includes
 cryptographic software written by Eric Young ([eay@cryptsoft.com](mailto:eay@cryptsoft.com)), and UPnP software written by Thomas Bernard.
 
-UNIX BUILD NOTES
-====================
 
-To Build
----------------------
-
-	cd src/
-	make -f makefile.unix		# Headless newenglandcoin
-
-See readme-qt.rst for instructions on building NewEnglandcoin-Qt, the graphical user interface.
 
 Dependencies
 ---------------------
@@ -38,41 +29,45 @@ IPv6 support may be disabled by setting:
 
 	USE_IPV6=0    Disable IPv6 support
 
+
+Linux Compilcation Guide
+
 Licenses of statically linked libraries:
  Berkeley DB   New BSD license with additional requirement that linked
                software must be free open source
  Boost         MIT-like license
  miniupnpc     New (3-clause) BSD license
 
-- Versions used in this release:
--  GCC           4.3.3
--  OpenSSL       1.0.1c
+- Versions used in this release in Ubuntu 16.04:
+-  GCC           5.4
+-  OpenSSL       1.0.2g
 -  Berkeley DB   4.8.30.NC
--  Boost         1.37
--  miniupnpc     1.6
+-  Boost         1.54.0/1.58.0
+-  miniupnpc     1.9
+-  Qt 4.8
 
-Dependency Build Instructions: Ubuntu & Debian
+Dependency Build Instructions: Ubuntu 16.04
 ----------------------------------------------
 Build requirements:
+ sudo apt-get install build-essential g++ libtool autotools-dev automake pkg-config libssl-dev libevent-dev bsdmainutils  libboost-all-dev
+ sudo apt-get install software-properties-common
 
-	sudo apt-get install build-essential
-	sudo apt-get install libssl-dev
+sudo add-apt-repository ppa:bitcoin/bitcoin
 
-for Ubuntu 12.04:
+sudo apt-get update
 
-	sudo apt-get install libboost-all-dev
+sudo apt-get install libdb4.8-dev libdb4.8++-dev
 
- db4.8 packages are available [here](https://launchpad.net/~bitcoin/+archive/bitcoin).
 
- Ubuntu precise has packages for libdb5.1-dev and libdb5.1++-dev,
- but using these will break binary wallet compatibility, and is not recommended.
+sudo apt-get install libzmq3-dev libbz2-dev 
 
-for other Ubuntu & Debian:
+sudo apt-get install libqt5gui5 libqt5core5a libqt5dbus5 qttools5-dev qttools5-dev-tools libprotobuf-dev protobuf-compiler 
 
-	sudo apt-get install libdb4.8-dev
-	sudo apt-get install libdb4.8++-dev
-	sudo apt-get install libboost1.37-dev
- (If using Boost 1.37, append -mt to the boost libraries in the makefile)
+sudo apt-get install libqt4-dev libprotobuf-dev protobuf-compiler
+
+
+## sometimes zlib will generate error, reinstall this
+sudo apt-get install --reinstall zlib1g
 
 Optional:
 
@@ -85,70 +80,36 @@ The release is built with GCC and then "strip bitcoind" to strip the debug
 symbols, which reduces the executable size by about 90%.
 
 
-miniupnpc
----------
-	tar -xzvf miniupnpc-1.6.tar.gz
-	cd miniupnpc-1.6
-	make
-	sudo su
-	make install
+
+UNIX BUILD NOTES
+====================
+
+To Build  
+---------------------
+# Headless newenglandcoin CLI
+	cd src/
+	make -f makefile.unix	
+   strip newenglandcoind
+
+# Qt GUI Wallet
+   cd ..
+   qmake
+   make
+   
+
+Ubuntu 18.04, Download gcc g++ to version 5 from default 7
+sudo apt-get update
+sudo apt-get install gcc-5 g++-5
 
 
-Berkeley DB
------------
-You need Berkeley DB 4.8.  If you have to build Berkeley DB yourself:
+To avoid conflic, might be good idea to at least temporarily remove gcc-7 g++-7
+sudo apt-get remove gcc-7 g++7
 
-	../dist/configure --enable-cxx
-	make
-
-
-Boost
+Boost 1.55.0
 -----
 If you need to build Boost yourself:
 
 	sudo su
-	./bootstrap.sh
-	./bjam install
-
-
-Security
---------
-To help make your newenglandcoin installation more secure by making certain attacks impossible to
-exploit even if a vulnerability is found, you can take the following measures:
-
-* Position Independent Executable
-    Build position independent code to take advantage of Address Space Layout Randomization
-    offered by some kernels. An attacker who is able to cause execution of code at an arbitrary
-    memory location is thwarted if he doesn't know where anything useful is located.
-    The stack and heap are randomly located by default but this allows the code section to be
-    randomly located as well.
-
-    On an Amd64 processor where a library was not compiled with -fPIC, this will cause an error
-    such as: "relocation R_X86_64_32 against `......' can not be used when making a shared object;"
-
-    To build with PIE, use:
-    make -f makefile.unix ... -e PIE=1
-
-    To test that you have built PIE executable, install scanelf, part of paxutils, and use:
-
-    	scanelf -e ./newenglandcoin
-
-    The output should contain:
-     TYPE
-    ET_DYN
-
-* Non-executable Stack
-    If the stack is executable then trivial stack based buffer overflow exploits are possible if
-    vulnerable buffers are found. By default, bitcoin should be built with a non-executable stack
-    but if one of the libraries it uses asks for an executable stack or someone makes a mistake
-    and uses a compiler extension which requires an executable stack, it will silently build an
-    executable without the non-executable stack protection.
-
-    To verify that the stack is non-executable after compiling use:
-    `scanelf -e ./newenglandcoin`
-
-    the output should contain:
-	STK/REL/PTL
-	RW- R-- RW-
-
-    The STK RW- means that the stack is readable and writeable but not executable.
+	./bootstrap.sh  --prefix=/usr/local
+   ./b2
+	sudo ./b2 install 
