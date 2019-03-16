@@ -113,8 +113,10 @@ in Ubuntu 18.04.  This could be complicated. Without custome method, a simple ap
 
 An easier way is simply using Ubuntu 16.04 compiled binary files, then compile a boost library version 1.58.0 in Ubuntu 18.04
 
-(1) Download Ubuntu 16.04 binary files from release, directly running will fail with error msg like "libboost 1.58.0 libary file not found"
-(2) Compile boost v1.58.0 library in Ubuntu 18.04 with below steps:
+* (1) Download Ubuntu 16.04 binary files from release from https://github.com/ShorelineCrypto/NewEnglandCoin/releases
+
+* (2) Compile boost v1.58.0 library in Ubuntu 18.04 with below steps:
+
 ```
     wget -O boost_1_58_0.tar.bz2 http://sourceforge.net/projects/boost/files/boost/1.58.0/boost_1_58_0.tar.bz2/download
     tar xvfj boost_1_58_0.tar.bz2
@@ -124,4 +126,5 @@ An easier way is simply using Ubuntu 16.04 compiled binary files, then compile a
     sudo ./b2 install --prefix=/usr 
     sudo ldconfig 
 ```
-(3) Re-run either QT or command line Ubuntu 16.04 files, all should work in Ubuntu 18.04
+
+* (3) Re-run either QT or command line Ubuntu 16.04 files, all should work in Ubuntu 18.04
