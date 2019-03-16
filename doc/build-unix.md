@@ -7,8 +7,8 @@ cryptographic software written by Eric Young ([eay@cryptsoft.com](mailto:eay@cry
 
 
 
-Dependencies
----------------------
+# Dependencies for Ubuntu
+
 
  Library     Purpose           Description
  -------     -------           -----------
@@ -38,19 +38,25 @@ Licenses of statically linked libraries:
  Boost         MIT-like license
  miniupnpc     New (3-clause) BSD license
 
-- Versions used in this release in Ubuntu 16.04:
+
+### Versions used in this release in Ubuntu 16.04
+
 -  GCC           5.4
 -  OpenSSL       1.0.2g
 -  Berkeley DB   4.8.30.NC
--  Boost         1.54.0/1.58.0
+-  Boost         1.58.0
 -  miniupnpc     1.9
 -  Qt 4.8
 
-Dependency Build Instructions: Ubuntu 16.04
-----------------------------------------------
+## Dependency Build Instructions: Ubuntu 16.04 / Ubuntu 18.04
+
+
 Build requirements:
- sudo apt-get install build-essential g++ libtool autotools-dev automake pkg-config libssl-dev libevent-dev bsdmainutils  libboost-all-dev
- sudo apt-get install software-properties-common
+
+```
+sudo apt-get install build-essential g++ libtool autotools-dev automake pkg-config libssl-dev libevent-dev bsdmainutils  libboost-all-dev
+
+sudo apt-get install software-properties-common
 
 sudo add-apt-repository ppa:bitcoin/bitcoin
 
@@ -58,15 +64,15 @@ sudo apt-get update
 
 sudo apt-get install libdb4.8-dev libdb4.8++-dev
 
-
 sudo apt-get install libzmq3-dev libbz2-dev 
 
 sudo apt-get install libqt5gui5 libqt5core5a libqt5dbus5 qttools5-dev qttools5-dev-tools libprotobuf-dev protobuf-compiler 
 
 sudo apt-get install libqt4-dev libprotobuf-dev protobuf-compiler
-
+```
 
 ## sometimes zlib will generate error, reinstall this
+
 sudo apt-get install --reinstall zlib1g
 
 Optional:
@@ -81,55 +87,41 @@ symbols, which reduces the executable size by about 90%.
 
 
 
-UNIX BUILD NOTES
-====================
+## NewEnglandcoin Linux BUILD NOTES
+
 
 To Build  
 ---------------------
 # Headless newenglandcoin CLI
+```
 	cd src/
 	make -f makefile.unix	
-   strip newenglandcoind
+ strip newenglandcoind
+```
 
 # Qt GUI Wallet
+```
    cd ..
    qmake
    make
-   
+``` 
 
-Ubuntu 18.04
-Versions used in this release in Ubuntu 18.04:
--  GCC           5.5
--  OpenSSL       1.1.0g
--  Berkeley DB   4.8.30.NC
--  Boost         1.55.0
--  miniupnpc     1.9
--  Qt 4.8
+# Ubuntu 18.04
 
-#Download gcc g++ to version 5 from default 7
-sudo apt-get update
-sudo apt-get install gcc-5 g++-5
+There are two ways to obtain Ubuntu 18.04 compatible binary. The first approach is to follow similar steps above to compile everything
+in Ubuntu 18.04.  This could be complicated. Without custome method, a simple apt-get and same steps like Ubuntu 16.04 will fail on boost.
 
+An easier way is simply using Ubuntu 16.04 compiled binary files, then compile a boost library version 1.58.0 in Ubuntu 18.04
 
-#To avoid conflic, temporarily remove gcc-7 g++-7, which can be restored after completion
-sudo apt-get remove gcc-7 g++7
-
-Boost 1.55.0
------
-
-
-	./bootstrap.sh  --prefix=/usr/local/boost_1_55
-   ./b2 --with-chrono --with-filesystem --with-program_options --with-system --with-thread toolset=gcc variant=release link=static threading=multi runtime-link=static stage
-	./b2 install
-   
-   
-BUILD NewEnglandcoin
-
-   cd src/
-	make -f makefile.ubuntu18	
-   strip newenglandcoind
-
-# Qt GUI Wallet
-   cd ..
-   qmake
-   make
+(1) Download Ubuntu 16.04 binary files from release, directly running will fail with error msg like "libboost 1.58.0 libary file not found"
+(2) Compile boost v1.58.0 library in Ubuntu 18.04 with below steps:
+```
+    wget -O boost_1_58_0.tar.bz2 http://sourceforge.net/projects/boost/files/boost/1.58.0/boost_1_58_0.tar.bz2/download
+    tar xvfj boost_1_58_0.tar.bz2
+    cd boost_1_58_0
+    ./bootstrap.sh --with-libraries=all --with-toolset=gcc 
+    ./b2 toolset=gcc 
+    sudo ./b2 install --prefix=/usr 
+    sudo ldconfig 
+```
+(3) Re-run either QT or command line Ubuntu 16.04 files, all should work in Ubuntu 18.04
