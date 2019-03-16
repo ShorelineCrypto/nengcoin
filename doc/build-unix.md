@@ -90,10 +90,12 @@ symbols, which reduces the executable size by about 90%.
 ## NewEnglandcoin Linux BUILD NOTES
 
 Headless newenglandcoin CLI
+
 ```
-	cd src/
-	make -f makefile.unix	
- strip newenglandcoind
+cd src
+make -f makefile.unix
+strip newenglandcoind
+
 ```
 
  Qt GUI Wallet
