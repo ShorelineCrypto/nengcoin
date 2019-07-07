@@ -86,7 +86,7 @@ If not, you can ensure that the Brew OpenSSL is correctly linked by running
 
 Rerunning "openssl version" should now return the correct version.
 
-Above step may not work for MacOsX El Capitan, insert below into ~/.bash_profile  file
+Above step may not work for macOS El Capitan or Mojave, insert below into ~/.bash_profile  file
 and reboot the machine.
 
 
