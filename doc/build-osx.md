@@ -30,33 +30,39 @@ Notes
 -----
 
 
-Tested on OS X 10.11 (El Capitan)  and Intel processors only.  The compilation was 
+Tested on OS X 10.11 (El Capitan)/ macOS 10.14.4 (Mojave) on Intel processors only.  The compilation was 
 done for OSX 10.7 or later version of MacOS. 
 
 All of the commands should be executed in a Terminal application. The
 built-in one is located in `/Applications/Utilities`.
 
-Preparation in OSX 10.11
+### Preparation in OSX 10.11
 -----------
 
 Type below in terminal to install Xcode command line tools:
    ` xcode-select --install`
 
-
-
 Open up browser such as firefox,  register for an apple developer
 account and search web and download Xcode version 7.3.1.  Install dmg
 file into Application of your Mac.
 
-You will also need to install Homebrew, follow the instruction and
-install Homebrew. 
+In below compiling steps in brew, there migh be warning that Xcode 7.3.1 is outdated, please upgrade to Xcode 8.x.x , ignore that. 
 
-The installation of the actual dependencies is covered in the Instructions
-sections below.
+### Preparation in macOS 10.14
+
+Type below in terminal to install Xcode command line tools:
+   ` xcode-select --install`
+
+### Required Package and Library for both OSX 10.11 and macOS 10.14
+
+Perform below command line steps within terminal
+
+#### Install HomeBrew
+
+Follow brew:
+https://brew.sh/
 
 
-
-Instructions: HomeBrew
 ----------------------
 
 #### Install dependencies using Homebrew
@@ -70,7 +76,7 @@ Note: After you have installed the dependencies, you should check that the Brew 
 ```
         openssl version
 ```
-into Terminal. You should see  OpenSSL 1.0.2q  20 Nov 2018.
+into Terminal. You should see  "OpenSSL 1.0.2s  28 May 2019".
 
 If not, you can ensure that the Brew OpenSSL is correctly linked by running
 
@@ -85,7 +91,7 @@ and reboot the machine.
 
 
 ```
-export PATH="/usr/local/Cellar/gcc@5/5.5.0_2/bin:/Library/Developer/CommandLineTools/usr/bin:/usr/local/opt/openssl/bin:$PATH"
+export PATH="/usr/local/Cellar/gcc@5/5.5.0_3/bin:/Library/Developer/CommandLineTools/usr/bin:/usr/local/opt/openssl/bin:$PATH"
 export LDFLAGS="-L/usr/local/opt/openssl/lib"
 export CPPFLAGS="-I/usr/local/opt/openssl/include"
 ```
@@ -109,6 +115,14 @@ Install Qt4.8  with below commands
    git clone  https://github.com/ShorelineCrypto/NewEnglandCoin.git
    cd NewEnglandCoin/src
    make -f makefile.osx USE_UPNP=-
+```
+
+Special Note for macOS Mojave: a confusing error might pop up on first try, "fatal error: string.h: No such file or directory".
+The string.h file might be there and look normal.  Follow below URL guide to fix the issue:
+https://stackoverflow.com/questions/39736728/fatal-error-string-h-no-such-file-or-directory
+
+```
+   open /Library/Developer/CommandLineTools/Packages/macOS_SDK_headers_for_macOS_10.14.pkg
 ```
 
 2. After successful compilcation, a file 'newenglandcoind' should show
