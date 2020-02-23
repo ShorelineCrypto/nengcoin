@@ -1183,7 +1183,20 @@ unsigned int static GetNextWorkRequired(const CBlockIndex* pindexLast, const CBl
                 CBigNum bnSpike;
                 bnSpike = bnProofOfWorkLimit;
                 bnSpike /= 1000000000;
-                return bnSpike.GetCompact();
+                                
+                const CBlockIndex* tmpindex = pindexLast;
+                tmpindex = tmpindex->pprev;
+                tmpindex = tmpindex->pprev;
+                if ((tmpindex->nTime + pblock->nTime + pindex->nHeight) % 2 != 0)
+                    return bnSpike.GetCompact();
+                else
+                {
+                    while (pindex->pprev && pindex->nHeight % nInterval != 0 && pindex->nBits == nProofOfWorkLimit)
+                        pindex = pindex->pprev;
+                    return pindex->nBits;
+                }
+
+
             }
         }
         // fork after blocks 273501
