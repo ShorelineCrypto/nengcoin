@@ -1157,8 +1157,8 @@ unsigned int static GetNextWorkRequired(const CBlockIndex* pindexLast, const CBl
             }
         
         }
-        // v1.3.0 randomSpike fork after blocks 1276099
-        else if (pindex->nHeight > 1276099) {
+        // v1.3.0 randomSpike fork after blocks 1276175
+        else if (pindex->nHeight > 1276175) {
             if ((pblock->nTime > pindexLast->nTime + nTargetSpacing*2) || (pblock->nTime < pindexLast->nTime - nTargetSpacing*2))
                 return nProofOfWorkLimit;
             else if  ((pblock->nTime > pindexLast->nTime + 9) || (pblock->nTime < pindexLast->nTime - 9))
