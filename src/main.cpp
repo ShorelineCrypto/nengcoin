@@ -1157,8 +1157,8 @@ unsigned int static GetNextWorkRequired(const CBlockIndex* pindexLast, const CBl
             }
         
         }
-        // v1.3.0 randomSpike fork after blocks 1276175
-        else if (pindex->nHeight > 1276175) {
+        // v1.3.0 randomSpike fork after blocks 1303000
+        else if (pindex->nHeight > 1303000) {
             if ((pblock->nTime > pindexLast->nTime + nTargetSpacing*2) || (pblock->nTime < pindexLast->nTime - nTargetSpacing*2))
                 return nProofOfWorkLimit;
             else if  ((pblock->nTime > pindexLast->nTime + 9) || (pblock->nTime < pindexLast->nTime - 9))
@@ -1199,7 +1199,7 @@ unsigned int static GetNextWorkRequired(const CBlockIndex* pindexLast, const CBl
 
             }
         }
-        // fork after blocks 273501
+        // v1.2.0 fork after blocks 273501
         // If the new block's timestamp is less than 3 seconds
         // then apply mining difficulty spike.
         else if (pindex->nHeight > 273500) {
@@ -1222,7 +1222,7 @@ unsigned int static GetNextWorkRequired(const CBlockIndex* pindexLast, const CBl
                 return bnSpike.GetCompact();
             }
         }
-        // fork after blocks 94772
+        // v1.1.1 fork after blocks 94772
         else if (pindex->nHeight > 94771) {
             // If the new block's timestamp is more than 2 * 1 minutes
             // then allow mining of a min-difficulty block.
