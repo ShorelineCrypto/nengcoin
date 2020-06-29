@@ -2,11 +2,10 @@
 # Distributed under the MIT/X11 software license, see the accompanying
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-## below compiling is based on debian wheezy in arm platform in the cloud
-## qemu environment.  
-DB_INCLUDE_PATH=/opt/db-4.8.30.NC/build_unix
-DB_LIB_PATH=/opt/db-4.8.30.NC/build_unix
-
+## below compiling is based on debian wheezy/jessie in amd64 and arm/arm64 platform in the cloud
+## qemu environment.
+BDB_INCLUDE_PATH=/opt/db-4.8.30.NC/build_unix
+BDB_LIB_PATH=/opt/db-4.8.30.NC/build_unix
 
 # :=0 --> UPnP support turned off by default at runtime
 # :=1 --> UPnP support turned on by default at runtime
@@ -21,8 +20,8 @@ LINK:=$(CXX)
 
 DEFS=-DBOOST_SPIRIT_THREADSAFE -D_FILE_OFFSET_BITS=64
 
-DEFS += $(addprefix -I,$(CURDIR) $(CURDIR)/obj $(BOOST_INCLUDE_PATH) $(BDB_INCLUDE_PATH) $(OPENSSL_INCLUDE_PATH) $(DB_INCLUDE_PATH))
-LIBS = $(addprefix -L,$(BOOST_LIB_PATH) $(BDB_LIB_PATH) $(OPENSSL_LIB_PATH) $(DB_LIB_PATH))
+DEFS += $(addprefix -I,$(CURDIR) $(CURDIR)/obj $(BOOST_INCLUDE_PATH) $(BDB_INCLUDE_PATH) $(OPENSSL_INCLUDE_PATH))
+LIBS = $(addprefix -L,$(BOOST_LIB_PATH) $(BDB_LIB_PATH) $(OPENSSL_LIB_PATH))
 
 TESTDEFS = -DTEST_DATA_DIR=$(abspath test/data)
 
