@@ -29,12 +29,22 @@ sudo apt-get -y install git
 wget https://github.com/ShorelineCrypto/NewEnglandCoin/releases/download/v1.4.0/ubuntu20.04_x86_64_db-4.8.30.NC.tgz
 tar xvfz ubuntu20.04_x86_64_db-4.8.30.NC.tgz 
 sudo mv db-4.8.30.NC  /opt/
-sudo cp bitcoin.conf /etc/ld.so.conf.d/
+sudo mv bitcoin.conf /etc/ld.so.conf.d/
+
+wget https://github.com/ShorelineCrypto/NewEnglandCoin/releases/download/v1.4.0/ubuntu20.04_x86_64_miniupnpc.tgz
+tar xvfz ubuntu20.04_x86_64_miniupnpc.tgz
+sudo mv miniupnpc /opt/
+sudo mv miniupnpc.conf /etc/ld.so.conf.d/ 
+
+wget https://github.com/ShorelineCrypto/NewEnglandCoin/releases/download/v1.4.0/ubuntu20.04_x86_64_openssl-1.0.1l.tgz
+tar xvfz ubuntu20.04_x86_64_openssl-1.0.1l.tgz
+sudo mv openssl-1.0.1l  /opt/
+sudo mv openssl.conf /etc/ld.so.conf.d/ 
+
+## reuse prior compiled boost libary for Ubuntu 18.04
+wget https://github.com/ShorelineCrypto/NewEnglandCoin/releases/download/v1.2.1.1/ubuntu18.04_boost1.58.tgz
+tar xvfz ubuntu18.04_boost1.58.tgz
+sudo mv boost1.58  /opt/
+sudo mv boost1.58.conf  /etc/ld.so.conf.d/
+## link all libary files
 sudo ldconfig
-
-cat >> ~/.bashrc  << EOF
-
-export LDFLAGS="-L/opt/db-4.8.30.NC/build_unix"
-export CPPFLAGS="-I/opt/db-4.8.30.NC/build_unix"
-
-EOF
