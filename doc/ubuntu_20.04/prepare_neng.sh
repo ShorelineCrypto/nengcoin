@@ -4,22 +4,20 @@ sudo apt-get -y install g++ libtool autotools-dev automake pkg-config libssl-dev
 sudo apt-get -y install libboost-all-dev
 
 sudo apt-get -y install software-properties-common
-sudo apt-get -y  install python-software-properties
 sudo apt-get update
 
  
 sudo apt-get -y install libzmq3-dev libbz2-dev zlib1g 
- 
- 
+sudo apt-get install libqt4-dev libprotobuf-dev protobuf-compiler
+
 sudo apt-get -y install openssl
-sudo apt-get -y install libminiupnpc-dev
 
 sudo apt-get -y install python-pip
 pip install python-bitcoinrpc
 
 sudo apt-get -y install git
 #git clone https://github.com/ShorelineCrypto/NewEnglandCoin.git
-#git clone https://github.com/ShorelineCrypto/cheetah_cpuminer.git
+git clone https://github.com/ShorelineCrypto/cheetah_cpuminer.git
 
 
 # Berkeley DB: http://download.oracle.com/berkeley-db/db-4.8.30.NC.tar.gz
@@ -48,3 +46,4 @@ sudo mv boost1.58  /opt/
 sudo mv boost1.58.conf  /etc/ld.so.conf.d/
 ## link all libary files
 sudo ldconfig
+
