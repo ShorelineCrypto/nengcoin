@@ -5,15 +5,23 @@ NewEnglandcoin
 What is NewEnglandcoin?
 ----------------
 
-NewEnglandcoin is a clone of Bitcoin using scrypt as a proof-of-work algorithm.
+NewEnglandcoin is a clone of Bitcoin using scrypt as a proof-of-work algorithm with enhanced features to protect against 51% attack 
+and decentralize on mining to allow diversified mining rigs across CPUs, GPUs, ASICs and Android phones.
  - 1 minute block targets
  - subsidy halves in 2.1m blocks (~4 years)
  - ~84 billion total maximum coins
  - 20000 coins per block
 
+Major releases features:
+ - v1.1.x support CPU Minings on Windows, Linux or MacOS
+ - v1.2.x start restrictions on big ASIC rigs
+ - v1.3.x scrypt randomSpike release
+ - v1.4.x enable mobile mining on android phones (both 64 bits arm64 and 32 bits arm)
+
+
 Bitcointalk Ann: https://bitcointalk.org/index.php?topic=5027091.0
 
-Marinecoin Forum Ann: https://talk.marinecoin.info/index.php?topic=137.0
+Reddit: https://www.reddit.com/r/NewEnglandCoin/
 
 DISCORD: https://discordapp.com/invite/UPeBwgs
 
