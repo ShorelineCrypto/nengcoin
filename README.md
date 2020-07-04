@@ -13,11 +13,13 @@ and decentralize on mining to allow diversified mining rigs across CPUs, GPUs, A
  - 20000 coins per block
 
 Major releases features:
+ - v0.8.7.5 litecoin clone, ASIC dominant mining
  - v1.1.x support CPU Minings on Windows, Linux or MacOS
  - v1.2.x start restrictions on big ASIC rigs
  - v1.3.x scrypt randomSpike release
  - v1.4.x enable mobile mining on android phones (both 64 bits arm64 and 32 bits arm)
 
+Note: all above versions have "0.8.7.5" version tag in QT wallet.  The downloaded files should have correct version on file names.
 
 Bitcointalk Ann: https://bitcointalk.org/index.php?topic=5027091.0
 
