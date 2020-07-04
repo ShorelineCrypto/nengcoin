@@ -34,9 +34,9 @@ tar xvfz ubuntu20.04_x86_64_miniupnpc.tgz
 sudo mv miniupnpc /opt/
 sudo mv miniupnpc.conf /etc/ld.so.conf.d/ 
 
-wget https://github.com/ShorelineCrypto/NewEnglandCoin/releases/download/v1.4.0/ubuntu20.04_x86_64_openssl-1.0.1l.tgz
-tar xvfz ubuntu20.04_x86_64_openssl-1.0.1l.tgz
-sudo mv openssl-1.0.1l  /opt/
+wget https://github.com/ShorelineCrypto/NewEnglandCoin/releases/download/v1.4.0/ubuntu20.04_x86_64_openssl-1.0.0.tgz
+tar xvfz ubuntu20.04_x86_64_openssl-1.0.0.tgz 
+sudo mv openssl  /opt/
 sudo mv openssl.conf /etc/ld.so.conf.d/ 
 
 ## reuse prior compiled boost libary for Ubuntu 18.04
@@ -46,4 +46,12 @@ sudo mv boost1.58  /opt/
 sudo mv boost1.58.conf  /etc/ld.so.conf.d/
 ## link all libary files
 sudo ldconfig
+
+## Qt4 was removed in Ubuntu 20.04
+## workaround from: https://askubuntu.com/questions/1234786/qt4-libqt4-in-ubuntu-20-04
+
+sudo add-apt-repository ppa:rock-core/qt4
+sudo apt-get update
+sudo apt-get install libqtcore4
+
 
