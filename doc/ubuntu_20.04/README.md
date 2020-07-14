@@ -10,6 +10,6 @@ Please run below shell script in Ubuntu 20.04 for installing depencies and libra
 
 ## Step 2: download the binary wallet and enjoy:
 ```
- wget    wget https://github.com/ShorelineCrypto/NewEnglandCoin/releases/download/v1.3.0.1/newenglandcoin_v1.3.0.1_ubuntu16.04.tgz
+  wget https://github.com/ShorelineCrypto/NewEnglandCoin/releases/download/v1.3.0.1/newenglandcoin_v1.3.0.1_ubuntu16.04.tgz
  tar xvfz newenglandcoin_v1.3.0.1_ubuntu16.04.tgz
 ```
