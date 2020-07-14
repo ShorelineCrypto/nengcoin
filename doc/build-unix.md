@@ -128,3 +128,8 @@ A third way in the middle ground is simply using Ubuntu 16.04 compiled NENG bina
 ```
 
 * (3) Re-run either QT or command line Ubuntu 16.04 files, all should work in Ubuntu 18.04
+
+# Ubuntu 20.04 Binary Download
+
+NENG core wallet can not be easily compiled on Ubuntu 20.04. Please download binary wallet files for x86_64 hardware from v1.4.0 release. 
+The instructions on Ubuntu 20.04 can also be found at "doc/ubuntu_20.04" subfolder below this directory. 
