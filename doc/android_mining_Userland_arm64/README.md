@@ -40,9 +40,9 @@ IP = 192.168.1.4 with user "hlu" like below
 ### Step 4: Install library files
 Please run below shell script in Ubuntu 20.04 for installing depencies and library files:
 ```
-  wget https://github.com/ShorelineCrypto/NewEnglandCoin/releases/download/v1.4.0/newenglandcoin_v1.4.0_ubuntu18.04_arm64_android_userland.tgz
-  tar xvfz newenglandcoin_v1.4.0_ubuntu18.04_arm64_android_userland.tgz
-  cd  newenglandcoin_v1.4.0_ubuntu18.04_arm64_android_userland
+  wget https://github.com/ShorelineCrypto/NewEnglandCoin/releases/download/v1.4.0/newenglandcoin_v1.4.0_android_arm64_userland.tgz
+  tar xvfz newenglandcoin_v1.4.0_android_arm64_userland.tgz 
+  cd newenglandcoin_v1.4.0_android_arm64_userland 
   bash prepare_userland.sh
   bash prepare_neng.sh
   bash prepare_nengX.sh
@@ -70,23 +70,31 @@ Please run below shell script in Ubuntu 20.04 for installing depencies and libra
 
   Try to find how much cpu threads you have on the phone, for quad core phone, 8 cpu threads were found 
 
-### use screen command to run cheeta
-  screen is useful batch style of command running in background in linux, you can type in command:
-  detach: Ctrl-A-D
-  attach: screen -r
-  attach specfic pid (say 3145-tty screen):  screen -r 31
-  Inside screen, run below in cheetah to mine NENG
-  ```
+### optional - screen command to run cheeta
+  screen is useful linux command for background running in linux, you can start screen session job in the phone and log out. 
+When you re-login into phone, you can re-attach the screen session with a command.  Useful keyboards commands to be remembered:
+#### start a screen session: type "screen" command in linux terminal
+####  detach screen: Ctrl-A-D
+####  re-attach screen: type "screen -r" command
+####  re-attach specfic screen session when multiple sessions are running (say 3145.pts-1.localhost session):  screen -r 31
+
+  Inside screen, run below in cheetah to mine NENGi, detach screen
+```
+   screen
+
    python main.py --interval 10 --cpu 6
-  ```
+
+   CTRL-A-D
+
+```
 
 ### optional - load QT wallet in windows 10
 
- X-window free software "VcXsrv" can be installed and running in windows 10 to allow QT GUI 
- running in phone and display in windows 10 remotely. Check the screen shot of putty for enable 
+ free software "VcXsrv" can be installed and running in windows 10 to allow QT GUI NENG wallet 
+ running in phone and display in windows 10 remotely. Check the screen shot of putty for enabling 
  "Enable X11 forwarding" for the ssh login setting. Once the login with X11 enabled, 
  inside the phone command line,  type "./newenglandcoin-qt  & "  in phone linux terminal will 
- pop the QT gui wallet in windows 10 running VcXsrv
+ pop the QT gui wallet in windows 10 running VcXsrv.
 
 
    
