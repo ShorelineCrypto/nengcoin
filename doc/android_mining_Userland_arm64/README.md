@@ -78,7 +78,7 @@ When you re-login into phone, you can re-attach the screen session with a comman
 ####  re-attach screen: type "screen -r" command
 ####  re-attach specfic screen session when multiple sessions are running (say 3145.pts-1.localhost session):  screen -r 31
 
-  Inside screen, run below in cheetah to mine NENGi, detach screen
+  Inside screen, run below in cheetah to mine NENG, detach screen
 ```
    screen
 
@@ -88,13 +88,13 @@ When you re-login into phone, you can re-attach the screen session with a comman
 
 ```
 
-### optional - load QT wallet in windows 10
+### optional - load QT wallet in windows 10 remotely
 
- free software "VcXsrv" can be installed and running in windows 10 to allow QT GUI NENG wallet 
- running in phone and display in windows 10 remotely. Check the screen shot of putty for enabling 
- "Enable X11 forwarding" for the ssh login setting. Once the login with X11 enabled, 
- inside the phone command line,  type "./newenglandcoin-qt  & "  in phone linux terminal will 
- pop the QT gui wallet in windows 10 running VcXsrv.
+ free software "VcXsrv" can be installed in windows 10 to allow QT GUI NENG wallet 
+ running in phone and display in windows 10 remotely. Check the screenshot2 of putty for enabling 
+ "Enable X11 forwarding" for the userland login setting. Once the login with X11 enabled, start VcXsrv in windows, 
+ re-login into phone into linux command line,  type "./newenglandcoin-qt  & "  in phone linux terminal will 
+ pop the QT GUI wallet in windows 10 running VcXsrv and control the wallet inside phone from windows.
 
 
    
