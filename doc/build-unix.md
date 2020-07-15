@@ -87,13 +87,13 @@ symbols, which reduces the executable size by about 90%.
 
 
 
-## NewEnglandcoin Linux BUILD NOTES
+## NewEnglandcoin Linux BUILD NOTES on Ubuntu 16.04
 
 Headless newenglandcoin CLI
 
 ```
 cd src
-make -f makefile.unix
+make -f makefile.unix USE_UPNP=1
 strip newenglandcoind
 
 ```
@@ -101,16 +101,17 @@ strip newenglandcoind
  Qt GUI Wallet
 ```
    cd ..
-   qmake
+   qmake USE_UPNP=1 
    make
 ``` 
 
-# Ubuntu 18.04
+# Ubuntu 18.04 Compile from source
 
-There are two ways to obtain Ubuntu 18.04 compatible binary. The first approach is to follow similar steps above to compile everything
-in Ubuntu 18.04.  This could be complicated. Without custome method, a simple apt-get and same steps like Ubuntu 16.04 will fail on boost.
+There are three ways to obtain Ubuntu 18.04 compatible binary. The first approach is to follow similar steps above to compile everything in Ubuntu 18.04.  This could be complicated. Without custome method, a simple apt-get and same steps like Ubuntu 16.04 will fail on boost version incompatible with NENG wallet.
 
-An easier way is simply using Ubuntu 16.04 compiled binary files, then compile a boost library version 1.58.0 in Ubuntu 18.04
+The easiest way is to take  Ubuntu 16.04 compiled binary files including the boost libary files version  1.58.0  and use it in Ubuntu 18.04. This should work in AMD64 and ARM64 64 bits machines.  However this approach is likely to fail on 32 bits arm android hardware because of hardware incompatibility issue.
+
+A third way in the middle ground is simply using Ubuntu 16.04 compiled NENG binary files only, then compile a boost library version 1.58.0 in Ubuntu 18.04 tailored to hardware in Ubuntu 18.04. This is likely to be useful in arm 32 bits hardware where hardware compatibility on boost or library is issue across different Ubuntu version even on same hardware platform. Detailed steps:
 
 * (1) Download Ubuntu 16.04 binary files from release from https://github.com/ShorelineCrypto/NewEnglandCoin/releases
 
@@ -127,3 +128,8 @@ An easier way is simply using Ubuntu 16.04 compiled binary files, then compile a
 ```
 
 * (3) Re-run either QT or command line Ubuntu 16.04 files, all should work in Ubuntu 18.04
+
+# Ubuntu 20.04 Binary Download
+
+NENG core wallet can not be easily compiled on Ubuntu 20.04. Please download binary wallet files for x86_64 hardware from v1.4.0 release. 
+The instructions on Ubuntu 20.04 can also be found at "doc/ubuntu_20.04" subfolder below this directory. 
