@@ -112,7 +112,7 @@ english keyboard:
   dpkg-reconfigure locales
 ```
 
-### Step 9: install some uitls, prepare libary
+### Step 9: install some tools, prepare NENG required library
 
  screen is useful tools to run in background.  busybox top or uptime is better tool for 
 than the default ones.  "busybox top" can see NENG mining command and android processes.  
