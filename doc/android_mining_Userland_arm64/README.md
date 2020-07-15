@@ -38,7 +38,7 @@ IP = 192.168.1.4 with user "hlu" like below
 
 ## Now you can run below commands from putty from windows 10 or ssh from MacOS or Linux
 ### Step 4: Install library files
-Please run below shell script in Ubuntu 20.04 for installing depencies and library files:
+Please run below shell script in Userland Ubuntu for installing depencies and library files:
 ```
   wget https://github.com/ShorelineCrypto/NewEnglandCoin/releases/download/v1.4.0/newenglandcoin_v1.4.0_android_arm64_userland.tgz
   tar xvfz newenglandcoin_v1.4.0_android_arm64_userland.tgz 
