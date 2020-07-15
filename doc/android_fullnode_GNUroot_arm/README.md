@@ -133,7 +133,7 @@ than the default ones.  "busybox top" can see NENG mining command and android pr
 ## From Desktop Linux in Virtualbox
 ### Step 10: Compile NENG wallet in QEMU
   The armel/armhf NENG binary from our download is unlikely to work well if your phone hardware is different. 
-  Explained inour pdf report, you should compile Berkley DB libary above successfully, but likely to fail on NENG core compilation.  Extract and copy DB library files into QEMU and compile NENG core wallet following cloud boot from below guide:
+  Explained in pdf report, you should compile Berkley DB libary above successfully, but likely to fail on NENG core compilation.  Extract and copy DB library files into QEMU and compile NENG core wallet following cloud boot from below guide:
   
   debian armel, upgrade wheezy to jessie in QEMU:
   https://people.debian.org/~aurel32/qemu/armel/
@@ -154,11 +154,12 @@ than the default ones.  "busybox top" can see NENG mining command and android pr
 ```
 
    "lowmemory_neng.sh" script file is used to reduce memory usage when the phone is on cheetah cpu mining. 
+   This script also print log file into screen so that you can watch what is going on. 
    NENG full node can run in one screen session, the cheetah runs in another screen session. 
 
 ### optional - solo server for futurebit moonlander2 ASIC USB
 
    It appears that the full node running in old android can sever better as solo server for USB ASIC that needs 
- two full nodes to rotate around.  Example config file and solo server script provided for this usage. 
+ two full nodes to rotate around.  Example config file and solo server script are provided for this usage. 
 
    
