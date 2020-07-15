@@ -6,6 +6,13 @@ This product includes software developed by the OpenSSL Project for use in the [
 cryptographic software written by Eric Young ([eay@cryptsoft.com](mailto:eay@cryptsoft.com)), and UPnP software written by Thomas Bernard.
 
 
+# Docker
+
+A docker file for compiling NewEnglandcoin (NENG) in ubuntu 16.04 is provided. For pulling down a x86_64 docker image on this docker file can be obtained by 
+below docker commands:
+```
+ docker pull shorelinecrypto/neng_ubuntu16_x86_64
+```
 
 # Dependencies for Ubuntu
 
@@ -133,3 +140,8 @@ A third way in the middle ground is simply using Ubuntu 16.04 compiled NENG bina
 
 NENG core wallet can not be easily compiled on Ubuntu 20.04. Please download binary wallet files for x86_64 hardware from v1.4.0 release. 
 The instructions on Ubuntu 20.04 can also be found at "doc/ubuntu_20.04" subfolder below this directory. 
+
+# Debian Wheezy or Jessie
+
+NENG core wallet can be compiled in Debian 7 (wheezy) or Debian 8 (jessie).  Please check out the android arm64 arm subfolder below for more information on debian platform. 
+
