@@ -143,5 +143,13 @@ The instructions on Ubuntu 20.04 can also be found at "doc/ubuntu_20.04" subfold
 
 # Debian Wheezy or Jessie
 
-NENG core wallet can be compiled in Debian 7 (wheezy) or Debian 8 (jessie).  Please check out the android arm64 arm subfolder below for more information on debian platform. 
+NENG core wallet can be compiled in Debian 7 (wheezy) or Debian 8 (jessie).  Please check out the android arm64 arm subfolder below for more information on debian platform on library dependencies compiling and installation.
+
+For actual NENG core wallet compiling, run below in Debian wheezy or jessie:
+```
+   cd NewEnglandCoin/src
+   make -f makefile.debian USE_UPNP=1
+   strip newenglandcoind
+```
+
 
