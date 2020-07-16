@@ -2,6 +2,8 @@
 
 This folder describes how to set up full node of NewEnglandcoin (NENG) on 32 bits android phone on arm CPUs. 
 
+Minimum Hardware requirement: 1G memory in 32 bits arm phone with 3G spare hard disk 
+
 This full node on old android phone can be used for android CPU mining or as solo server for 
 futurebit moonlander2 ASIC USB stick for two nodes rotation setup on base difficulty reset day.
 
