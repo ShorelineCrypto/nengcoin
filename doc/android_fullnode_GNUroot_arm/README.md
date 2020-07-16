@@ -65,7 +65,7 @@ Run below inside linux terminal of GNUroot app in phone:
 ```
 
 
-### step 5,  setup proper ssh ntworking
+### step 5,  setup proper ssh networking
 
   Prepare to use another port 2222 for ssh.  The GNUroot does not allow 
  any port below 1024 for external ssh login
