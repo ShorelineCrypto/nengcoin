@@ -163,7 +163,7 @@ than the default ones.  "busybox top" can see NENG mining command and android pr
 
 ### optional - solo server for futurebit moonlander2 ASIC USB
 
-   It appears that the full node running in old android can sever better as solo server for USB ASIC that needs 
+   It appears that the full node running in old android can serve better as solo server for USB ASIC that needs 
  two full nodes to rotate around.  Example config file and solo server script are provided for this usage. 
 
    
