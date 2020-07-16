@@ -1,6 +1,6 @@
 # Mobile Full Node on Android 32 bits phone (armel or armhf) with GNUroot App
 
-Warning: this is alpha release, suitable only for expert linux developers only
+Warning: alpha release, suitable for expert linux developers only
 
 This folder describes how to set up full node of NewEnglandcoin (NENG) on 32 bits android phone on arm CPUs. 
 
