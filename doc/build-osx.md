@@ -106,6 +106,24 @@ Install Qt4.8  with below commands
 ```
 
 
+### For MacOs Mojave only - Switch openssl to older version,
+
+openssl default installation at Mojave is now version 1.1, incompatible with NENG. 
+
+ A workaround solution from
+ https://stackoverflow.com/questions/59006602/dyld-library-not-loaded-usr-local-opt-openssl-lib-libssl-1-0-0-dylib
+
+```     
+     brew install openssl@1.0
+     cd /usr/local/Cellar/openssl@1.1
+     ln -s ../openssl@1.0/1.0.2t
+     brew switch openssl 1.0.2t
+```
+
+rerunning "openssl version" should now return the correct version 1.0.2t.
+
+
+##  for both MacOS Mojave or El Capitan
 ### Building command line  and QT wallet
 
 1. Clone the github tree to get the source code and go into the
@@ -115,6 +133,7 @@ Install Qt4.8  with below commands
    git clone  https://github.com/ShorelineCrypto/NewEnglandCoin.git
    cd NewEnglandCoin/src
    make -f makefile.osx USE_UPNP=-
+   strip newenglandcoind
 ```
 
 Special Note for macOS Mojave: a confusing error might pop up on first try, "fatal error: string.h: No such file or directory".
