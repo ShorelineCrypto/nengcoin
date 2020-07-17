@@ -19,6 +19,8 @@ CONFIG += thread
 #    BOOST_INCLUDE_PATH, BOOST_LIB_PATH, BDB_INCLUDE_PATH,
 #    BDB_LIB_PATH, OPENSSL_INCLUDE_PATH and OPENSSL_LIB_PATH respectively
 
+MINIUPNPC_INCLUDE_PATH=/usr/local/opt
+MINIUPNPC_LIB_PATH=/usr/local/opt/miniupnpc
 OBJECTS_DIR = build
 MOC_DIR = build
 UI_DIR = build
