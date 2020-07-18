@@ -12,7 +12,11 @@ https://github.com/ShorelineCrypto/NewEnglandCoin/releases/download/NENG_2020_Q3
 
 First install free "UserLand" app from google play store.  After installation, click Distribution 
 "Ubuntu", pick a username, password, and VNC password (which could be same password). You will enter 
-a linux terminal inside UserLand app, which runs a arm64 version of Ubuntu 18.04 
+a linux terminal inside UserLand app, which runs a arm64 version of Ubuntu 18.04. 
+
+Here we are recommending running through SSH (linux terminal) only, not VNC.  For linux GUI, it is much better to run remotely 
+through putty and you can display all linux GUI software in windows 10 with a few mouse clicks of free software download and installs. See optional 
+item at bottom of the page.
 
 ### Step 2: prepare UserLand
 
