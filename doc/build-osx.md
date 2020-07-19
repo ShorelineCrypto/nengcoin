@@ -1,4 +1,4 @@
-Mac OS X newenglandcoind build instructions
+# Mac OS X newenglandcoind build instructions
 ====================================
 
 Authors
@@ -36,7 +36,7 @@ done for OSX 10.7 or later version of MacOS.
 All of the commands should be executed in a Terminal application. The
 built-in one is located in `/Applications/Utilities`.
 
-### Preparation in OSX 10.11
+## Preparation in OSX 10.11
 -----------
 
 Type below in terminal to install Xcode command line tools:
@@ -48,12 +48,12 @@ file into Application of your Mac.
 
 In below compiling steps in brew, there migh be warning that Xcode 7.3.1 is outdated, please upgrade to Xcode 8.x.x , ignore that. 
 
-### Preparation in macOS 10.14
+## Preparation in macOS 10.14
 
 Type below in terminal to install Xcode command line tools:
    ` xcode-select --install`
 
-### Required Package and Library for both OSX 10.11 and macOS 10.14
+## Required Package and Library for both OSX 10.11 and macOS 10.14
 
 Perform below command line steps within terminal
 
@@ -70,13 +70,29 @@ https://brew.sh/
 ```
         brew install gcc@5
         brew install boost@1.55 miniupnpc openssl berkeley-db4
+        
 ```
+
+####  Switch openssl to older version,
+
+openssl default installation  is now version 1.1, incompatible with NENG.
+
+ A workaround solution from
+ https://stackoverflow.com/questions/59006602/dyld-library-not-loaded-usr-local-opt-openssl-lib-libssl-1-0-0-dylib
+
+```    
+     brew install openssl@1.0
+     cd /usr/local/Cellar/openssl@1.1
+     ln -s ../openssl@1.0/1.0.2t
+     brew switch openssl 1.0.2t
+```
+
 
 Note: After you have installed the dependencies, you should check that the Brew installed version of OpenSSL is the one available for compilation. You can check this by typing
 ```
         openssl version
 ```
-into Terminal. You should see  "OpenSSL 1.0.2s  28 May 2019".
+into Terminal. You should see  "OpenSSL 1.0.2t  10 Sep 2019".
 
 If not, you can ensure that the Brew OpenSSL is correctly linked by running
 
@@ -91,37 +107,32 @@ and reboot the machine.
 
 
 ```
-export PATH="/usr/local/Cellar/gcc@5/5.5.0_3/bin:/Library/Developer/CommandLineTools/usr/bin:/usr/local/opt/openssl/bin:$PATH"
+export PATH="/usr/local/Cellar/gcc@5/5.5.0_4/bin:/Library/Developer/CommandLineTools/usr/bin:/usr/local/opt/openssl/bin:$PATH"
 export LDFLAGS="-L/usr/local/opt/openssl/lib"
 export CPPFLAGS="-I/usr/local/opt/openssl/include"
 ```
 
 
-Install Qt4.8  with below commands
+#### Install Qt4.8  with below commands
 
 ```
     brew tap cartr/qt4
-    brew tap-pin cartr/qt4
     brew install qt@4
 ```
 
 
-### For MacOs Mojave only - Switch openssl to older version,
+#### Install miniupnpc-1.9.20150206
 
-openssl default installation at Mojave is now version 1.1, incompatible with NENG. 
+miniupnpc 2.1 is default, which is incompatible with NENG.
 
- A workaround solution from
- https://stackoverflow.com/questions/59006602/dyld-library-not-loaded-usr-local-opt-openssl-lib-libssl-1-0-0-dylib
-
-```     
-     brew install openssl@1.0
-     cd /usr/local/Cellar/openssl@1.1
-     ln -s ../openssl@1.0/1.0.2t
-     brew switch openssl 1.0.2t
 ```
-
-rerunning "openssl version" should now return the correct version 1.0.2t.
-
+   cd /usr/local/Cellar/miniupnpc
+   tar xvfz ~/Downloads/miniupnpc-1.9.20150206.tar.gz
+   mv miniupnpc-1.9.20150206  1.9
+   cd 1.9
+   make upnpc-static
+   brew switch  miniupnpc  1.9
+```
 
 ##  for both MacOS Mojave or El Capitan
 ### Building command line  and QT wallet
@@ -132,7 +143,7 @@ rerunning "openssl version" should now return the correct version 1.0.2t.
 ```
    git clone  https://github.com/ShorelineCrypto/NewEnglandCoin.git
    cd NewEnglandCoin/src
-   make -f makefile.osx USE_UPNP=-
+   make -f makefile.osx USE_UPNP=1
    strip newenglandcoind
 ```
 
@@ -152,7 +163,7 @@ up in the folder. This is command line wallet
 ```
     cd ..
     cp bitcoin-qt.pro.osx bitcoin-qt.pro
-    qmake USE_UPNP=-
+    qmake USE_UPNP=1
     make
 ```
 

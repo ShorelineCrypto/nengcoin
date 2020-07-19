@@ -11,6 +11,8 @@ DEPSDIR=/usr/local
 DB4DIR=/usr/local/opt/berkeley-db@4
 OPENSSLDIR=/usr/local/opt/openssl
 BOOSTDIR=/usr/local/opt/boost@1.55
+MINIUPNPC_INCLUDE_PATH=/usr/local/opt
+MINIUPNPC_LIB_PATH=/usr/local/opt/miniupnpc
 
 INCLUDEPATHS= \
  -I"$(CURDIR)" \
@@ -18,12 +20,14 @@ INCLUDEPATHS= \
  -I"$(DEPSDIR)/include" \
  -I"$(DB4DIR)/include" \
  -I"$(OPENSSLDIR)/include" \
+ -I"$(MINIUPNPC_INCLUDE_PATH)" \
  -I"$(BOOSTDIR)/include" 
 
 LIBPATHS= \
  -L"$(DEPSDIR)/lib" \
  -L"$(DB4DIR)/lib" \
  -L"$(OPENSSLDIR)/lib" \
+ -L"$(MINIUPNPC_LIB_PATH)" \
  -L"$(BOOSTDIR)/lib"
 
 USE_UPNP:=1
