@@ -36,6 +36,23 @@ Open up terminal, type
      bash prepare_darwin.sh
 ```
 
+Sometimes Mojave will have header errors because of updates,  like below:
+```
+upnpc.c:8:10: fatal error: 'stdio.h' file not found
+#include <stdio.h>
+         ^~~~~~~~~
+1 error generated.
+make: *** [upnpc.o] Error 1
+``` 
+
+Fix the errors by running: 
+```
+    open /Library/Developer/CommandLineTools/Packages/macOS_SDK_headers_for_macOS_10.14.pkg
+```
+
+rerun "prepare_darwin.sh" should fix the issue. 
+
+
 CLI and GUI wallet files are downloaded in "Downloads" folder
 
 
