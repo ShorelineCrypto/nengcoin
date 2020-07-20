@@ -53,5 +53,4 @@ sudo ldconfig
 sudo add-apt-repository ppa:rock-core/qt4
 sudo apt-get update
 sudo apt-get install libqtcore4
-
-
+sudo apt-get install libqtgui4
