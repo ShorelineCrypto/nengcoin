@@ -29,9 +29,15 @@ Eric Young (eay@cryptsoft.com) and UPnP software written by Thomas Bernard.
 Notes
 -----
 
+# macOS 10.15 (Catalina) - Supported on Binary only
 
-Tested on OS X 10.11 (El Capitan)/ macOS 10.14.4 (Mojave) on Intel processors only.  The compilation was 
-done for OSX 10.7 or later version of MacOS. 
+macOS Catalina was also tested but failed to build from source.  However, Catalina is supported on binary wallet. Please 
+check out NENG v1.4.0.2 for MacOS Catalina wallet. 
+
+# MacOS 10.11 (El Capitan) to MacOS 10.14 (Mojave) - Fully Supported
+
+
+Tested on OS X 10.11 (El Capitan)/ macOS 10.14.4 (Mojave) on Intel processors only.  The binary wallet release was compiled on Mojave. However the compilation method below should work for any version between 10.11 to 10.14.
 
 All of the commands should be executed in a Terminal application. The
 built-in one is located in `/Applications/Utilities`.
