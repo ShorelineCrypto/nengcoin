@@ -1,15 +1,12 @@
-# macOS 10.15 (Catalina) - Not Supported
-macOS Catalina was also tested but failed to work or build because of Apple's decision to discontinue support on 32 bits software.
 
-We recommend to run a virtual machine of Mojave in Catalina in order to run NewEnglandcoin (NENG) full node for CPU mining or other 
-purposes.  
 
-# Supported - macOS 10.11 El Capitan to 10.14 Mojave
+# Supported - macOS 10.11 El Capitan to 10.15 Catalina
 
 For full guide of building own wallet from source, please follow steps at:
  https://github.com/ShorelineCrypto/NewEnglandCoin/blob/master/doc/build-osx.md
 
-Here below we describe an easier way to install macOS wallet on NENG v1.4.0.1 
+Here below we describe an easier way to install macOS binary wallet on NENG v1.4.0.1, which was built from source in Mojave. The below 
+method was tested to be working on 10.11 , 10.14 and 10.15. 
 
 
 ### Step 1:  Install xcode
@@ -63,6 +60,9 @@ Brew now installed newer and imcompatible versions.  Older version of libraries 
 ```
      bash enable_neng.sh    
 ```
+
+In Catalina, the openssl library linking method changed dramatically on system level so that enable or not may not have any effect on system. 
+Enable or not, NENG GUI and CLI wallet was tested to be working in MacOS Catalina. 
 
 
 ### Step 5 optional:  Restore system on openssl/miniupnpc
