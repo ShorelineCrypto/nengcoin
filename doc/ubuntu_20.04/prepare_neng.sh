@@ -16,7 +16,7 @@ sudo apt-get -y install  python2
 sudo apt-get -y install curl
 curl https://bootstrap.pypa.io/get-pip.py --output get-pip.py
 sudo python2 get-pip.py
-pip install python-bitcoinrpc
+sudo pip install python-bitcoinrpc
 
 sudo apt-get -y install git
 #git clone https://github.com/ShorelineCrypto/NewEnglandCoin.git
