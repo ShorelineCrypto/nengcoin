@@ -12,7 +12,10 @@ sudo apt-get -y install libprotobuf-dev protobuf-compiler
 sudo apt-get -y install libqt5gui5 libqt5core5a libqt5dbus5 qttools5-dev qttools5-dev-tools libprotobuf-dev protobuf-compiler 
 sudo apt-get -y install openssl
 
-sudo apt-get -y install python-pip
+sudo apt-get -y install  python2
+sudo apt-get -y install curl
+curl https://bootstrap.pypa.io/get-pip.py --output get-pip.py
+sudo python2 get-pip.py
 pip install python-bitcoinrpc
 
 sudo apt-get -y install git
