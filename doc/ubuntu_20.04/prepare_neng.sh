@@ -53,7 +53,7 @@ sudo ldconfig
 ## Qt4 was removed in Ubuntu 20.04
 ## workaround from: https://askubuntu.com/questions/1234786/qt4-libqt4-in-ubuntu-20-04
 
-sudo add-apt-repository ppa:rock-core/qt4
+sudo add-apt-repository -y ppa:rock-core/qt4
 sudo apt-get update
-sudo apt-get install libqtcore4
-sudo apt-get install libqtgui4
+sudo apt-get -y install libqtcore4
+sudo apt-get -y install libqtgui4
