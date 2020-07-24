@@ -1,9 +1,9 @@
-# MX Linux 19.2 on x86_64
+# MX Linux 19.2 / Debian 10 (buster) on x86_64
 
-This folder describe a binary support from v1.4.0.3 NENG core release for MX Linux 19.2_x64 
+This folder describe a binary support from v1.4.0.3 NENG core release on MX Linux 19.2 and Debian 10 (buster).
 
 ## Step 1: Install library files
-Please run below shell script in Ubuntu 20.04 for installing depencies and library files:
+Please run below shell script in debian or MX Linux for installing depencies and library files:
 ```
   bash  prepare_neng.sh
 ```

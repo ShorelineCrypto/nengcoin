@@ -1,4 +1,5 @@
 sudo apt-get update
+sudo apt-get -y install wget curl
 sudo apt-get -y install build-essential 
 sudo apt-get -y install g++ libtool autotools-dev automake pkg-config libssl-dev libevent-dev bsdmainutils 
 sudo apt-get -y install libboost-all-dev
@@ -13,7 +14,7 @@ sudo apt-get -y install libqt5gui5 libqt5core5a libqt5dbus5 qttools5-dev qttools
 sudo apt-get -y install openssl
 
 sudo apt-get -y install  python2
-sudo apt-get -y install curl
+sudo ln -s /usr/bin/python2.7 /usr/bin/python
 curl https://bootstrap.pypa.io/get-pip.py --output get-pip.py
 sudo python2 get-pip.py
 sudo pip install python-bitcoinrpc
