@@ -17,7 +17,7 @@ sudo apt-get -y install qt4-default
 
 sudo apt-get -y install python-pip
 sudo apt-get -y install python-setuptools
-pip install python-bitcoinrpc
+sudo pip install python-bitcoinrpc
 
 sudo apt-get -y install git
 #git clone https://github.com/ShorelineCrypto/NewEnglandCoin.git
