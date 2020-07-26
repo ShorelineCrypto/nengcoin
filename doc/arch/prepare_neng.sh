@@ -1,5 +1,5 @@
 sudo pacman -Syu
-sudo pacman --noconfirm  -S wget  curl
+sudo pacman --noconfirm  -S wget curl openssh 
 sudo pacman --noconfirm  -S  base-devel python2
 sudo pacman --noconfirm  -S qt4
 wget https://github.com/ShorelineCrypto/NewEnglandCoin/releases/download/v1.4.0/ubuntu20.04_x86_64_db-4.8.30.NC.tgz

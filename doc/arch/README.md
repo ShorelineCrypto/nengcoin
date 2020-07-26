@@ -1,6 +1,6 @@
-# Manjaro 20.0.3 on x86_64
+# Manjaro 20.0.3 / Arch Linux on x86_64
 
-This folder describe a binary support from v1.4.0.3 NENG core release on Manjaro 20.0.3 .
+This folder describe a binary support from v1.4.0.3 NENG core release on Manjaro 20.0.3 or Arch Linux .
 
 ## Step 1: Install library files
 Please run below shell script in debian or MX Linux for installing dependencies and library files:
