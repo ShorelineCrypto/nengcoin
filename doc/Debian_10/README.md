@@ -3,7 +3,7 @@
 This folder describe a binary support from v1.4.0.3 NENG core release on MX Linux 19.2 and Debian 10 (buster).
 
 ## Step 1: Install library files
-Please run below shell script in debian or MX Linux for installing dependencies and library files:
+Please run below shell script in terminal for installing dependencies and library files:
 ```
   bash  prepare_neng.sh
 ```

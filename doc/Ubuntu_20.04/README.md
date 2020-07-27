@@ -3,7 +3,7 @@
 This folder describe a binary support from v1.4.0 NENG core release for Ubuntu 20.04 and Linux Mint 20 on AMD64 platform 
 
 ## Step 1: Install library files
-Please run below shell script in Ubuntu 20.04 for installing dependencies and library files:
+Please run below shell script in terminal for installing dependencies and library files:
 ```
   bash  prepare_neng.sh
 ```
