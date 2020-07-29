@@ -6,10 +6,10 @@ This product includes software developed by the OpenSSL Project for use in the [
 cryptographic software written by Eric Young ([eay@cryptsoft.com](mailto:eay@cryptsoft.com)), and UPnP software written by Thomas Bernard.
 
 
-# Docker
+# Docker Image
 
-A docker file for compiling NewEnglandcoin (NENG) in ubuntu 16.04 is provided. For pulling down a x86_64 docker image on this docker file can be obtained by 
-below docker commands:
+A docker file "Dockerfile-ubuntu" for compiling NewEnglandcoin (NENG) in ubuntu 16.04 is provided here. You can pull down a x86_64 docker image built on this docker file by 
+below docker command:
 ```
  docker pull shorelinecrypto/neng_ubuntu16_x86_64
 ```
