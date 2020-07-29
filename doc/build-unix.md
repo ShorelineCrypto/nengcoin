@@ -18,7 +18,7 @@ below docker command:
 
 Currently, only Ubuntu 16.04 or Debian 7 (Wheezy) / 8 (Jessie) are described below for compiling wallet from source. 
 
-Newer versions of various linux distros are supported on binary wallet download only. Please check out v1.4.0.3 release ( https://github.com/ShorelineCrypto/NewEnglandCoin/releases/tag/v1.4.0.3 ) or follow web README page at each subfolders under:
+Newer versions of various linux distros are supported on binary wallet download only. Please check out v1.4.0.3 release ( https://github.com/ShorelineCrypto/NewEnglandCoin/releases/tag/v1.4.0.3 ) or follow web README page at each subfolder under:
 https://github.com/ShorelineCrypto/NewEnglandCoin/tree/master/doc
 
 The list of Linux distros currently supported on binary download on x86_64 platform:
