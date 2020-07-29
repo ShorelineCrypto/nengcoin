@@ -136,33 +136,10 @@ strip newenglandcoind
    make
 ``` 
 
-# Ubuntu 18.04 Compile from source
-
-There are three ways to obtain Ubuntu 18.04 compatible binary. The first approach is to follow similar steps above to compile everything in Ubuntu 18.04.  This could be complicated. Without custome method, a simple apt-get and same steps like Ubuntu 16.04 will fail on boost version incompatible with NENG wallet.
-
-The easiest way is to take  Ubuntu 16.04 compiled binary files including the boost libary files version  1.58.0  and use it in Ubuntu 18.04. This should work in AMD64 and ARM64 64 bits machines.  However this approach is likely to fail on 32 bits arm android hardware because of hardware incompatibility issue.
-
-A third way in the middle ground is simply using Ubuntu 16.04 compiled NENG binary files only, then compile a boost library version 1.58.0 in Ubuntu 18.04 tailored to hardware in Ubuntu 18.04. This is likely to be useful in arm 32 bits hardware where hardware compatibility on boost or library is issue across different Ubuntu version even on same hardware platform. Detailed steps:
-
-* (1) Download Ubuntu 16.04 binary files from release from https://github.com/ShorelineCrypto/NewEnglandCoin/releases
-
-* (2) Compile boost v1.58.0 library in Ubuntu 18.04 with below steps:
-
-```
-    wget -O boost_1_58_0.tar.bz2 http://sourceforge.net/projects/boost/files/boost/1.58.0/boost_1_58_0.tar.bz2/download
-    tar xvfj boost_1_58_0.tar.bz2
-    cd boost_1_58_0
-    ./bootstrap.sh --with-libraries=all --with-toolset=gcc 
-    ./b2 toolset=gcc 
-    sudo ./b2 install --prefix=/usr 
-    sudo ldconfig 
-```
-
-* (3) Re-run either QT or command line Ubuntu 16.04 files, all should work in Ubuntu 18.04
 
 # Debian Wheezy or Jessie
 
-NENG core wallet can be compiled in Debian 7 (wheezy) or Debian 8 (jessie).  the deppendencies are actually mostly same as Ubuntu 16.04 except for berkley DB shown below.  Please check out the android arm subfolder for more information on debian platform on library dependencies compiling and installation.
+NENG core wallet can be compiled in Debian 7 (wheezy) or Debian 8 (jessie).  The dependencies are actually mostly same as Ubuntu 16.04 except for berkley DB shown below.  Please check out the android arm subfolder for more information on debian platform on library dependencies compiling and installation.
 
 ```
 cd /opt
