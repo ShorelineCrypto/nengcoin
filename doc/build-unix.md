@@ -32,7 +32,9 @@ The list of Linux distros currently supported on binary download on x86_64 platf
 -  openSUSE Tumbleweed
 -  Ubuntu 20.04/18.04/16.04
 
-
+The list of Linux distros currently supported on binary download on arm64 platform:
+-  Ubuntu 16.04
+-  Ubuntu 18.04
 
 # Ubuntu 16.04 on x86_64 or arm64
 
