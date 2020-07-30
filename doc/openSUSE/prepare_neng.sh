@@ -1,21 +1,12 @@
-sudo apt-get update
-sudo apt-get -y install build-essential 
-sudo apt-get -y install g++ libtool autotools-dev automake pkg-config libssl-dev libevent-dev bsdmainutils 
-sudo apt-get -y install libboost-all-dev
+sudo zypper install -y  wget curl
+sudo zypper install -y  libqt4-devel
 
-sudo apt-get -y install software-properties-common
-sudo apt-get update
+sudo zypper install -y  python2-pip
+sudo zypper install -y  python2-setuptools
+sudo zypper install -y  python-xml 
+sudo pip2  install  python-bitcoinrpc
 
- 
-sudo apt-get -y install libzmq3-dev libbz2-dev zlib1g 
-sudo apt-get -y install libprotobuf-dev protobuf-compiler
-sudo apt-get -y install libqt5gui5 libqt5core5a libqt5dbus5 qttools5-dev qttools5-dev-tools libprotobuf-dev protobuf-compiler 
-sudo apt-get -y install openssl
-
-sudo apt-get -y install python-pip
-pip install python-bitcoinrpc
-
-sudo apt-get -y install git
+sudo zypper install -y git
 #git clone https://github.com/ShorelineCrypto/NewEnglandCoin.git
 git clone https://github.com/ShorelineCrypto/cheetah_cpuminer.git
 
@@ -47,10 +38,3 @@ sudo mv boost1.58.conf  /etc/ld.so.conf.d/
 ## link all libary files
 sudo ldconfig
 
-## Qt4 was removed in Ubuntu 20.04
-## workaround from: https://askubuntu.com/questions/1234786/qt4-libqt4-in-ubuntu-20-04
-
-sudo add-apt-repository ppa:rock-core/qt4
-sudo apt-get update
-sudo apt-get install libqtcore4
-sudo apt-get install libqtgui4

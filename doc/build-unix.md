@@ -6,15 +6,41 @@ This product includes software developed by the OpenSSL Project for use in the [
 cryptographic software written by Eric Young ([eay@cryptsoft.com](mailto:eay@cryptsoft.com)), and UPnP software written by Thomas Bernard.
 
 
-# Docker
+# Docker Image
 
-A docker file for compiling NewEnglandcoin (NENG) in ubuntu 16.04 is provided. For pulling down a x86_64 docker image on this docker file can be obtained by 
-below docker commands:
+A docker file "Dockerfile-ubuntu" for compiling NewEnglandcoin (NENG) in ubuntu 16.04 is provided here. You can pull down a x86_64 docker image built on this docker file by 
+below docker command:
 ```
  docker pull shorelinecrypto/neng_ubuntu16_x86_64
 ```
 
-# Dependencies for Ubuntu
+# Linux Distros supported on binary wallet only
+
+Currently, only Ubuntu 16.04 or Debian 7 (Wheezy) / 8 (Jessie) are described below for compiling wallet from source. 
+
+Newer versions of various linux distros are supported on binary wallet download only. Please check out v1.4.0.3 release ( https://github.com/ShorelineCrypto/NewEnglandCoin/releases/tag/v1.4.0.3 ) or follow web README page at each subfolder under:
+https://github.com/ShorelineCrypto/NewEnglandCoin/tree/master/doc
+
+The list of Linux distros currently supported on binary download on x86_64 platform:
+
+-  Arch Linux
+-  Debian 10 (buster)
+-  Fedora 32
+-  Manjaro 20.0.3
+-  MX Linux 19.2
+-  Linux Mint 20
+-  openSUSE Tumbleweed
+-  Ubuntu 20.04/18.04/16.04
+
+The list of Linux distros currently supported on binary download on arm64 platform:
+-  Ubuntu 16.04
+-  Ubuntu 18.04
+
+# Ubuntu 16.04 on x86_64 or arm64
+
+Ubuntu 16.04 NENG wallet can be compiled from source on x86_64 or arm64 hardware.
+
+## Dependencies for Ubuntu 16.04
 
 
  Library     Purpose           Description
@@ -82,7 +108,7 @@ sudo apt-get install libqt4-dev libprotobuf-dev protobuf-compiler
 
 sudo apt-get install --reinstall zlib1g
 
-Optional:
+Optional, but recommended:
 
 	sudo apt-get install libminiupnpc-dev (see USE_UPNP compile flag)
 
@@ -112,44 +138,40 @@ strip newenglandcoind
    make
 ``` 
 
-# Ubuntu 18.04 Compile from source
-
-There are three ways to obtain Ubuntu 18.04 compatible binary. The first approach is to follow similar steps above to compile everything in Ubuntu 18.04.  This could be complicated. Without custome method, a simple apt-get and same steps like Ubuntu 16.04 will fail on boost version incompatible with NENG wallet.
-
-The easiest way is to take  Ubuntu 16.04 compiled binary files including the boost libary files version  1.58.0  and use it in Ubuntu 18.04. This should work in AMD64 and ARM64 64 bits machines.  However this approach is likely to fail on 32 bits arm android hardware because of hardware incompatibility issue.
-
-A third way in the middle ground is simply using Ubuntu 16.04 compiled NENG binary files only, then compile a boost library version 1.58.0 in Ubuntu 18.04 tailored to hardware in Ubuntu 18.04. This is likely to be useful in arm 32 bits hardware where hardware compatibility on boost or library is issue across different Ubuntu version even on same hardware platform. Detailed steps:
-
-* (1) Download Ubuntu 16.04 binary files from release from https://github.com/ShorelineCrypto/NewEnglandCoin/releases
-
-* (2) Compile boost v1.58.0 library in Ubuntu 18.04 with below steps:
-
-```
-    wget -O boost_1_58_0.tar.bz2 http://sourceforge.net/projects/boost/files/boost/1.58.0/boost_1_58_0.tar.bz2/download
-    tar xvfj boost_1_58_0.tar.bz2
-    cd boost_1_58_0
-    ./bootstrap.sh --with-libraries=all --with-toolset=gcc 
-    ./b2 toolset=gcc 
-    sudo ./b2 install --prefix=/usr 
-    sudo ldconfig 
-```
-
-* (3) Re-run either QT or command line Ubuntu 16.04 files, all should work in Ubuntu 18.04
-
-# Ubuntu 20.04 Binary Download
-
-NENG core wallet can not be easily compiled on Ubuntu 20.04. Please download binary wallet files for x86_64 hardware from v1.4.0 release. 
-The instructions on Ubuntu 20.04 can also be found at "doc/ubuntu_20.04" subfolder below this directory. 
 
 # Debian Wheezy or Jessie
 
-NENG core wallet can be compiled in Debian 7 (wheezy) or Debian 8 (jessie).  Please check out the android arm64 arm subfolder below for more information on debian platform on library dependencies compiling and installation.
+NENG core wallet can be compiled in Debian 7 (wheezy) or Debian 8 (jessie).  The dependencies are actually mostly same as Ubuntu 16.04 except for berkley DB shown below.  Please check out the android arm subfolder for more information on debian platform on library dependencies compiling and installation.
+
+```
+cd /opt
+wget http://download.oracle.com/berkeley-db/db-4.8.30.NC.tar.gz
+tar xvfz db-4.8.30.NC.tar.gz
+cd db-4.8.30.NC/build_unix
+/dist/configure --enable-cxx --disable-shared --disable-replication
+make
+
+cat >> ~/.bashrc  << EOF
+
+export LDFLAGS="-L/opt/db-4.8.30.NC/build_unix"
+export CPPFLAGS="-I/opt/db-4.8.30.NC/build_unix"
+
+EOF
+```
+
+
 
 For actual NENG core wallet compiling, run below in Debian wheezy or jessie:
 ```
    cd NewEnglandCoin/src
    make -f makefile.debian USE_UPNP=1
    strip newenglandcoind
+   
+   cd ..
+   cp bitcoin-qt.pro.debian  bitcoin-qt.pro
+   qmake USE_UPNP=1 
+   make
+   
 ```
 
 

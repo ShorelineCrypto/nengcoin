@@ -1,9 +1,9 @@
-# Ubuntu 20.04 on x86_64
+# Fedora 32 Workstation on x86_64
 
-This folder describe a binary support from v1.4.0 NENG core release for Ubuntu 20.04 on AMD64 platform 
+This folder describe a binary support from v1.4.0.3 NENG core release on Fedora 32 Workstation.
 
 ## Step 1: Install library files
-Please run below shell script in Ubuntu 20.04 for installing depencies and library files:
+Please run below shell script in terminal for installing dependencies and library files:
 ```
   bash  prepare_neng.sh
 ```
