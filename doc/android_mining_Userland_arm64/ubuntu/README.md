@@ -23,9 +23,8 @@ item at bottom of the page.
 Type below commands in linux terminal inside Userland:
 
 ```
-  sudo apt-get update
-  sudo apt-get install wget
-  sudo apt-get install ssh
+  sudo apt update
+  sudo apt install wget ssh
   hostname -I
 ```
 
@@ -76,10 +75,11 @@ Please run below shell script in Userland Ubuntu for installing dependencies and
 
   Try to find how much cpu threads you have on the phone, for quad core phone, 8 cpu threads were found 
 
-### optional - screen command to run cheeta
-  screen is useful linux command for background running in linux, you can start screen session job in the phone and log out. 
+### optional - "screen" command to run cheetah_cpuminer
+
+"screen" is useful linux command for background running in linux, you can start screen session job in the phone and log out. 
 When you re-login into phone, you can re-attach the screen session with a command.  Useful keyboards commands to be remembered:
-#### start a screen session: type "screen" command in linux terminal
+####  start a screen session: type "screen" command in linux terminal
 ####  detach screen: Ctrl-A-D
 ####  re-attach screen: type "screen -r" command
 ####  re-attach specfic screen session when multiple sessions are running (say 3145.pts-1.localhost session):  screen -r 31
@@ -94,13 +94,9 @@ When you re-login into phone, you can re-attach the screen session with a comman
 
 ```
 
-### optional - load QT wallet in windows 10 remotely
+For more information on CPU mining with cheetah_Cpuminer, please checkout:
+https://github.com/ShorelineCrypto/cheetah_cpuminer
 
- free software "VcXsrv" can be installed in windows 10 to allow QT GUI NENG wallet 
- running in phone and display in windows 10 remotely. Check the screenshot2 of putty for enabling 
- "Enable X11 forwarding" for the userland login setting. Once the login with X11 enabled, start VcXsrv in windows, 
- re-login into phone into linux command line,  type "./newenglandcoin-qt  & "  in phone linux terminal will 
- pop the QT GUI wallet in windows 10 running VcXsrv and control the wallet inside phone from windows.
 
 
    
