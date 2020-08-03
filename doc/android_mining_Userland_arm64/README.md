@@ -39,7 +39,7 @@ In fact, we have tested XSDL/VNC in quad core android 8.0 on VNC or XSDL mode, a
 Android is optimized for mobile GUI on top of linux kernel. GNU or regular linux LXDE or XFCE desktop is mainly for desktop/laptop environment. Therefore we see limited value using LXDE/XFCE in android phones any way. If you want to learn or have fun experience for linux, we would recommend to install a copy of Linux OS inside "VirtualBox" in windows 10. Oracle VirtualBox is free virtual machine software that can install and run a second operating system in windows 10 without need of dual boot.  With virutalBox setup for any one of 8 distros that we support for NENG wallet, you can mine NENG with cheetah_cpuminer easily in linux inside virtualbox of windows 10. 
 
 
-### optional - Load GUI QT wallet into windows/mac/linux Desktop Remotely
+## optional - Load GUI QT wallet into windows/mac/linux Desktop Remotely
 
  Running linux terminal-only does not mean that you can not load NENG QT wallet with GUI remotely. If your home wifi speed is decent, you could try to load NENG QT GUI wallet in windows 10, or MacOS or Linux Desktop PCs. 
  - Windows 10 with VcXsrv. Download, install and run free software "VcXsrv".  Check the screenshot2 of putty for enabling 
@@ -67,4 +67,11 @@ Above in mac terminal will pop up android phone NENG QT GUI wallet in macOS desk
  hlu@localhost:~/newenglandcoin_v1.4.0_u16_arm64$ ./newenglandcoin-qt &
 ```
 Above in linux desktop terminal will pop android phone NENG QT wallet in linux desktop remotely.
+
+## optional - Fix the phone IP address at home LAN
+
+If you have a router at home environment with wifi connection to the phone for android mining, you will realize that the phone IP address is constantly changing for each time to come home with wifi connection. You should be able to get a fixed IP address through your router setup so that you do not need to find out IP address each time to try the ssh login. 
+
+Take NETGEAR router as example, after intranet admin login into web, say 192.168.1.1 as example, "ADVANCED" -> "WPS Wizard" -> "LAN Setup" -> "ADD", you can add a device mainly based on MAC address and assign that MAC address with an IP, say "192.168.1.98" in our case.  Apply and restart the router. Now reconnect phone wifi, you will get a fixed IP address on the phone no matter what. To avoid conflict with other electronic devices at home, try to pick large IP number, say 98 last digits. Other router vendors may have different lay out of admin web menu setup, but should have similar feature of allowing you to assign a fixed LAN internal IP address for the phone based on MAC address.
+
    
