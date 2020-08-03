@@ -8,6 +8,9 @@ This folder describe how to CPU mine NewEnglandcoin (NENG) in 64 bits android ph
 Please read high level overview first from pdf report:
 https://github.com/ShorelineCrypto/NewEnglandCoin/releases/download/NENG_2020_Q3_report/NENG_2020_Q3_report.pdf 
 
+For CPU mining steps and optimization with cheetah_Cpuminer, please checkout: 
+https://github.com/ShorelineCrypto/cheetah_cpuminer
+
 ## Confusion on android vs linux on NENG v1.4.x release
 
 There was some confusion created by recent android mining release v1.4.0.  Please watch this youtube video from android authority Gary Sims:
@@ -35,24 +38,6 @@ In fact, we have tested XSDL/VNC in quad core android 8.0 on VNC or XSDL mode, a
 
 Android is optimized for mobile GUI on top of linux kernel. GNU or regular linux LXDE or XFCE desktop is mainly for desktop/laptop environment. Therefore we see limited value using LXDE/XFCE in android phones any way. If you want to learn or have fun experience for linux, we would recommend to install a copy of Linux OS inside "VirtualBox" in windows 10. Oracle VirtualBox is free virtual machine software that can install and run a second operating system in windows 10 without need of dual boot.  With virutalBox setup for any one of 8 distros that we support for NENG wallet, you can mine NENG with cheetah_cpuminer easily in linux inside virtualbox of windows 10. 
 
-### optional - "screen" command to run cheetah_cpuminer
-
-"screen" is useful linux command for background running in linux, you can start screen session job in the phone and log out. 
-When you re-login into phone, you can re-attach the screen session with a command.  Useful keyboards commands to be remembered:
-#### start a screen session: type "screen" command in linux terminal
-####  detach screen: Ctrl-A-D
-####  re-attach screen: type "screen -r" command
-####  re-attach specfic screen session when multiple sessions are running (say 3145.pts-1.localhost session):  screen -r 31
-
-  Inside screen, run below in cheetah to mine NENG, detach screen
-```
-   screen
-
-   python main.py --interval 10 --cpu 6
-
-   CTRL-A-D
-
-```
 
 ### optional - Load GUI QT wallet into windows/mac/linux Desktop Remotely
 
