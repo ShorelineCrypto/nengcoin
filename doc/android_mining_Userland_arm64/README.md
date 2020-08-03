@@ -50,6 +50,21 @@ Android is optimized for mobile GUI on top of linux kernel. GNU or regular linux
  hlu@localhost:~/newenglandcoin_v1.4.0_u16_arm64$ ./newenglandcoin-qt &
 ```
  Above command inside putty will pop the QT GUI wallet in windows 10 with VcXsrv running. Wait for a while for the QT wallet to fully show up in windows, and then you can control the wallet inside phone from windows 10.
+ - macOS with XQuartz. Download, install free software "XQuartz". Log out and re-login. Open up mac terminal:
+ ```
+ $ ssh -XY hlu@192.168.1.98 -p 2022
+ -----login in phone----
+ hlu@localhost:~$ cd newenglandcoin_v1.4.0_u16_arm64
+ hlu@localhost:~/newenglandcoin_v1.4.0_u16_arm64$ ./newenglandcoin-qt &
+```
+Above in mac terminal will pop up android phone NENG QT GUI wallet in macOS desktop. 
 
-
+ - Linux Desktop, any distro in a terminal
+```
+ honglu@MX $ ssh -XY hlu@192.168.1.98 -p 2022
+ -----login in phone----
+ hlu@localhost:~$ cd newenglandcoin_v1.4.0_u16_arm64
+ hlu@localhost:~/newenglandcoin_v1.4.0_u16_arm64$ ./newenglandcoin-qt &
+```
+Above in linux desktop terminal will pop android phone NENG QT wallet in linux desktop remotely.
    
