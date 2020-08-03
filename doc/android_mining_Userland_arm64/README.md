@@ -1,33 +1,40 @@
 # Mobile Mining on Android 64 bits phone (arm64) with UserLand App
 
-This folder describe how to CPU mine NewEnglandcoin (NENG) on 64 bits android phone (arm64). 
+This folder describe how to CPU mine NewEnglandcoin (NENG) in 64 bits android phone (arm64) through UserLand app inside a linux terminal.  UserLand app is an open-source app that can run linux inside your android phone. 
 
 Minimum hardware requirement: 1G memory phone with 3G spare hard disk. 
+Software Required: UserLand app from Google Play Store or F-Droid
 
 Please read high level overview first from pdf report:
 https://github.com/ShorelineCrypto/NewEnglandCoin/releases/download/NENG_2020_Q3_report/NENG_2020_Q3_report.pdf 
 
+## Confusion on android vs linux on NENG v1.4.x release
 
-### Step 1: Install and setup UserLand app from Google Play Store
+There was some confusion created by recent android mining release v1.4.0.  Please watch this youtube video from android authority Gary Sims:
 
-First install free "UserLand" app from google play store.  After installation, click Distribution 
-"Ubuntu", pick a username, password, and VNC password (which could be same password). You will enter 
-a linux terminal inside UserLand app, which runs a arm64 version of Ubuntu 18.04. 
+Is Android really just Linux? - Gary explains
+https://www.youtube.com/watch?v=BkP6FTy0a4Y&t=307s
 
-Here we are recommending running through SSH (linux terminal) only, not VNC.  For linux GUI, it is much better to run remotely 
-through putty and you can display all linux GUI software in windows 10 with a few mouse clicks of free software download and installs. See optional 
-item at bottom of the page.
+Not trying to create a flaming war.  Understanding the relationship between android vs linux, then you will clearly know what we did on NENG android CPU mining through UserLand app inside a linux terminal at almost native OS speed.
 
-### Step 2: prepare UserLand
 
-Type below commands in linux terminal inside Userland:
+## Debian or Ubuntu?
 
-```
-  sudo apt-get update
-  sudo apt-get install wget
-  sudo apt-get install ssh
-  hostname -I
-```
+UserLand app offers 4 linux distros (Alpine, Arch, Debian, Ubuntu). Currently for NewEnglandcoin android mining, two distros are supported and tested: Debian and Ubuntu. 
+
+UserLand Debian runs Debian 10 (buster) on arm64.  UserLand ubuntu runs Ubuntu 18.04 on arm64.  The UserLand LXDE or XFCE desktop installation session uses Debian. 
+
+Either distro is fine with similar user experience. If you are interested in desktop offering, Debian is preferred. 
+
+## Linux Terminal (SSH) or Desktop (VNC or XSDL)? 
+
+For NENG android mining purpose, we recommend using Linux terminal only through UserLand SSH login mode.  Our experience on debian or ubuntu has been fabulous and smooth with 
+easy setup for remote login from windows/Mac/Linux desktop on big screen. 
+
+In fact, we have tested XSDL/VNC in quad core android 8.0 on VNC or XSDL mode, and failed with crashes.  We do not know the reason of crash errors like "Connection Failed" after hours of LXDE or XFCE installation.  We also tested Arch SSH installation and failed to complete. 
+
+Android is optimized for mobile GUI on top of linux kernel. GNU or regular linux LXDE or XFCE desktop is mainly for desktop/laptop environment. Therefore we see limited value using LXDE/XFCE in android phones any way. If you want to learn or have fun experience for linux, we would recommend to install a copy of Linux OS inside "VirtualBox" in windows 10. Oracle VirtualBox is free virtual machine software that can install and run a second operating system in windows 10 without need of dual boot.  With virutalBox setup for any one of 8 distros that we support for NENG wallet, you can mine NENG with cheetah_cpuminer easily in linux inside virtualbox of windows 10. 
+
 
 ### Step 3: Remember IP of phone from above step, remote login from desktop computer
 
