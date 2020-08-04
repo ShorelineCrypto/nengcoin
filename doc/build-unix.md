@@ -148,7 +148,7 @@ cd /opt
 wget http://download.oracle.com/berkeley-db/db-4.8.30.NC.tar.gz
 tar xvfz db-4.8.30.NC.tar.gz
 cd db-4.8.30.NC/build_unix
-/dist/configure --enable-cxx --disable-shared --disable-replication
+../dist/configure --enable-cxx --disable-shared --disable-replication
 make
 
 cat >> ~/.bashrc  << EOF
