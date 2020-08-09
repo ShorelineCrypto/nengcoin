@@ -38,6 +38,29 @@ In fact, we have tested XSDL/VNC in quad core android 8.0 on VNC or XSDL mode, a
 
 Android is optimized for mobile GUI on top of linux kernel. GNU or regular linux LXDE or XFCE desktop is mainly for desktop/laptop environment. Therefore we see limited value using LXDE/XFCE in android phones any way. If you want to learn or have fun experience for linux, we would recommend to install a copy of Linux OS inside "VirtualBox" in windows 10. Oracle VirtualBox is free virtual machine software that can install and run a second operating system in windows 10 without need of dual boot.  With virutalBox setup for any one of 8 distros that we support for NENG wallet, you can mine NENG with cheetah_cpuminer easily in linux inside virtualbox of windows 10. 
 
+## FAQ - Linux Terminal Basic Keyboard
+
+Typing command line in linux terminal inside UserLand is reasonably easy if you are familiar with linux command line on server or desktop. Here are android specific important points
+
+#### TAB key on auto filling
+See attached picture in this folder "tab.gif".  Tab key in android is the character below "ESC". It is left/right arrow in one symbol. TAB key is powerful in linux command line.  Typing full word of file or folder names are inconvenient. 
+
+Here is easier way with tab:
+```
+   cd  newenglandcoin_v1.3.0.1_ubuntu16.04
+
+```
+  Typing above long word in android phone is close to impossible. An easier way to do is:
+
+```
+   cd  newe-finger push TAB key
+```
+After you push TAB afer word "newe" , the android UserLand linux terminal should behave like linux in server/desktop with the full file/folder name "newenglandcoin_v1.3.0.1_ubuntu16.04" auto populated for you. 
+
+#### Arrow up or down key for history
+
+The arrow up or down key is useful key if you want to repeat a command in recent history.  This is same as desktop/server linux terminal. 
+
 
 ## optional - Load GUI QT wallet into windows/mac/linux Desktop Remotely
 
