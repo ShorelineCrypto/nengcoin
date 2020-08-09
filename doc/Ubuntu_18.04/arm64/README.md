@@ -13,3 +13,17 @@ Please run below shell script in terminal for installing dependencies and librar
   wget  https://github.com/ShorelineCrypto/NewEnglandCoin/releases/download/v1.4.0/newenglandcoin_v1.4.0_u16_arm64.tgz
   tar xvfz newenglandcoin_v1.4.0_u16_arm64.tgz
 ```
+
+## Optional Step 3: compile boost 1.58 from source
+
+The above should work for most of arm64 android phones. However it may fail in arm64 desktop/server or for rare phone cases.
+
+Below can fix the hardware incompatible issue by removing binary boost1.58 and compile boost 1.58 library in the machine from source 
+as replacement:
+ 
+```
+  bash compile_boost1.58.sh
+```
+
+Then you can re-run the Step 2 binary wallet files and it should all work now. 
+
