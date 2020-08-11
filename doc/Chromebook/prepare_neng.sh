@@ -1,5 +1,5 @@
 sudo apt-get update
-sudo apt-get -y install screen wget curl
+sudo apt-get -y install screen wget curl vim nano
 sudo apt-get -y install build-essential 
 sudo apt-get -y install g++ libtool autotools-dev automake pkg-config libssl-dev libevent-dev bsdmainutils 
 sudo apt-get -y install libboost-all-dev
