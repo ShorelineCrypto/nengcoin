@@ -92,6 +92,6 @@ You can let it run overnight until you pick up the Chromebook tomorrow for daily
  hlu@penguin:~/newenglandcoin_v1.3.0.1_ubuntu16.04$ ./newenglandcoin-qt &
 ```
 
-Above in linux desktop terminal will pop chromebook NENG QT wallet in  desktop remotely.
+Above in linux terminal will pop NENG QT wallet in chromebook desktop.
 
 
