@@ -74,27 +74,3 @@ Run below to find cpu info and memory information:
  For more information on CPU mining with cheetah_Cpuminer, please checkout:
 https://github.com/ShorelineCrypto/cheetah_cpuminer
 
-### optional - "screen" command to run cheetah_cpuminer
-
-"screen" is useful linux command for background running in linux, you can start screen session job in the phone and log out. 
-When you re-login into phone, you can re-attach the screen session with a command.  Useful keyboards commands to be remembered:
-####  start a screen session: type "screen" command in linux terminal
-####  detach screen: Ctrl-A-D
-####  re-attach screen: type "screen -r" command
-####  re-attach specfic screen session when multiple sessions are running (say 3145.pts-1.localhost session):  screen -r 31
-
-  Inside screen, run below in cheetah to mine NENG, and detach screen
-```
-   screen
-
-   python main.py --interval 10 --cpu 6
-
-   CTRL-A-D
-
-```
-
-Now you can let the cheetah cpuminer running with the phone cord connected to charger. You can let it run overnight until you pick up the phone tomorrow for daily use. 
-
-
-
-   
