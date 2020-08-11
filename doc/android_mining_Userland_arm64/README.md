@@ -62,6 +62,31 @@ After you push TAB afer word "newe" , the android UserLand linux terminal should
 The arrow up or down key is useful key if you want to repeat a command in recent history.  This is same as desktop/server linux terminal. 
 
 
+## optional - "screen" command to run cheetah_cpuminer
+
+"screen" is useful linux command for background running in linux, you can start screen session job in the phone and log out. 
+When you re-login into phone, you can re-attach the screen session with a command.  Useful keyboards commands to be remembered:
+####  start a screen session: type "screen" command in linux terminal
+####  detach screen: Ctrl-A-D
+####  re-attach screen: type "screen -r" command
+####  re-attach specfic screen session when multiple sessions are running (say 3145.pts-1.localhost session):  screen -r 31
+#### force re-attach if the screen session is open at another computer: screen -r 31 -d
+
+  Inside screen, run below in cheetah to mine NENG, and detach screen session to leave it running in background:
+```
+   screen
+
+   python main.py --interval 10 --cpu 6
+
+   CTRL-A-D
+
+```
+
+Now you can let the cheetah cpuminer running with the phone cord connected to charger. You can let it run overnight until you pick up the phone tomorrow for daily use. 
+
+
+
+
 ## optional - Load GUI QT wallet into windows/mac/linux Desktop Remotely
 
  Running linux terminal-only does not mean that you can not load NENG QT wallet with GUI remotely. If your home wifi speed is decent, you could try to load NENG QT GUI wallet in windows 10, or MacOS or Linux Desktop PCs. 
