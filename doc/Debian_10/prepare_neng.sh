@@ -10,7 +10,6 @@ sudo apt-get update
  
 sudo apt-get -y install libzmq3-dev libbz2-dev zlib1g 
 sudo apt-get -y install libprotobuf-dev protobuf-compiler
-sudo apt-get -y install libqt5gui5 libqt5core5a libqt5dbus5 qttools5-dev qttools5-dev-tools libprotobuf-dev protobuf-compiler 
 sudo apt-get -y install openssl
 
 sudo apt-get -y install qt4-default
