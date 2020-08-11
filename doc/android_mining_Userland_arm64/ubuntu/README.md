@@ -2,8 +2,6 @@
 
 This folder describe how to CPU mine NewEnglandcoin (NENG) on 64 bits android phone (arm64). 
 
-Minimum hardware requirement: 1G memory phone with 3G spare hard disk. 
-
 Please read high level overview first from pdf report:
 https://github.com/ShorelineCrypto/NewEnglandCoin/releases/download/NENG_2020_Q3_report/NENG_2020_Q3_report.pdf 
 
