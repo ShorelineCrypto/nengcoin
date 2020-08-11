@@ -24,7 +24,7 @@ https://github.com/ShorelineCrypto/NewEnglandCoin/tree/master/doc
 The list of Linux distros currently supported on binary download on x86_64 platform:
 
 -  Arch Linux
--  Debian 10 (buster)
+-  Debian 9 (stretch) / 10 (buster)
 -  Fedora 32
 -  Manjaro 20.0.3
 -  MX Linux 19.2
