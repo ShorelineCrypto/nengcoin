@@ -2,7 +2,7 @@
 
 This folder describe how to CPU mine NewEnglandcoin (NENG) in 64 bits android phone (arm64) through UserLand app inside a linux terminal.  UserLand app is an open-source app that can run linux inside your android phone. 
 
-- Minimum hardware requirement: 1G memory phone with 3G spare hard disk. 
+- Minimum hardware requirement: 2G memory phone with 3G spare hard disk. 
 - Software Required: UserLand app from Google Play Store or F-Droid
 
 Please read high level overview first from pdf report:
