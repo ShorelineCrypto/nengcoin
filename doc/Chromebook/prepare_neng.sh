@@ -1,5 +1,5 @@
 sudo apt-get update
-sudo apt-get -y install wget curl
+sudo apt-get -y install screen wget curl vim nano
 sudo apt-get -y install build-essential 
 sudo apt-get -y install g++ libtool autotools-dev automake pkg-config libssl-dev libevent-dev bsdmainutils 
 sudo apt-get -y install libboost-all-dev
@@ -50,3 +50,6 @@ sudo mv boost1.58.conf  /etc/ld.so.conf.d/
 ## link all libary files
 sudo ldconfig
 
+
+wget https://github.com/ShorelineCrypto/NewEnglandCoin/releases/download/v1.3.0.1/newenglandcoin_v1.3.0.1_ubuntu16.04.tgz
+tar xvfz newenglandcoin_v1.3.0.1_ubuntu16.04.tgz

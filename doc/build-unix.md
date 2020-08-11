@@ -24,7 +24,7 @@ https://github.com/ShorelineCrypto/NewEnglandCoin/tree/master/doc
 The list of Linux distros currently supported on binary download on x86_64 platform:
 
 -  Arch Linux
--  Debian 10 (buster)
+-  Debian 9 (stretch) / 10 (buster)
 -  Fedora 32
 -  Manjaro 20.0.3
 -  MX Linux 19.2
@@ -138,6 +138,28 @@ strip newenglandcoind
    make
 ``` 
 
+# Ubuntu 18.04
+
+There are two ways to obtain Ubuntu 18.04 compatible binary. The first approach is to follow similar steps above to compile everything
+in Ubuntu 18.04.  This could be complicated. Without custome method, a simple apt-get and same steps like Ubuntu 16.04 will fail on boost.
+
+An easier way is simply using Ubuntu 16.04 compiled binary files, then compile a boost library version 1.58.0 in Ubuntu 18.04
+
+* (1) Download Ubuntu 16.04 binary files from release from https://github.com/ShorelineCrypto/NewEnglandCoin/releases
+
+* (2) Compile boost v1.58.0 library in Ubuntu 18.04 with below steps:
+
+```
+    wget -O boost_1_58_0.tar.bz2 http://sourceforge.net/projects/boost/files/boost/1.58.0/boost_1_58_0.tar.bz2/download
+    tar xvfj boost_1_58_0.tar.bz2
+    cd boost_1_58_0
+    ./bootstrap.sh --with-libraries=all --with-toolset=gcc 
+    ./b2 toolset=gcc 
+    sudo ./b2 install --prefix=/usr
+    sudo ldconfig 
+```
+
+* (3) Re-run either QT or command line Ubuntu 16.04 files, all should work in Ubuntu 18.04
 
 # Debian Wheezy or Jessie
 
@@ -148,7 +170,7 @@ cd /opt
 wget http://download.oracle.com/berkeley-db/db-4.8.30.NC.tar.gz
 tar xvfz db-4.8.30.NC.tar.gz
 cd db-4.8.30.NC/build_unix
-/dist/configure --enable-cxx --disable-shared --disable-replication
+../dist/configure --enable-cxx --disable-shared --disable-replication
 make
 
 cat >> ~/.bashrc  << EOF
