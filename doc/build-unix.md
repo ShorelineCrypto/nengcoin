@@ -35,10 +35,19 @@ The list of Linux distros currently supported on binary download on x86_64 platf
 The list of Linux distros currently supported on binary download on arm64 platform:
 -  Ubuntu 16.04
 -  Ubuntu 18.04
+-  Debian 9
+-  Debian 10
 
-# Ubuntu 16.04 on x86_64 or arm64
+The list of Linux distros currently supported on binary download on armhf platform:
+-  Ubuntu 16.04
+-  Ubuntu 18.04
+-  Debian 9
+-  Debian 10
 
-Ubuntu 16.04 NENG wallet can be compiled from source on x86_64 or arm64 hardware.
+
+# Ubuntu 16.04 on x86_64 or arm64/armhf
+
+Ubuntu 16.04 NENG wallet can be compiled from source on x86_64 or arm64/armhf hardware.
 
 ## Dependencies for Ubuntu 16.04
 
@@ -99,8 +108,6 @@ sudo apt-get install libdb4.8-dev libdb4.8++-dev
 
 sudo apt-get install libzmq3-dev libbz2-dev 
 
-sudo apt-get install libqt5gui5 libqt5core5a libqt5dbus5 qttools5-dev qttools5-dev-tools libprotobuf-dev protobuf-compiler 
-
 sudo apt-get install libqt4-dev libprotobuf-dev protobuf-compiler
 ```
 
@@ -112,6 +119,7 @@ Optional, but recommended:
 
 	sudo apt-get install libminiupnpc-dev (see USE_UPNP compile flag)
 
+	sudo apt-get install libqt5gui5 libqt5core5a libqt5dbus5 qttools5-dev qttools5-dev-tools libprotobuf-dev protobuf-compiler 
 
 Notes
 -----
@@ -159,13 +167,15 @@ An easier way is simply using Ubuntu 16.04 compiled binary files, then compile a
     sudo ldconfig 
 ```
 
-* (3) Re-run either QT or command line Ubuntu 16.04 files, all should work in Ubuntu 18.04
+* (3) Re-run either QT or command line Ubuntu 16.04 files, all should work in Ubuntu 18.04, tested to be good on arm64 cloud vps
 
 # Debian Wheezy or Jessie
 
 NENG core wallet can be compiled in Debian 7 (wheezy) or Debian 8 (jessie).  The dependencies are actually mostly same as Ubuntu 16.04 except for berkley DB shown below.  Please check out the android arm subfolder for more information on debian platform on library dependencies compiling and installation.
 
 ```
+sudo apt-get -y install qt4-default
+
 cd /opt
 wget http://download.oracle.com/berkeley-db/db-4.8.30.NC.tar.gz
 tar xvfz db-4.8.30.NC.tar.gz
