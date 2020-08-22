@@ -1,5 +1,5 @@
 sudo apt-get update
-sudo apt-get install ssh wget curl unzip
+sudo apt-get -y install ssh wget curl unzip
 #install libbost, gcc and g++ compilers
 sudo apt-get -y install build-essential
 sudo apt-get -y install g++ libtool autotools-dev automake pkg-config libssl-dev libevent-dev bsdmainutils
