@@ -1,4 +1,4 @@
-# Debian 10 (buster) on armhf
+# Debian 9 (stretch)/ 10 (buster) on armhf
 
 This folder describe a binary support from v1.4.0.5 NENG core release on Debian 9 (stretch) / 10 (buster).
 
