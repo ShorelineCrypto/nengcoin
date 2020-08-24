@@ -8,10 +8,16 @@ cryptographic software written by Eric Young ([eay@cryptsoft.com](mailto:eay@cry
 
 # Docker Image
 
-A docker file "Dockerfile-ubuntu" for compiling NewEnglandcoin (NENG) in ubuntu 16.04 is provided here. You can pull down a x86_64 docker image built on this docker file by 
-below docker command:
+A docker file "Dockerfile-ubuntu" for compiling NewEnglandcoin (NENG) in ubuntu 16.04 is provided here. You can pull down a docker image built on this docker file by 
+below docker command. 
+
+For x86_64:
 ```
  docker pull shorelinecrypto/neng_ubuntu16_x86_64
+```
+For armhf:
+```
+ docker pull shorelinecrypto/neng_ubuntu16_armhf
 ```
 
 # Linux Distros supported on binary wallet only
