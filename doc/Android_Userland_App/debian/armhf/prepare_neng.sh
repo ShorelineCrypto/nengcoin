@@ -49,3 +49,7 @@ sudo mv boost1.58.conf  /etc/ld.so.conf.d/
 ## link all libary files
 sudo ldconfig
 
+## download the binary wallet and enjoy:
+wget https://github.com/ShorelineCrypto/NewEnglandCoin/releases/download/v1.4.0.5/newenglandcoin_v1.4.0.5_ubuntu16_armhf.tgz
+tar xvfz newenglandcoin_v1.4.0.5_ubuntu16_armhf.tgz
+
