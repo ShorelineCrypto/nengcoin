@@ -59,7 +59,15 @@ Please run below shell script in Userland Ubuntu for installing dependencies and
 ```
 The above step automatically download binary NENG wallet file and cheetah_cpuminer in current folder.
 
-### Step 6: Optimize CPU mining with Cheetah_Cpuminer:
+### Optional Step 6: compile boost 1.58 from source
+The above should work for most of arm64 android phones/chromebook. However it may fail in rare phone/chromebook cases.
+
+You can fix the hardware incompatible issue by removing binary boost1.58 and compile boost 1.58 library in the machine from source as replacement:
+```
+  bash compile_boost1.58.sh
+```
+
+### Step 7: Optimize CPU mining with Cheetah_Cpuminer:
 
 Run below to find cpu info and memory information:
 
