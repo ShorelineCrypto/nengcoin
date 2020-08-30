@@ -25,7 +25,7 @@ Inside terminal, this file will be at your home directory.
 ## Determine your Platform is 64 bits arm64 or 32 bits armhf
 
 In newest arm chromebook, we expect 64 bits arm64 should be the norm. In older chromebook such as chromebook or chromebit with only 2G memory, it may be armhf platform. 
-In the rare cases, your chromebook may have 64 bits CPU, but the linux runs on 32 bits armhf.  Here run below two commands to determine what is your linux architecture
+In the rare cases, your chromebook may have 64 bits CPU, but the linux runs on 32 bits armhf.  You can first run below two commands to determine what is your linux architecture
 ```
   uname -a
   sudo apt-get update
