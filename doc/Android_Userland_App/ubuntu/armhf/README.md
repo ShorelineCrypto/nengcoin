@@ -1,29 +1,82 @@
-# Ubuntu 18.04 on armhf
+# Mobile Mining on Android 32 bits phone (armhf) with UserLand App
 
-This folder describe a binary support from v1.4.0.5 NENG core release on Ubuntu 18.04.
+This folder describe how to CPU mine NewEnglandcoin (NENG) on 32 bits android phone (armhf). 
 
-## Step 1: Install library files
-Please run below shell script in terminal for installing dependencies and library files:
+Please read high level overview first from pdf report:
+https://github.com/ShorelineCrypto/NewEnglandCoin/releases/download/NENG_2020_Q3_report/NENG_2020_Q3_report.pdf 
+
+
+### Step 1: Install and setup UserLand app from Google Play Store
+
+First install free "UserLand" app from google play store.  After installation, click Distribution 
+"Ubuntu", pick a username, password, and VNC password (which could be same password). You will enter 
+a linux terminal inside UserLand app, which runs armhf version of Ubuntu 18.04. 
+
+Here we are recommending running through SSH (linux terminal) only, not VNC.  For linux GUI, it is much better to run remotely 
+through putty and you can display all linux GUI software in windows 10 with a few mouse clicks of free software download and installs. See optional 
+item at bottom of the parent page.
+
+### Step 2: prepare UserLand
+
+Type below commands in linux terminal inside Userland:
+
 ```
-  bash  prepare_neng.sh
+  sudo apt update
+  sudo apt install wget ssh
+  hostname -I
 ```
 
-## Step 2: download the binary wallet and enjoy:
+### Step 3: Remember IP of phone from above step, remote login from desktop computer
+
+For windows 10 desktop machine, install a free software "PuTTY", login into phone with your
+username/password picked at port 2022
+
+A screen shot of putty was provided. 
+
+For linux or MacOS,  you can remote login with ssh from command line at port 2022. For example 
+IP = 192.168.1.4 with user "hlu" like below 
 ```
-  wget  https://github.com/ShorelineCrypto/NewEnglandCoin/releases/download/v1.4.0.5/newenglandcoin_v1.4.0.5_ubuntu16_armhf.tgz
-  tar xvfz newenglandcoin_v1.4.0.5_ubuntu16_armhf.tgz
+  ssh hlu@192.168.1.4 -p 2022
 ```
 
-## Optional Step 3: compile boost 1.58 from source
+## Now you can run below commands from putty from windows 10 or ssh from MacOS or Linux
+### Step 4: Prepare UserLand app Linux Terminal
+First login into UserLand app linux terminal remotely, you should find that common linux command like "top", "uptime" does not work. 
+Please run below for workaround for those issues:
+```
+  bash prepare_userland.sh
 
-The above should work for most of armhf android phones/chromebook. However it may fail in armhf desktop/server or for rare phone/chromebook cases.
+```
 
-Below can fix the hardware incompatible issue by removing binary boost1.58 and compile boost 1.58 library in the machine from source 
-as replacement:
- 
+After completion of above, logout and re-login into UserLand linux terminal, you should be able to use "top", "uptime" etc command. 
+
+
+### Step 5: Install library files, wallet and cheetah_cpuminer
+Please run below shell script in Userland Ubuntu for installing dependencies and library files:
+```
+  bash prepare_neng.sh
+
+```
+The above step automatically download binary NENG wallet file and cheetah_cpuminer in current folder.
+
+### Optional Step 6: compile boost 1.58 from source
+The above should work for most of armhf android phones/chromebook. However it may fail in rare phone/chromebook cases.
+
+You can fix the hardware incompatible issue by removing binary boost1.58 and compile boost 1.58 library in the machine from source as replacement:
 ```
   bash compile_boost1.58.sh
 ```
 
-Then you can re-run the Step 2 binary wallet files and it should all work now. 
+### Step 7: Optimize CPU mining with Cheetah_Cpuminer:
+
+Run below to find cpu info and memory information:
+
+```
+  more /proc/cpuinfo
+  top
+```
+ For quad core phone, 8 cpu threads were found. You can now optimize Cheetah_Cpuminer parameter to perform android mining. 
+ 
+ For more information on CPU mining with cheetah_Cpuminer, please checkout:
+https://github.com/ShorelineCrypto/cheetah_cpuminer
 
