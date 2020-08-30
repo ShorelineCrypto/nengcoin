@@ -20,14 +20,32 @@ https://www.youtube.com/watch?v=BkP6FTy0a4Y&t=307s
 
 Not trying to create a flaming war.  Understanding the relationship between android vs linux, then you will clearly know what we did on NENG android CPU mining through UserLand app inside a linux terminal at almost native OS speed.
 
+## Determine your Platform is 64 bits arm64 or 32 bits armhf
+
+In newest android phone or arm chromebook, we expect 64 bits arm64 (aarch64) should be the norm. In older android phone or chromebook such as Samsung Galaxy Tab S4 on Android 9, it may be armhf platform. In the rare cases, your phone or chromebook may have 64 bits CPU, but the linux runs on 32 bits armhf. You can first run below two commands to determine what is your linux architecture on linux terminal either in Debian or Ubuntu after SSH installation.
+
+```
+  uname -a
+  sudo apt-get update
+```
+
+Above information from terminal should give you clear idea whether you have arm64 (aarch64) or armhf platform in linux.
 
 ## Debian or Ubuntu?
 
 UserLand app offers 4 linux distros (Alpine, Arch, Debian, Ubuntu). Currently for NewEnglandcoin android mining, two distros are supported and tested: Debian and Ubuntu. 
 
-UserLand Debian runs Debian 10 (buster) on arm64.  UserLand ubuntu runs Ubuntu 18.04 on arm64.  The UserLand LXDE or XFCE desktop installation session uses Debian. 
+UserLand Debian runs Debian 10 (buster) on arm64/armhf.  UserLand ubuntu runs Ubuntu 18.04 on arm64/armhf.  The UserLand LXDE or XFCE desktop installation session uses Debian. 
 
-Either distro is fine with similar user experience. If you are interested in desktop offering, Debian is preferred. 
+Either distro is fine with similar user experience. If you are interested in desktop offering, Debian is preferred. If you encounter hardware compatibility issues, 
+Ubuntu 18.04 is preferred. 
+
+## Ubuntu 18.04 Alternative to Fix Potential Hardware Issue
+
+Arm hardware may have hardware compatibility issues. This situation is worse on 32 bits arm platform. You can suspect a hardware issue if you run into error like "error while loading shared libraries: libboost_system.so.1.58.0". Or NENG wallet may run, but crash within 1 or 2 hours.
+
+Here we provide a Ubuntu 18.04 NENG wallet method where you can compile Boost library from source. With self-compiled boost library from source together with NENG binary wallet file, the hardware compatibility issue should be fixed.
+
 
 ## Linux Terminal (SSH) or Desktop (VNC or XSDL)? 
 
