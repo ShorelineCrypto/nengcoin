@@ -38,14 +38,14 @@ By default, Linux (Beta) or Crostini runs a container for Debian 10. Below has b
 
 ```
    tar xvfz newenglandcoin_v1.4.0.5_chromeos_arm.tgz
-   cd Chromebook/arm64/debian
+   cd Chromebook/arm/arm64/debian
    bash  prepare_neng.sh
 ```
 ### armhf
 ```
    tar xvfz newenglandcoin_v1.4.0.5_chromeos_arm.tgz
-   cd Chromebook/armhf/debian
-   bash  prepare_nen
+   cd Chromebook/arm/armhf/debian
+   bash  prepare_neng.sh
 ```
 
 After successfully completing above commands, NENG wallet file and Cheetah_Cpuminer will be downloaded at your current folder. You can move these files to whatever best location inside your "Linux files" folder by using either linux command line or Chromebook GUI drag and drop. 
