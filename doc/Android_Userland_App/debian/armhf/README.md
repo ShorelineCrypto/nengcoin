@@ -1,6 +1,6 @@
-# Mobile Mining on Android 64 bits phone (arm64) with UserLand App
+# Mobile Mining on Android 32 bits phone (armhf) with UserLand App
 
-This folder describe how to CPU mine NewEnglandcoin (NENG) on 64 bits android phone (arm64). 
+This folder describe how to CPU mine NewEnglandcoin (NENG) on 32 bits android phone (armhf). 
 
 Please read high level overview first from pdf report:
 https://github.com/ShorelineCrypto/NewEnglandCoin/releases/download/NENG_2020_Q3_report/NENG_2020_Q3_report.pdf 
@@ -9,8 +9,8 @@ https://github.com/ShorelineCrypto/NewEnglandCoin/releases/download/NENG_2020_Q3
 ### Step 1: Install and setup UserLand app from Google Play Store
 
 First install free "UserLand" app from google play store.  After installation, click Distribution 
-"Ubuntu", pick a username, password, and VNC password (which could be same password). You will enter 
-a linux terminal inside UserLand app, which runs arm64 version of Ubuntu 18.04. 
+"Debian", pick a username, password, and VNC password (which could be same password). You will enter 
+a linux terminal inside UserLand app, which runs armhf version of Debian 10 (Buster). 
 
 Here we are recommending running through SSH (linux terminal) only, not VNC.  For linux GUI, it is much better to run remotely 
 through putty and you can display all linux GUI software in windows 10 with a few mouse clicks of free software download and installs. See optional 
@@ -52,7 +52,7 @@ After completion of above, logout and re-login into UserLand linux terminal, you
 
 
 ### Step 5: Install library files, wallet and cheetah_cpuminer
-Please run below shell script in Userland Ubuntu for installing dependencies and library files:
+Please run below shell script in Userland Debian for installing dependencies and library files:
 ```
   bash prepare_neng.sh
 

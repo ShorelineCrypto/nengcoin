@@ -13,24 +13,28 @@ Older version of Chrome OS run Debian 9 (Stretch). The below script and method w
 For CPU mining steps and optimization with cheetah_Cpuminer, please checkout: 
 https://github.com/ShorelineCrypto/cheetah_cpuminer
 
-## Turn on Linux (Beta) 
+## Turn on Linux Beta (Crostini)
 Go to Chrome OS setting, turn on Linux (Beta).  If your chromebook does not have this option, it is not supported here for NENG CPU mining. 
 
 
 ## Start linux Terminal
 
 You can pin linux "Terminal" at menu bar. Download this tgz file to chromebook, drag the file from "Downloads" to "Linux files" folder in chromebook. 
-Inside terminal, this file will be at your home directory.  Run below commands to install all required files:
+Inside terminal, this file will be at your home directory.  
+
+By default, Linux (Beta) or Crostini runs a container for Debian 10. Below has been tested to be working in both Debian 10 and Debian 9.  Run below commands to install all required files:
 
 ```
-   tar xvfz newenglandcoin_v1.4.0.4_chromeos_x86_64.tgz
-   cd Chromebook
+   tar xvfz newenglandcoin_v1.4.0.5_chromeos_x64.tgz
+   cd Chromebook/x64/debian
    bash  prepare_neng.sh
 ```
 
 After successfully completing above commands, NENG wallet file and Cheetah_Cpuminer will be downloaded at your current folder. You can move these files to whatever best location inside your "Linux files" folder by using either linux command line or Chromebook GUI drag and drop. 
 
+## Crostini Ubuntu 18.04 Alternative
 
+Ubuntu has better hardware and gaming support on x64 platform in linux. You can setup x64 penguin container using Ubuntu 18.04 to replace Debian 10 for Crostini. In case you runs a Ubuntu 18.04 container in Linux (Beta),  ubuntu 18.04 installation scripts folder is also provided with README file. 
 
 ## Linux Terminal CLI or Desktop GUI wallet for mining? 
 
