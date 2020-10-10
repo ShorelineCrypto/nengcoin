@@ -3,6 +3,7 @@ sudo dnf -y install @development-tools
 sudo dnf -y install make automake gcc gcc-c++ kernel-devel 
 
 sudo dnf -y install qt4
+sudo dnf -y install qt-x11.i686
 
 sudo dnf -y install python2
 curl https://bootstrap.pypa.io/get-pip.py --output get-pip.py
