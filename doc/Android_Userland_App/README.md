@@ -56,6 +56,13 @@ In fact, we have tested XSDL/VNC in quad core android 8.0 on VNC or XSDL mode, a
 
 Android is optimized for mobile GUI on top of linux kernel. GNU or regular linux LXDE or XFCE desktop is mainly for desktop/laptop environment. Therefore we see limited value using LXDE/XFCE in android phones any way. If you want to learn or have fun experience for linux, we would recommend to install a copy of Linux OS inside "VirtualBox" in windows 10. Oracle VirtualBox is free virtual machine software that can install and run a second operating system in windows 10 without need of dual boot.  With virutalBox setup for any one of 8 distros that we support for NENG wallet, you can mine NENG with cheetah_cpuminer easily in linux inside virtualbox of windows 10. 
 
+## Putty or No Putty in windows 10?
+
+Putty is windows 10 software to remote login into android UserLand linux at port 2022.  Below main guide mainly use putty to login into android with big screen to type in those linux command line for installation. Alternatively, those command line can also be done without using putty.
+
+Some members reported that putty does not work either because new android versions have security feature to block UserLand app port or routers block those ports.  Member @Sefia at discord provided this word documents here "NENG_Android_Mining_Guide_without_Putty.docx" on how to do android mining without using putty. 
+
+
 ## FAQ - Linux Terminal Basic Keyboard
 
 Typing command line in linux terminal inside UserLand is reasonably easy if you are familiar with linux command line on server or desktop. Here are android specific important points
