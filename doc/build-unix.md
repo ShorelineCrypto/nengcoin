@@ -13,11 +13,11 @@ below docker command.
 
 For x86_64:
 ```
- docker pull shorelinecrypto/neng_ubuntu16_x86_64
+ docker pull shorelinecrypto/neng_ubuntu16_x86_64:v1.3.0.1
 ```
 For armhf:
 ```
- docker pull shorelinecrypto/neng_ubuntu16_armhf
+ docker pull shorelinecrypto/neng_ubuntu16_armhf:v1.4.0.5
 ```
 
 # Linux Distros supported on binary wallet only
