@@ -75,7 +75,7 @@ https://brew.sh/
 
 ```
         brew install gcc@5
-        brew install boost@1.55 miniupnpc openssl berkeley-db4
+        brew install boost@1.55 miniupnpc openssl@1.0 berkeley-db4
         
 ```
 
