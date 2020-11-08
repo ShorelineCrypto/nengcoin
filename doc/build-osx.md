@@ -32,7 +32,7 @@ Notes
 # macOS 10.15 (Catalina) - Supported on Binary only
 
 macOS Catalina was also tested but failed to build from source.  However, Catalina is supported on binary wallet. Please 
-check out NENG v1.4.0.2 for MacOS Catalina wallet. 
+check out NENG v1.4.1.0 for MacOS Catalina wallet. 
 
 # MacOS 10.11 (El Capitan) to MacOS 10.14 (Mojave) - Fully Supported
 
@@ -113,7 +113,7 @@ and reboot the machine.
 
 
 ```
-export PATH="/usr/local/Cellar/gcc@5/5.5.0_4/bin:/Library/Developer/CommandLineTools/usr/bin:/usr/local/opt/openssl/bin:$PATH"
+export PATH="/usr/local/Cellar/gcc@5/5.5.0_6/bin:/Library/Developer/CommandLineTools/usr/bin:/usr/local/opt/openssl/bin:$PATH"
 export LDFLAGS="-L/usr/local/opt/openssl/lib"
 export CPPFLAGS="-I/usr/local/opt/openssl/include"
 ```
