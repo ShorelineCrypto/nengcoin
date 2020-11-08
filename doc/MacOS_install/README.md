@@ -64,8 +64,17 @@ Brew now installed newer and imcompatible versions.  Older version of libraries 
 In Catalina, the openssl library linking method changed dramatically on system level so that enable or not may not have any effect on system. 
 Enable or not, NENG GUI and CLI wallet was tested to be working in MacOS Catalina. 
 
+### Step 5: Install macOs QT wallet and cli wallet
+With typical mac method, drag and drop to install GUI dmg software to application or any other folder. Unzip the CLI software and install it at your preferred location. 
 
-### Step 5 optional:  Restore system on openssl/miniupnpc
+Copy the conf file to your NewEngalndcoin data directory by running below at terminal:
+
+```
+    cp  newenglandcoin.conf  ~/Library/'Application Support'/NewEnglandcoin/
+```
+ 
+
+### Step 6 optional:  Restore system on openssl/miniupnpc
 
 When you are running NENG already or after running, you may need to restore system (newer) versions on openssl/miniupnpc to allow 
 softwares such as wget etc to work. 
