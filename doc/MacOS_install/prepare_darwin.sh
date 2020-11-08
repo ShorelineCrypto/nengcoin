@@ -22,5 +22,5 @@
 
 ## Download GUI/CLI wallet
 cd ~/Downloads
-wget https://github.com/ShorelineCrypto/NewEnglandCoin/releases/download/v1.4.0.1/newenglandcoin_v1.4.0.1_macOS_GUI.dmg
-wget https://github.com/ShorelineCrypto/NewEnglandCoin/releases/download/v1.4.0.1/newenglandcoin_v1.4.0.1_macOS_CLI.zip
+wget https://github.com/ShorelineCrypto/NewEnglandCoin/releases/download/v1.4.1.0/newenglandcoin_v1.4.1.0_macOS_GUI.dmg
+wget https://github.com/ShorelineCrypto/NewEnglandCoin/releases/download/v1.4.1.0/newenglandcoin_v1.4.1.0_macOS_CLI.zip
