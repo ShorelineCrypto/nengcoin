@@ -5,7 +5,7 @@
 For full guide of building own wallet from source, please follow steps at:
  https://github.com/ShorelineCrypto/NewEnglandCoin/blob/master/doc/build-osx.md
 
-Here below we describe an easier way to install macOS binary wallet on NENG v1.4.0.1, which was built from source in Mojave. The below 
+Here below we describe an easier way to install macOS binary wallet on NENG v1.4.1.0, which was built from source in Mojave. The below 
 method was tested to be working on 10.11 , 10.14 and 10.15. 
 
 
@@ -25,6 +25,12 @@ https://brew.sh/
 
 
 ### Step 3:  Install Required Library Dependencies using Homebrew, download wallet files
+
+Using Safari browser, download file from:
+http://miniupnp.free.fr/files/download.php?file=miniupnpc-1.9.20150206.tar.gz
+
+Unpack the tar file, and place the folder "miniupnpc-1.9.20150206" into current working folder where 
+this README.txt file at 
 
 Open up terminal, type
 ```
@@ -64,8 +70,17 @@ Brew now installed newer and imcompatible versions.  Older version of libraries 
 In Catalina, the openssl library linking method changed dramatically on system level so that enable or not may not have any effect on system. 
 Enable or not, NENG GUI and CLI wallet was tested to be working in MacOS Catalina. 
 
+### Step 5: Install macOs QT wallet and cli wallet
+With typical mac method, drag and drop to install GUI dmg software to application or any other folder. Unzip the CLI software and install it at your preferred location. 
 
-### Step 5 optional:  Restore system on openssl/miniupnpc
+Copy the conf file to your NewEngalndcoin data directory by running below at terminal:
+
+```
+    cp  newenglandcoin.conf  ~/Library/'Application Support'/NewEnglandcoin/
+```
+ 
+
+### Step 6 optional:  Restore system on openssl/miniupnpc
 
 When you are running NENG already or after running, you may need to restore system (newer) versions on openssl/miniupnpc to allow 
 softwares such as wget etc to work. 
