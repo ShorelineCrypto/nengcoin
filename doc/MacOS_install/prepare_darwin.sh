@@ -2,8 +2,8 @@
 
   brew install gcc@5
   brew install boost@1.55 miniupnpc openssl berkeley-db4
-  wget http://miniupnp.free.fr/files/download.php?file=miniupnpc-1.9.20150206.tar.gz
-  tar xvfz "download.php?file=miniupnpc-1.9.20150206.tar.gz"  
+#  wget http://miniupnp.free.fr/files/download.php?file=miniupnpc-1.9.20150206.tar.gz
+#  tar xvfz "download.php?file=miniupnpc-1.9.20150206.tar.gz"  
   rm -rf  /usr/local/Cellar/miniupnpc/1.9
   mv miniupnpc-1.9.20150206  /usr/local/Cellar/miniupnpc/1.9
   cd  /usr/local/Cellar/miniupnpc/1.9

@@ -26,6 +26,12 @@ https://brew.sh/
 
 ### Step 3:  Install Required Library Dependencies using Homebrew, download wallet files
 
+Using Safari browser, download file from:
+http://miniupnp.free.fr/files/download.php?file=miniupnpc-1.9.20150206.tar.gz
+
+Unpack the tar file, and place the folder "miniupnpc-1.9.20150206" into current working folder where 
+this README.txt file at 
+
 Open up terminal, type
 ```
      brew update
