@@ -25,7 +25,7 @@ Inside terminal, this file will be at your home directory.
 By default, Linux (Beta) or Crostini runs a container for Debian 10. Below has been tested to be working in both Debian 10 and Debian 9.  Run below commands to install all required files:
 
 ```
-   tar xvfz newenglandcoin_v1.4.0.5_chromeos_x64.tgz
+   tar xvfz newenglandcoin_v1.4.1.1_chromeos_x64.tgz
    cd Chromebook/x64/debian
    bash  prepare_neng.sh
 ```
