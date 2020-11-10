@@ -2,7 +2,7 @@
 
 This folder describe how to run a full node of NewEnglandcoin (NENG) and to CPU mine NENG in arm based Chromebook as Linux App.  Chrome OS on arm64 or armhf platform was tested. Any Chrome OS version v69 or later on 64 bits arm64 or 32 bits armhf  with linux either in linux beta (Crostini) or Android UserLand app should all work. 
 
-Chrome OS v83 Linux (Beta) runs Debian 10 (Buster) in embedded linux in a container with close to full feature of linux for both CLI and GUI. 
+Chrome OS v85 Linux (Beta) runs Debian 10 (Buster) in embedded linux in a container with close to full feature of linux for both CLI and GUI. 
 Older version of Chrome OS run Debian 9 (Stretch). The below script and method was also tested on Debian 9 successfully and should all just work on Debian 9.
    
 
@@ -16,6 +16,8 @@ For Android UserLand app setup on Debian/Ubuntu, please download and checkout An
 
 ## Turn on Linux Beta (Crostini)
 Go to Chrome OS setting, turn on Linux (Beta).  If your chromebook does not have this option, it is not supported here for NENG CPU mining. However, your arm CPU based chromebook may still work on Android UserLand app method as alternative. 
+
+For disk size in Linux Beta, we recommend to add 3G on top of recommended 5G by Google. So pick custom disk 8G as minimum selection.
 
 ## Start linux Terminal
 
@@ -63,6 +65,26 @@ You can setup arm64/armhf penguin container using Ubuntu 18.04 to replace Debian
 For NENG cpu mining purpose, either CLI wallet or GUI QT wallet was tested working in Chromebook.  You can run either of the software
 to run a full node and for the purpose of CPU mining. 
 
+## run GUI QT wallet in Chromebook
+
+ ```
+ hlu@penguin:~$ cd  newenglandcoin_v1.4.0.5_ubuntu16_armhf
+ hlu@penguin:~/newenglandcoin_v1.4.0.5_ubuntu16_armhf$ ./newenglandcoin-qt &
+```
+
+Above in linux terminal will pop NENG QT wallet in chromebook desktop.
+
+## Copy the conf file and restart wallet
+ QT wallet in penguin container may show no connections.  Copy the conf file with below command:
+
+```
+hlu@penguin:~$  cp newenglandcoin.conf ~/.newenglandcoin/
+```
+
+ Then restart the QT GUI wallet, NENG should start to sync. Note fully synced wallet to latest block is required in order to CPU mine NENG with Cheetah_Cpuminer
+
+
+
 ## FAQ - Linux Terminal Basic Keyboard
 
 Typing command line in linux terminal inside Chromebook is reasonably easy if you are familiar with linux command line on server or desktop. 
@@ -108,16 +130,4 @@ When you re-login into Chromebook, you can re-attach the screen session with a c
 ```
 
 You can let it run overnight until you pick up the Chromebook tomorrow for daily use. 
-
-
-
-## run GUI QT wallet in Chromebook
-
- ```
- hlu@penguin:~$ cd  newenglandcoin_v1.4.0.5_ubuntu16_armhf
- hlu@penguin:~/newenglandcoin_v1.4.0.5_ubuntu16_armhf$ ./newenglandcoin-qt &
-```
-
-Above in linux terminal will pop NENG QT wallet in chromebook desktop.
-
 
