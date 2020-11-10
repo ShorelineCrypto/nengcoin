@@ -72,7 +72,7 @@ See attached picture in this folder "tab.gif".  Tab key in android is the charac
 
 Here is easier way with tab:
 ```
-   cd  newenglandcoin_v1.3.0.1_ubuntu16.04
+   cd  newenglandcoin_v1.4.0_u16_arm64
 
 ```
   Typing above long word in android phone is close to impossible. An easier way to do is:
@@ -80,7 +80,7 @@ Here is easier way with tab:
 ```
    cd  newe-finger push TAB key
 ```
-After you push TAB afer word "newe" , the android UserLand linux terminal should behave like linux in server/desktop with the full file/folder name "newenglandcoin_v1.3.0.1_ubuntu16.04" auto populated for you. 
+After you push TAB afer word "newe" , the android UserLand linux terminal should behave like linux in server/desktop with the full file/folder name "newenglandcoin_v1.4.0_u16_arm64" auto populated for you. 
 
 #### Arrow up or down key for history
 

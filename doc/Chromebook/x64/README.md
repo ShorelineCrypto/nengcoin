@@ -50,7 +50,7 @@ TAB key is powerful in linux command line.  Typing full word of file or folder n
 
 Here is easier way with tab:
 ```
-   cd  newenglandcoin_v1.3.0.1_ubuntu16.04
+   cd  newenglandcoin_v1.4.1.1_ubuntu16.04
 
 ```
   Typing above long word in Chromebook is close to impossible. An easier way to do is:
@@ -58,7 +58,7 @@ Here is easier way with tab:
 ```
    cd  newe-finger push TAB key
 ```
-After you push TAB afer word "newe" , the chromebook linux terminal should behave like linux in server/desktop with the full file/folder name "newenglandcoin_v1.3.0.1_ubuntu16.04" auto populated for you. 
+After you push TAB afer word "newe" , the chromebook linux terminal should behave like linux in server/desktop with the full file/folder name "newenglandcoin_v1.4.1.1_ubuntu16.04" auto populated for you. 
 
 #### Arrow up or down key for history
 
@@ -92,8 +92,8 @@ You can let it run overnight until you pick up the Chromebook tomorrow for daily
 ## run GUI QT wallet in Chromebook
 
  ```
- hlu@penguin:~$ cd  newenglandcoin_v1.3.0.1_ubuntu16.04
- hlu@penguin:~/newenglandcoin_v1.3.0.1_ubuntu16.04$ ./newenglandcoin-qt &
+ hlu@penguin:~$ cd  newenglandcoin_v1.4.1.1_ubuntu16.04
+ hlu@penguin:~/newenglandcoin_v1.4.1.1_ubuntu16.04$ ./newenglandcoin-qt &
 ```
 
 Above in linux terminal will pop NENG QT wallet in chromebook desktop.

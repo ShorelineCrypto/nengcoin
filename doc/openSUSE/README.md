@@ -29,6 +29,6 @@ Please run below shell script in terminal for installing dependencies and librar
 
 ## Step 4: download the binary wallet and enjoy:
 ```
-  wget https://github.com/ShorelineCrypto/NewEnglandCoin/releases/download/v1.3.0.1/newenglandcoin_v1.3.0.1_ubuntu16.04.tgz
-  tar xvfz newenglandcoin_v1.3.0.1_ubuntu16.04.tgz
+  wget https://github.com/ShorelineCrypto/NewEnglandCoin/releases/download/v1.4.1.1/newenglandcoin_v1.4.1.1_ubuntu16.04.tgz
+  tar xvfz newenglandcoin_v1.4.1.1_ubuntu16.04.tgz
 ```
