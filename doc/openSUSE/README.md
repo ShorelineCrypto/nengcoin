@@ -1,6 +1,6 @@
 # openSUSE Tumbleweed on x86_64
 
-This folder describe a binary support from v1.4.0.3 NENG core release on openSUSE Tumbleweed 20200724.
+This folder describe a binary support from v1.4.1.1 NENG core release on openSUSE Tumbleweed 20200724.
 
 
 ## Step 1: Install development tools through YaST

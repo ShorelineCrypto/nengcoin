@@ -1,6 +1,6 @@
 # Ubuntu 18.04 on x86_64
 
-This folder describe a binary support from v1.4.0.3 NENG core release on Ubuntu 18.04.
+This folder describe a binary support from v1.4.1.1 NENG core release on Ubuntu 18.04.
 
 ## Step 1: Install library files
 Please run below shell script in terminal for installing dependencies and library files:

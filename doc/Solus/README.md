@@ -1,6 +1,6 @@
 # Solus Linux on x86_64
 
-This folder describe a binary support from v1.4.0.6 NENG core release on Solus Linux .
+This folder describe a binary support from v1.4.1.1 NENG core release on Solus Linux .
 
 ## Step 1: Install library files
 Please run below shell script in terminal for installing dependencies and library files:
