@@ -51,5 +51,5 @@ sudo mv boost1.58.conf  /etc/ld.so.conf.d/
 sudo ldconfig
 
 
-wget https://github.com/ShorelineCrypto/NewEnglandCoin/releases/download/v1.3.0.1/newenglandcoin_v1.3.0.1_ubuntu16.04.tgz
-tar xvfz newenglandcoin_v1.3.0.1_ubuntu16.04.tgz
+wget https://github.com/ShorelineCrypto/NewEnglandCoin/releases/download/v1.4.1.1/newenglandcoin_v1.4.1.1_ubuntu16.04.tgz
+tar xvfz newenglandcoin_v1.4.1.1_ubuntu16.04.tgz
