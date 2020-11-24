@@ -1149,7 +1149,7 @@ unsigned int static GetNextWorkRequired(const CBlockIndex* pindexLast, const CBl
                 CBigNum bnCheetah;
                 bnCheetah = bnProofOfWorkLimit;
                 bnCheetah /= 32;
-                nCheetah = bnCheetah.GetCompact();
+                unsigned int nCheetah = bnCheetah.GetCompact();
 
 
             if (pblock->nTime > pindexLast->nTime + nTargetSpacing*2)
