@@ -1144,14 +1144,21 @@ unsigned int static GetNextWorkRequired(const CBlockIndex* pindexLast, const CBl
         if (fTestNet)
         {
             // If the new block's timestamp is more than 2 * 1 minutes
-            // then allow mining of a min-difficulty block.
+            // then allow mining of a cheetah block.
+            // Cheetah difficulty = 0.0078
+                CBigNum bnCheetah;
+                bnCheetah = bnProofOfWorkLimit;
+                bnCheetah /= 32;
+                nCheetah = bnCheetah.GetCompact();
+
+
             if (pblock->nTime > pindexLast->nTime + nTargetSpacing*2)
-                return nProofOfWorkLimit;
+                return nCheetah;
             else
             {
                 // Return the last non-special-min-difficulty-rules-block
                 
-                while (pindex->pprev && pindex->nHeight % nInterval != 0 && pindex->nBits == nProofOfWorkLimit)
+                while (pindex->pprev && pindex->nHeight % nInterval != 0 && pindex->nBits == nCheetah)
                     pindex = pindex->pprev;
                 return pindex->nBits;
             }
