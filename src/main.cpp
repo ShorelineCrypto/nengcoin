@@ -1145,10 +1145,10 @@ unsigned int static GetNextWorkRequired(const CBlockIndex* pindexLast, const CBl
         {
             // If the new block's timestamp is more than 2 * 1 minutes
             // then allow mining of a cheetah block.
-            // Cheetah difficulty = 0.0078
+            // Cheetah difficulty = 0.00244
                 CBigNum bnCheetah;
                 bnCheetah = bnProofOfWorkLimit;
-                bnCheetah /= 32;
+                bnCheetah /= 10;
                 unsigned int nCheetah = bnCheetah.GetCompact();
 
 
@@ -1163,6 +1163,52 @@ unsigned int static GetNextWorkRequired(const CBlockIndex* pindexLast, const CBl
                 return pindex->nBits;
             }
         
+        }
+        // v1.5.0 hard fork after blocks 2257000
+        else if (pindex->nHeight > 2257000) {
+            CBigNum bnCheetah;
+            bnCheetah = bnProofOfWorkLimit;
+            bnCheetah /= 10;
+            unsigned int nCheetah = bnCheetah.GetCompact();
+            
+            CBigNum bnSpike;
+            bnSpike = bnProofOfWorkLimit;
+            bnSpike /= 1000000000;
+            unsigned int nSpike = bnSpike.GetCompact();
+            
+            if ((pblock->nTime > pindexLast->nTime + nTargetSpacing*2) || (pblock->nTime < pindexLast->nTime - nTargetSpacing*2))
+                return nCheetah;
+            else if  ((pblock->nTime > pindexLast->nTime + 9) || (pblock->nTime < pindexLast->nTime - 9))
+            {
+                // Return the last non-special-min-difficulty-rules-block
+                
+                while (pindex->pprev && pindex->nHeight % nInterval != 0 && pindex->nBits == nCheetah)
+                    pindex = pindex->pprev;
+                return pindex->nBits;
+            }
+            else if  ((pblock->nTime > pindexLast->nTime - 2) && (pblock->nTime < pindexLast->nTime + 2))
+            {
+                // Spike difficulty
+                return nSpike;
+            }
+            else
+            {
+                // randomSpike difficulty between 2 - 9 seconds
+                                
+                const CBlockIndex* tmpindex = pindexLast;
+                tmpindex = tmpindex->pprev;
+                tmpindex = tmpindex->pprev;
+                if ((tmpindex->nTime + pblock->nTime + pindex->nHeight) % 2 != 0)
+                    return nSpike;
+                else
+                {
+                    while (pindex->pprev && pindex->nHeight % nInterval != 0 && pindex->nBits == nCheetah)
+                        pindex = pindex->pprev;
+                    return pindex->nBits;
+                }
+
+
+            }
         }
         // v1.3.0 randomSpike fork after blocks 1303000
         else if (pindex->nHeight > 1303000) {
