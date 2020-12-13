@@ -1,4 +1,4 @@
-# Mac OS X newenglandcoind build instructions
+# Mac OS X nengcoind build instructions
 ====================================
 
 Authors
@@ -15,7 +15,7 @@ License
 
 Copyright (c) 2009-2012 Bitcoin Developers
 Copyright (c) 2011-2014 Litecoin Developers
-Copyright (c) 2018-2019 NewEnglandcoin Developers
+Copyright (c) 2018-2019 Nengcoin Developers
 
 Distributed under the MIT/X11 software license, see the accompanying
 file COPYING or http://www.opensource.org/licenses/mit-license.php.
@@ -147,10 +147,10 @@ miniupnpc 2.1 is default, which is incompatible with NENG.
    directory.
 
 ```
-   git clone  https://github.com/ShorelineCrypto/NewEnglandCoin.git
-   cd NewEnglandCoin/src
+   git clone  https://github.com/ShorelineCrypto/NengCoin.git
+   cd NengCoin/src
    make -f makefile.osx USE_UPNP=1
-   strip newenglandcoind
+   strip nengcoind
 ```
 
 Special Note for macOS Mojave: a confusing error might pop up on first try, "fatal error: string.h: No such file or directory".
@@ -161,7 +161,7 @@ https://stackoverflow.com/questions/39736728/fatal-error-string-h-no-such-file-o
    open /Library/Developer/CommandLineTools/Packages/macOS_SDK_headers_for_macOS_10.14.pkg
 ```
 
-2. After successful compilcation, a file 'newenglandcoind' should show
+2. After successful compilcation, a file 'nengcoind' should show
 up in the folder. This is command line wallet
 
 3.  Run below to compile QT wallet under main folder
@@ -179,15 +179,15 @@ up in the folder. This is command line wallet
 Running command line wallet
 -------
 
-It's now available at `./newenglandcoind`, provided that you are still in the `src`
+It's now available at `./nengcoind`, provided that you are still in the `src`
 directory. We have to first create the RPC configuration file, though.
 
-Run `./newenglandcoind` to get the filename where it should be put, or just try these
+Run `./nengcoind` to get the filename where it should be put, or just try these
 commands:
 
 ```
-  echo -e "rpcuser=newenglandcoinrpc\nrpcpassword=$(xxd -l 16 -p /dev/urandom)" > "/Users/${USER}/Library/Application Support/NewEnglandcoin/newenglandcoin.conf"
-  chmod 600 "/Users/${USER}/Library/Application Support/NewEnglandcoin/newenglandcoin.conf"
+  echo -e "rpcuser=nengcoinrpc\nrpcpassword=$(xxd -l 16 -p /dev/urandom)" > "/Users/${USER}/Library/Application Support/Nengcoin/nengcoin.conf"
+  chmod 600 "/Users/${USER}/Library/Application Support/Nengcoin/nengcoin.conf"
 ```
 
 When next you run it, it will start downloading the blockchain, but it won't
@@ -196,16 +196,16 @@ output anything while it's doing this. This process may take several hours.
 Other commands:
 
 ```
-    ./newenglandcoind --help  # for a list of command-line options. 
-    ./newenglandcoind -daemon # to start the newenglandcoin daemon.
-    ./newenglandcoind help    # When the daemon is running, to get a list of RPC commands
+    ./nengcoind --help  # for a list of command-line options. 
+    ./nengcoind -daemon # to start the nengcoin daemon.
+    ./nengcoind help    # When the daemon is running, to get a list of RPC commands
 ```
 
 
 Running Qt wallet
 -------
 
-Use mouse to find the folder "NewEnglandcoin-Qt.app",  double click
-and launch the GUI wallet "NewEnglandcoin-Qt.app".   QT wallet and command line wallet share
+Use mouse to find the folder "Nengcoin-Qt.app",  double click
+and launch the GUI wallet "Nengcoin-Qt.app".   QT wallet and command line wallet share
 the same folder for configuration file and synced blockchain files.  They can not be running
 together within same account, only one at a time.

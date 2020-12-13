@@ -16,7 +16,7 @@ sudo apt -y install python-pip
 sudo pip install python-bitcoinrpc
 
 ## reuse prior compiled boost libary for Ubuntu 18.04
-wget https://github.com/ShorelineCrypto/NewEnglandCoin/releases/download/v1.4.0.5/ubuntu16_armhf_boost1.58.tgz
+wget https://github.com/ShorelineCrypto/NengCoin/releases/download/v1.4.0.5/ubuntu16_armhf_boost1.58.tgz
 tar xvfz  ubuntu16_armhf_boost1.58.tgz
 sudo mv boost1.58  /opt/
 sudo mv boost1.58.conf  /etc/ld.so.conf.d/
@@ -25,5 +25,5 @@ sudo ldconfig
 
 git clone https://github.com/ShorelineCrypto/cheetah_cpuminer.git
 ## download the binary wallet and enjoy:
-wget  https://github.com/ShorelineCrypto/NewEnglandCoin/releases/download/v1.4.0.5/newenglandcoin_v1.4.0.5_ubuntu16_armhf.tgz
-tar xvfz newenglandcoin_v1.4.0.5_ubuntu16_armhf.tgz
+wget  https://github.com/ShorelineCrypto/NengCoin/releases/download/v1.4.0.5/nengcoin_v1.4.0.5_ubuntu16_armhf.tgz
+tar xvfz nengcoin_v1.4.0.5_ubuntu16_armhf.tgz

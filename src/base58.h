@@ -272,7 +272,7 @@ class CBitcoinAddress : public CBase58Data
 public:
     enum
     {
-        PUBKEY_ADDRESS = 53, // NewEnglandcoin addresses start with N
+        PUBKEY_ADDRESS = 53, // Nengcoin addresses start with N
         SCRIPT_ADDRESS = 5,
         PUBKEY_ADDRESS_TEST = 112,
         SCRIPT_ADDRESS_TEST = 196,

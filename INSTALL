@@ -1,9 +1,9 @@
-Building NewEnglandcoin
+Building Nengcoin
 
-See doc/readme-qt.rst for instructions on building NewEnglandcoin-Qt,
+See doc/readme-qt.rst for instructions on building Nengcoin-Qt,
 the intended-for-end-users, nice-graphical-interface, reference
-implementation of NewEnglandcoin.
+implementation of Nengcoin.
 
-See doc/build-*.txt for instructions on building newenglandcoind,
+See doc/build-*.txt for instructions on building nengcoind,
 the intended-for-services, no-graphical-interface, reference
-implementation of NewEnglandcoin.
+implementation of Nengcoin.

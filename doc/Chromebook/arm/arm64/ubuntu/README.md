@@ -10,8 +10,8 @@ Please run below shell script in terminal for installing dependencies and librar
 
 ## Step 2: download the binary wallet and enjoy:
 ```
-  wget  https://github.com/ShorelineCrypto/NewEnglandCoin/releases/download/v1.4.0/newenglandcoin_v1.4.0_u16_arm64.tgz
-  tar xvfz newenglandcoin_v1.4.0_u16_arm64.tgz
+  wget  https://github.com/ShorelineCrypto/NengCoin/releases/download/v1.4.0/nengcoin_v1.4.0_u16_arm64.tgz
+  tar xvfz nengcoin_v1.4.0_u16_arm64.tgz
 ```
 
 ## Optional Step 3: compile boost 1.58 from source

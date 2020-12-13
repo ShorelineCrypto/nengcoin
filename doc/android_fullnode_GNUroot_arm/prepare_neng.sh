@@ -22,7 +22,7 @@ apt-get --yes  --force-yes remove python-pip
 pip install python-bitcoinrpc
 
 apt-get --yes  --force-yes install git
-#git clone https://github.com/ShorelineCrypto/NewEnglandCoin.git
+#git clone https://github.com/ShorelineCrypto/NengCoin.git
 #git clone https://github.com/ShorelineCrypto/cheetah_cpuminer.git
 
 

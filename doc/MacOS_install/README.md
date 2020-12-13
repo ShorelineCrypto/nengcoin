@@ -3,7 +3,7 @@
 # Supported - macOS 10.11 El Capitan to 10.15 Catalina
 
 For full guide of building own wallet from source, please follow steps at:
- https://github.com/ShorelineCrypto/NewEnglandCoin/blob/master/doc/build-osx.md
+ https://github.com/ShorelineCrypto/NengCoin/blob/master/doc/build-osx.md
 
 Here below we describe an easier way to install macOS binary wallet on NENG v1.4.1.0, which was built from source in Mojave. The below 
 method was tested to be working on 10.11 , 10.14 and 10.15. 
@@ -76,7 +76,7 @@ With typical mac method, drag and drop to install GUI dmg software to applicatio
 Copy the conf file to your NewEngalndcoin data directory by running below at terminal:
 
 ```
-    cp  newenglandcoin.conf  ~/Library/'Application Support'/NewEnglandcoin/
+    cp  nengcoin.conf  ~/Library/'Application Support'/Nengcoin/
 ```
  
 
