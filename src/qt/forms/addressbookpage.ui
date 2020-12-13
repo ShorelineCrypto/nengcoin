@@ -96,7 +96,7 @@
      <item>
       <widget class="QPushButton" name="signMessage">
        <property name="toolTip">
-        <string>Sign a message to prove you own a NewEnglandcoin address</string>
+        <string>Sign a message to prove you own a Nengcoin address</string>
        </property>
        <property name="text">
         <string>Sign &amp;Message</string>
@@ -110,7 +110,7 @@
      <item>
       <widget class="QPushButton" name="verifyMessage">
        <property name="toolTip">
-        <string>Verify a message to ensure it was signed with a specified NewEnglandcoin address</string>
+        <string>Verify a message to ensure it was signed with a specified Nengcoin address</string>
        </property>
        <property name="text">
         <string>&amp;Verify Message</string>

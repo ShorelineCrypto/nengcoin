@@ -16,18 +16,18 @@ RUN apt-get -y install libzmq3-dev libbz2-dev zlib1g libminiupnpc-dev
 WORKDIR /usr/local/
 
 RUN apt-get -y install git
-RUN git clone https://github.com/ShorelineCrypto/NewEnglandCoin.git
+RUN git clone https://github.com/ShorelineCrypto/NengCoin.git
 
-WORKDIR /usr/local/NewEnglandCoin/src
+WORKDIR /usr/local/NengCoin/src
 RUN make -f makefile.unix USE_UPNP=1
-RUN strip newenglandcoind && cp  newenglandcoind /usr/local/bin/
+RUN strip nengcoind && cp  nengcoind /usr/local/bin/
 
 # install and compile GUI QT wallet
 RUN apt-get -y install libqt4-dev libprotobuf-dev protobuf-compiler
-WORKDIR /usr/local/NewEnglandCoin
+WORKDIR /usr/local/NengCoin
 RUN qmake USE_UPNP=1
-RUN make && cp newenglandcoin-qt /usr/local/bin/
+RUN make && cp nengcoin-qt /usr/local/bin/
 
 WORKDIR /usr/local/
-RUN rm -rf NewEnglandCoin
+RUN rm -rf NengCoin
 

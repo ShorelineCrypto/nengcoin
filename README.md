@@ -1,11 +1,11 @@
-NewEnglandcoin
+Nengcoin
 ================================
 
 
-What is NewEnglandcoin?
+What is Nengcoin?
 ----------------
 
-NewEnglandcoin is a clone of Bitcoin using scrypt as a proof-of-work algorithm with enhanced features to protect against 51% attack 
+Nengcoin is a clone of Bitcoin using scrypt as a proof-of-work algorithm with enhanced features to protect against 51% attack 
 and decentralize on mining to allow diversified mining rigs across CPUs, GPUs, ASICs and Android phones.
  - 1 minute block targets
  - subsidy halves in 2.1m blocks (~ 2 to 4 years)
@@ -23,7 +23,7 @@ Note: all above versions have "0.8.7.5" version tag in QT wallet.  The downloade
 
 Bitcointalk Ann: https://bitcointalk.org/index.php?topic=5027091.0
 
-Reddit: https://www.reddit.com/r/NewEnglandCoin/
+Reddit: https://www.reddit.com/r/NengCoin/
 
 DISCORD: https://discordapp.com/invite/UPeBwgs
 
@@ -31,7 +31,7 @@ DISCORD: https://discordapp.com/invite/UPeBwgs
 License
 -------
 
-NewEnglandcoin is released under the terms of the MIT license. See `COPYING` for more
+Nengcoin is released under the terms of the MIT license. See `COPYING` for more
 information or see http://opensource.org/licenses/MIT.
 
 

@@ -1,6 +1,6 @@
 # Chrome OS on x86_64
 
-This folder describe how to run a full node of NewEnglandcoin (NENG) and to CPU mine NENG in Chromebook as Linux App.  Chrome OS v85 on x64 platform was tested. 
+This folder describe how to run a full node of Nengcoin (NENG) and to CPU mine NENG in Chromebook as Linux App.  Chrome OS v85 on x64 platform was tested. 
 Any Chrome OS version v69 or later on x64 CPU should all work. 
 
 Chrome OS v83 Linux (Beta) runs Debian 10 (Buster) in embedded linux in a container with close to full feature of linux for both CLI and GUI. 
@@ -26,7 +26,7 @@ Inside terminal, this file will be at your home directory.
 By default, Linux (Beta) or Crostini runs a container for Debian 10. Below has been tested to be working in both Debian 10 and Debian 9.  Run below commands to install all required files:
 
 ```
-   tar xvfz newenglandcoin_v1.4.1.1_chromeos_x64.tgz
+   tar xvfz nengcoin_v1.4.1.1_chromeos_x64.tgz
    cd Chromebook/x64/debian
    bash  prepare_neng.sh
 ```
@@ -45,8 +45,8 @@ to run a full node and for the purpose of CPU mining.
 ## run GUI QT wallet in Chromebook
 
  ```
- hlu@penguin:~$ cd  newenglandcoin_v1.4.1.1_ubuntu16.04
- hlu@penguin:~/newenglandcoin_v1.4.1.1_ubuntu16.04$ ./newenglandcoin-qt &
+ hlu@penguin:~$ cd  nengcoin_v1.4.1.1_ubuntu16.04
+ hlu@penguin:~/nengcoin_v1.4.1.1_ubuntu16.04$ ./nengcoin-qt &
 ```
 
 Above in linux terminal will pop NENG QT wallet in chromebook desktop.
@@ -55,7 +55,7 @@ Above in linux terminal will pop NENG QT wallet in chromebook desktop.
  QT wallet in penguin container may show no connections.  Copy the conf file with below command:
 
 ```
-hlu@penguin:~$  cp newenglandcoin.conf ~/.newenglandcoin/
+hlu@penguin:~$  cp nengcoin.conf ~/.nengcoin/
 ```
 
  Then restart the QT GUI wallet, NENG should start to sync. Note fully synced to latest block is required in order to CPU mining NENG with Cheetah_Cpuminer
@@ -70,7 +70,7 @@ TAB key is powerful in linux command line.  Typing full word of file or folder n
 
 Here is easier way with tab:
 ```
-   cd  newenglandcoin_v1.4.1.1_ubuntu16.04
+   cd  nengcoin_v1.4.1.1_ubuntu16.04
 
 ```
   Typing above long word in Chromebook is close to impossible. An easier way to do is:
@@ -78,7 +78,7 @@ Here is easier way with tab:
 ```
    cd  newe-finger push TAB key
 ```
-After you push TAB afer word "newe" , the chromebook linux terminal should behave like linux in server/desktop with the full file/folder name "newenglandcoin_v1.4.1.1_ubuntu16.04" auto populated for you. 
+After you push TAB afer word "newe" , the chromebook linux terminal should behave like linux in server/desktop with the full file/folder name "nengcoin_v1.4.1.1_ubuntu16.04" auto populated for you. 
 
 #### Arrow up or down key for history
 

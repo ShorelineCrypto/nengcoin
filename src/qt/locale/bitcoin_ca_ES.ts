@@ -4,13 +4,13 @@
     <name>AboutDialog</name>
     <message>
         <location filename="../forms/aboutdialog.ui" line="+14"/>
-        <source>About NewEnglandcoin</source>
-        <translation>Sobre NewEnglandcoin</translation>
+        <source>About Nengcoin</source>
+        <translation>Sobre Nengcoin</translation>
     </message>
     <message>
         <location line="+39"/>
-        <source>&lt;b&gt;NewEnglandcoin&lt;/b&gt; version</source>
-        <translation>&lt;b&gt;NewEnglandcoin&lt;/b&gt; versió</translation>
+        <source>&lt;b&gt;Nengcoin&lt;/b&gt; version</source>
+        <translation>&lt;b&gt;Nengcoin&lt;/b&gt; versió</translation>
     </message>
     <message>
         <location line="+57"/>
@@ -29,7 +29,7 @@ This product includes software developed by the OpenSSL Project for use in the O
     </message>
     <message>
         <location line="+0"/>
-        <source>The NewEnglandcoin developers</source>
+        <source>The Nengcoin developers</source>
         <translation type="unfinished"/>
     </message>
 </context>
@@ -62,8 +62,8 @@ This product includes software developed by the OpenSSL Project for use in the O
     </message>
     <message>
         <location filename="../addressbookpage.cpp" line="+63"/>
-        <source>These are your NewEnglandcoin addresses for receiving payments. You may want to give a different one to each sender so you can keep track of who is paying you.</source>
-        <translation>Aquestes són les teves adreces NewEnglandcoin per a rebre pagaments. Pot interesar-te proveïr diferents adreces a cadascun dels enviadors així pots identificar qui et va pagant.</translation>
+        <source>These are your Nengcoin addresses for receiving payments. You may want to give a different one to each sender so you can keep track of who is paying you.</source>
+        <translation>Aquestes són les teves adreces Nengcoin per a rebre pagaments. Pot interesar-te proveïr diferents adreces a cadascun dels enviadors així pots identificar qui et va pagant.</translation>
     </message>
     <message>
         <location filename="../forms/addressbookpage.ui" line="+14"/>
@@ -77,8 +77,8 @@ This product includes software developed by the OpenSSL Project for use in the O
     </message>
     <message>
         <location line="+11"/>
-        <source>Sign a message to prove you own a NewEnglandcoin address</source>
-        <translation>Signa el missatge per provar que ets propietari de l&apos;adreça NewEnglandcoin</translation>
+        <source>Sign a message to prove you own a Nengcoin address</source>
+        <translation>Signa el missatge per provar que ets propietari de l&apos;adreça Nengcoin</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -102,8 +102,8 @@ This product includes software developed by the OpenSSL Project for use in the O
     </message>
     <message>
         <location line="-44"/>
-        <source>Verify a message to ensure it was signed with a specified NewEnglandcoin address</source>
-        <translation>Verificar un missatge per asegurar-se que ha estat signat amb una adreça NewEnglandcoin específica</translation>
+        <source>Verify a message to ensure it was signed with a specified Nengcoin address</source>
+        <translation>Verificar un missatge per asegurar-se que ha estat signat amb una adreça Nengcoin específica</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -117,8 +117,8 @@ This product includes software developed by the OpenSSL Project for use in the O
     </message>
     <message>
         <location filename="../addressbookpage.cpp" line="-5"/>
-        <source>These are your NewEnglandcoin addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
-        <translation>Aquestes són la seva adreça de NewEnglandcoin per enviar els pagaments. Sempre revisi la quantitat i l&apos;adreça del destinatari abans transferència de monedes.</translation>
+        <source>These are your Nengcoin addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
+        <translation>Aquestes són la seva adreça de Nengcoin per enviar els pagaments. Sempre revisi la quantitat i l&apos;adreça del destinatari abans transferència de monedes.</translation>
     </message>
     <message>
         <location line="+13"/>
@@ -243,8 +243,8 @@ This product includes software developed by the OpenSSL Project for use in the O
     </message>
     <message>
         <location line="+1"/>
-        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR NEWENGLANDCOINS&lt;/b&gt;!</source>
-        <translation>Advertència: Si encripteu el vostre moneder i perdeu la constrasenya, &lt;b&gt;PERDREU TOTS ELS VOSTRES NEWENGLANDCOINS&lt;/b&gt;!</translation>
+        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR NENGCOINS&lt;/b&gt;!</source>
+        <translation>Advertència: Si encripteu el vostre moneder i perdeu la constrasenya, &lt;b&gt;PERDREU TOTS ELS VOSTRES NENGCOINS&lt;/b&gt;!</translation>
     </message>
     <message>
         <location line="+0"/>
@@ -270,8 +270,8 @@ This product includes software developed by the OpenSSL Project for use in the O
     </message>
     <message>
         <location line="-56"/>
-        <source>NewEnglandcoin will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your newenglandcoins from being stolen by malware infecting your computer.</source>
-        <translation>NewEnglandcoin es tancarà ara per acabar el procés d&apos;encriptació. Recorda que encriptar el teu moneder no protegeix completament els teus newenglandcoins de ser robades per programari maliciós instal·lat al teu ordinador.</translation>
+        <source>Nengcoin will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your nengcoins from being stolen by malware infecting your computer.</source>
+        <translation>Nengcoin es tancarà ara per acabar el procés d&apos;encriptació. Recorda que encriptar el teu moneder no protegeix completament els teus nengcoins de ser robades per programari maliciós instal·lat al teu ordinador.</translation>
     </message>
     <message>
         <location line="+13"/>
@@ -369,8 +369,8 @@ This product includes software developed by the OpenSSL Project for use in the O
     </message>
     <message>
         <location line="+4"/>
-        <source>Show information about NewEnglandcoin</source>
-        <translation>Mostra informació sobre NewEnglandcoin</translation>
+        <source>Show information about Nengcoin</source>
+        <translation>Mostra informació sobre Nengcoin</translation>
     </message>
     <message>
         <location line="+2"/>
@@ -414,13 +414,13 @@ This product includes software developed by the OpenSSL Project for use in the O
     </message>
     <message>
         <location line="-347"/>
-        <source>Send coins to a NewEnglandcoin address</source>
-        <translation>Enviar monedes a una adreça NewEnglandcoin</translation>
+        <source>Send coins to a Nengcoin address</source>
+        <translation>Enviar monedes a una adreça Nengcoin</translation>
     </message>
     <message>
         <location line="+49"/>
-        <source>Modify configuration options for NewEnglandcoin</source>
-        <translation>Modificar les opcions de configuració per newenglandcoin</translation>
+        <source>Modify configuration options for Nengcoin</source>
+        <translation>Modificar les opcions de configuració per nengcoin</translation>
     </message>
     <message>
         <location line="+9"/>
@@ -450,8 +450,8 @@ This product includes software developed by the OpenSSL Project for use in the O
     <message>
         <location line="-165"/>
         <location line="+530"/>
-        <source>NewEnglandcoin</source>
-        <translation>NewEnglandcoin</translation>
+        <source>Nengcoin</source>
+        <translation>Nengcoin</translation>
     </message>
     <message>
         <location line="-530"/>
@@ -475,8 +475,8 @@ This product includes software developed by the OpenSSL Project for use in the O
     </message>
     <message>
         <location line="+22"/>
-        <source>&amp;About NewEnglandcoin</source>
-        <translation>&amp;Sobre NewEnglandcoin</translation>
+        <source>&amp;About Nengcoin</source>
+        <translation>&amp;Sobre Nengcoin</translation>
     </message>
     <message>
         <location line="+9"/>
@@ -495,13 +495,13 @@ This product includes software developed by the OpenSSL Project for use in the O
     </message>
     <message>
         <location line="+7"/>
-        <source>Sign messages with your NewEnglandcoin addresses to prove you own them</source>
-        <translation>Signa el missatges amb la seva adreça de NewEnglandcoin per provar que les poseeixes</translation>
+        <source>Sign messages with your Nengcoin addresses to prove you own them</source>
+        <translation>Signa el missatges amb la seva adreça de Nengcoin per provar que les poseeixes</translation>
     </message>
     <message>
         <location line="+2"/>
-        <source>Verify messages to ensure they were signed with specified NewEnglandcoin addresses</source>
-        <translation>Verificar els missatges per assegurar-te que han estat signades amb una adreça NewEnglandcoin específica.</translation>
+        <source>Verify messages to ensure they were signed with specified Nengcoin addresses</source>
+        <translation>Verificar els missatges per assegurar-te que han estat signades amb una adreça Nengcoin específica.</translation>
     </message>
     <message>
         <location line="+28"/>
@@ -531,13 +531,13 @@ This product includes software developed by the OpenSSL Project for use in the O
     </message>
     <message>
         <location line="+47"/>
-        <source>NewEnglandcoin client</source>
-        <translation>Client NewEnglandcoin</translation>
+        <source>Nengcoin client</source>
+        <translation>Client Nengcoin</translation>
     </message>
     <message numerus="yes">
         <location line="+141"/>
-        <source>%n active connection(s) to NewEnglandcoin network</source>
-        <translation><numerusform>%n connexió activa a la xarxa NewEnglandcoin</numerusform><numerusform>%n connexions actives a la xarxa NewEnglandcoin</numerusform></translation>
+        <source>%n active connection(s) to Nengcoin network</source>
+        <translation><numerusform>%n connexió activa a la xarxa Nengcoin</numerusform><numerusform>%n connexions actives a la xarxa Nengcoin</numerusform></translation>
     </message>
     <message>
         <location line="+22"/>
@@ -647,8 +647,8 @@ Address: %4
     <message>
         <location line="-23"/>
         <location line="+23"/>
-        <source>URI can not be parsed! This can be caused by an invalid NewEnglandcoin address or malformed URI parameters.</source>
-        <translation>la URI no pot ser processada! Això es pot ser causat per una adreça NewEnglandcoin invalida o paràmetres URI malformats.</translation>
+        <source>URI can not be parsed! This can be caused by an invalid Nengcoin address or malformed URI parameters.</source>
+        <translation>la URI no pot ser processada! Això es pot ser causat per una adreça Nengcoin invalida o paràmetres URI malformats.</translation>
     </message>
     <message>
         <location line="+17"/>
@@ -662,8 +662,8 @@ Address: %4
     </message>
     <message>
         <location filename="../bitcoin.cpp" line="+111"/>
-        <source>A fatal error occurred. NewEnglandcoin can no longer continue safely and will quit.</source>
-        <translation>Ha tingut lloc un error fatal. NewEnglandcoin no pot continuar executant-se de manera segura i es tancará.</translation>
+        <source>A fatal error occurred. Nengcoin can no longer continue safely and will quit.</source>
+        <translation>Ha tingut lloc un error fatal. Nengcoin no pot continuar executant-se de manera segura i es tancará.</translation>
     </message>
 </context>
 <context>
@@ -728,8 +728,8 @@ Address: %4
     </message>
     <message>
         <location line="-5"/>
-        <source>The entered address &quot;%1&quot; is not a valid NewEnglandcoin address.</source>
-        <translation>L&apos;adreça introduida &quot;%1&quot; no és una adreça NewEnglandcoin valida.</translation>
+        <source>The entered address &quot;%1&quot; is not a valid Nengcoin address.</source>
+        <translation>L&apos;adreça introduida &quot;%1&quot; no és una adreça Nengcoin valida.</translation>
     </message>
     <message>
         <location line="+10"/>
@@ -747,8 +747,8 @@ Address: %4
     <message>
         <location filename="../guiutil.cpp" line="+424"/>
         <location line="+12"/>
-        <source>NewEnglandcoin-Qt</source>
-        <translation>NewEnglandcoin-Qt</translation>
+        <source>Nengcoin-Qt</source>
+        <translation>Nengcoin-Qt</translation>
     </message>
     <message>
         <location line="-12"/>
@@ -810,13 +810,13 @@ Address: %4
     </message>
     <message>
         <location line="+31"/>
-        <source>Automatically start NewEnglandcoin after logging in to the system.</source>
-        <translation>Iniciar automàticament NewEnglandcoin després de l&apos;inici de sessió del sistema.</translation>
+        <source>Automatically start Nengcoin after logging in to the system.</source>
+        <translation>Iniciar automàticament Nengcoin després de l&apos;inici de sessió del sistema.</translation>
     </message>
     <message>
         <location line="+3"/>
-        <source>&amp;Start NewEnglandcoin on system login</source>
-        <translation>&amp;Iniciar NewEnglandcoin al inici de sessió del sistema.</translation>
+        <source>&amp;Start Nengcoin on system login</source>
+        <translation>&amp;Iniciar Nengcoin al inici de sessió del sistema.</translation>
     </message>
     <message>
         <location line="+35"/>
@@ -835,8 +835,8 @@ Address: %4
     </message>
     <message>
         <location line="+6"/>
-        <source>Automatically open the NewEnglandcoin client port on the router. This only works when your router supports UPnP and it is enabled.</source>
-        <translation>Obrir el port del client de NewEnglandcoin al router de forma automàtica. Això només funciona quan el teu router implementa UPnP i l&apos;opció està activada.</translation>
+        <source>Automatically open the Nengcoin client port on the router. This only works when your router supports UPnP and it is enabled.</source>
+        <translation>Obrir el port del client de Nengcoin al router de forma automàtica. Això només funciona quan el teu router implementa UPnP i l&apos;opció està activada.</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -845,8 +845,8 @@ Address: %4
     </message>
     <message>
         <location line="+7"/>
-        <source>Connect to the NewEnglandcoin network through a SOCKS proxy (e.g. when connecting through Tor).</source>
-        <translation>Connectar a la xarxa NewEnglandcoin a través de un SOCKS proxy (per exemple connectant a través de Tor).</translation>
+        <source>Connect to the Nengcoin network through a SOCKS proxy (e.g. when connecting through Tor).</source>
+        <translation>Connectar a la xarxa Nengcoin a través de un SOCKS proxy (per exemple connectant a través de Tor).</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -920,8 +920,8 @@ Address: %4
     </message>
     <message>
         <location line="+13"/>
-        <source>The user interface language can be set here. This setting will take effect after restarting NewEnglandcoin.</source>
-        <translation>Aquí pots definir el llenguatge de l&apos;aplicatiu. Aquesta configuració tindrà efecte un cop es reiniciï NewEnglandcoin.</translation>
+        <source>The user interface language can be set here. This setting will take effect after restarting Nengcoin.</source>
+        <translation>Aquí pots definir el llenguatge de l&apos;aplicatiu. Aquesta configuració tindrà efecte un cop es reiniciï Nengcoin.</translation>
     </message>
     <message>
         <location line="+11"/>
@@ -935,8 +935,8 @@ Address: %4
     </message>
     <message>
         <location line="+9"/>
-        <source>Whether to show NewEnglandcoin addresses in the transaction list or not.</source>
-        <translation>Mostrar adreces NewEnglandcoin als llistats de transaccions o no.</translation>
+        <source>Whether to show Nengcoin addresses in the transaction list or not.</source>
+        <translation>Mostrar adreces Nengcoin als llistats de transaccions o no.</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -987,8 +987,8 @@ Address: %4
     <message>
         <location line="-9"/>
         <location line="+9"/>
-        <source>This setting will take effect after restarting NewEnglandcoin.</source>
-        <translation>Aquesta configuració tindrà efecte un cop es reiniciï NewEnglandcoin.</translation>
+        <source>This setting will take effect after restarting Nengcoin.</source>
+        <translation>Aquesta configuració tindrà efecte un cop es reiniciï Nengcoin.</translation>
     </message>
     <message>
         <location line="+29"/>
@@ -1006,8 +1006,8 @@ Address: %4
     <message>
         <location line="+50"/>
         <location line="+166"/>
-        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the NewEnglandcoin network after a connection is established, but this process has not completed yet.</source>
-        <translation>La informació mostrada pot no estar al día. El teu moneder es sincronitza automàticament amb la xarxa NewEnglandcoin un cop s&apos;ha establert connexió, però aquest proces no s&apos;ha completat encara.</translation>
+        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Nengcoin network after a connection is established, but this process has not completed yet.</source>
+        <translation>La informació mostrada pot no estar al día. El teu moneder es sincronitza automàticament amb la xarxa Nengcoin un cop s&apos;ha establert connexió, però aquest proces no s&apos;ha completat encara.</translation>
     </message>
     <message>
         <location line="-124"/>
@@ -1060,8 +1060,8 @@ Address: %4
     <name>PaymentServer</name>
     <message>
         <location filename="../paymentserver.cpp" line="+107"/>
-        <source>Cannot start newenglandcoin: click-to-pay handler</source>
-        <translation>No es pot iniciar newenglandcoin: manejador clicla-per-pagar</translation>
+        <source>Cannot start nengcoin: click-to-pay handler</source>
+        <translation>No es pot iniciar nengcoin: manejador clicla-per-pagar</translation>
     </message>
 </context>
 <context>
@@ -1210,8 +1210,8 @@ Address: %4
     </message>
     <message>
         <location line="+7"/>
-        <source>Show the NewEnglandcoin-Qt help message to get a list with possible NewEnglandcoin command-line options.</source>
-        <translation>Mostrar el missatge d&apos;ajuda de NewEnglandcoin-Qt per a obtenir un llistat de possibles ordres per a la línia d&apos;ordres de NewEnglandcoin.</translation>
+        <source>Show the Nengcoin-Qt help message to get a list with possible Nengcoin command-line options.</source>
+        <translation>Mostrar el missatge d&apos;ajuda de Nengcoin-Qt per a obtenir un llistat de possibles ordres per a la línia d&apos;ordres de Nengcoin.</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -1230,13 +1230,13 @@ Address: %4
     </message>
     <message>
         <location line="-104"/>
-        <source>NewEnglandcoin - Debug window</source>
-        <translation>NewEnglandcoin -Finestra de debug</translation>
+        <source>Nengcoin - Debug window</source>
+        <translation>Nengcoin -Finestra de debug</translation>
     </message>
     <message>
         <location line="+25"/>
-        <source>NewEnglandcoin Core</source>
-        <translation>Nucli de NewEnglandcoin</translation>
+        <source>Nengcoin Core</source>
+        <translation>Nucli de Nengcoin</translation>
     </message>
     <message>
         <location line="+279"/>
@@ -1245,8 +1245,8 @@ Address: %4
     </message>
     <message>
         <location line="+7"/>
-        <source>Open the NewEnglandcoin debug log file from the current data directory. This can take a few seconds for large log files.</source>
-        <translation>Obrir el dietari de debug de NewEnglandcoin del directori de dades actual. Aixó pot trigar uns quants segons per a dietàris grossos.</translation>
+        <source>Open the Nengcoin debug log file from the current data directory. This can take a few seconds for large log files.</source>
+        <translation>Obrir el dietari de debug de Nengcoin del directori de dades actual. Aixó pot trigar uns quants segons per a dietàris grossos.</translation>
     </message>
     <message>
         <location line="+102"/>
@@ -1255,8 +1255,8 @@ Address: %4
     </message>
     <message>
         <location filename="../rpcconsole.cpp" line="-30"/>
-        <source>Welcome to the NewEnglandcoin RPC console.</source>
-        <translation>Benvingut a la consola RPC de NewEnglandcoin</translation>
+        <source>Welcome to the Nengcoin RPC console.</source>
+        <translation>Benvingut a la consola RPC de Nengcoin</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -1439,8 +1439,8 @@ Address: %4
     </message>
     <message>
         <location filename="../sendcoinsentry.cpp" line="+1"/>
-        <source>Enter a NewEnglandcoin address (e.g. Ler4HNAEfwYhBmGXcFP2Po1NpRUEiK8km2)</source>
-        <translation>Introdueixi una adreça de NewEnglandcoin (per exemple Ler4HNAEfwYhBmGXcFP2Po1NpRUEiK8km2)</translation>
+        <source>Enter a Nengcoin address (e.g. Ler4HNAEfwYhBmGXcFP2Po1NpRUEiK8km2)</source>
+        <translation>Introdueixi una adreça de Nengcoin (per exemple Ler4HNAEfwYhBmGXcFP2Po1NpRUEiK8km2)</translation>
     </message>
 </context>
 <context>
@@ -1504,8 +1504,8 @@ Address: %4
     </message>
     <message>
         <location line="+21"/>
-        <source>Sign the message to prove you own this NewEnglandcoin address</source>
-        <translation>Signa el missatge per provar que ets propietari d&apos;aquesta adreça NewEnglandcoin</translation>
+        <source>Sign the message to prove you own this Nengcoin address</source>
+        <translation>Signa el missatge per provar que ets propietari d&apos;aquesta adreça Nengcoin</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -1540,8 +1540,8 @@ Address: %4
     </message>
     <message>
         <location line="+40"/>
-        <source>Verify the message to ensure it was signed with the specified NewEnglandcoin address</source>
-        <translation>Verificar el missatge per assegurar-se que ha estat signat amb una adreça NewEnglandcoin específica</translation>
+        <source>Verify the message to ensure it was signed with the specified Nengcoin address</source>
+        <translation>Verificar el missatge per assegurar-se que ha estat signat amb una adreça Nengcoin específica</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -1556,8 +1556,8 @@ Address: %4
     <message>
         <location filename="../signverifymessagedialog.cpp" line="+27"/>
         <location line="+3"/>
-        <source>Enter a NewEnglandcoin address (e.g. Ler4HNAEfwYhBmGXcFP2Po1NpRUEiK8km2)</source>
-        <translation>Introdueixi una adreça de NewEnglandcoin (per exemple Ler4HNAEfwYhBmGXcFP2Po1NpRUEiK8km2)</translation>
+        <source>Enter a Nengcoin address (e.g. Ler4HNAEfwYhBmGXcFP2Po1NpRUEiK8km2)</source>
+        <translation>Introdueixi una adreça de Nengcoin (per exemple Ler4HNAEfwYhBmGXcFP2Po1NpRUEiK8km2)</translation>
     </message>
     <message>
         <location line="-2"/>
@@ -1566,8 +1566,8 @@ Address: %4
     </message>
     <message>
         <location line="+3"/>
-        <source>Enter NewEnglandcoin signature</source>
-        <translation>Introduïr una clau NewEnglandcoin</translation>
+        <source>Enter Nengcoin signature</source>
+        <translation>Introduïr una clau Nengcoin</translation>
     </message>
     <message>
         <location line="+82"/>
@@ -1640,7 +1640,7 @@ Address: %4
     <name>SplashScreen</name>
     <message>
         <location filename="../splashscreen.cpp" line="+22"/>
-        <source>The NewEnglandcoin developers</source>
+        <source>The Nengcoin developers</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -2178,8 +2178,8 @@ Address: %4
     <name>bitcoin-core</name>
     <message>
         <location filename="../bitcoinstrings.cpp" line="+94"/>
-        <source>NewEnglandcoin version</source>
-        <translation>Versió de NewEnglandcoin</translation>
+        <source>Nengcoin version</source>
+        <translation>Versió de Nengcoin</translation>
     </message>
     <message>
         <location line="+102"/>
@@ -2188,8 +2188,8 @@ Address: %4
     </message>
     <message>
         <location line="-29"/>
-        <source>Send command to -server or newenglandcoind</source>
-        <translation>Enviar comanda a -servidor o newenglandcoind</translation>
+        <source>Send command to -server or nengcoind</source>
+        <translation>Enviar comanda a -servidor o nengcoind</translation>
     </message>
     <message>
         <location line="-23"/>
@@ -2208,13 +2208,13 @@ Address: %4
     </message>
     <message>
         <location line="+24"/>
-        <source>Specify configuration file (default: newenglandcoin.conf)</source>
-        <translation>Especificat arxiu de configuració (per defecte: newenglandcoin.conf)</translation>
+        <source>Specify configuration file (default: nengcoin.conf)</source>
+        <translation>Especificat arxiu de configuració (per defecte: nengcoin.conf)</translation>
     </message>
     <message>
         <location line="+3"/>
-        <source>Specify pid file (default: newenglandcoind.pid)</source>
-        <translation>Especificar arxiu pid (per defecte: newenglandcoind.pid)</translation>
+        <source>Specify pid file (default: nengcoind.pid)</source>
+        <translation>Especificar arxiu pid (per defecte: nengcoind.pid)</translation>
     </message>
     <message>
         <location line="-1"/>
@@ -2291,15 +2291,15 @@ Address: %4
         <source>%s, you must set a rpcpassword in the configuration file:
 %s
 It is recommended you use the following random password:
-rpcuser=newenglandcoinrpc
+rpcuser=nengcoinrpc
 rpcpassword=%s
 (you do not need to remember this password)
 The username and password MUST NOT be the same.
 If the file does not exist, create it with owner-readable-only file permissions.
 It is also recommended to set alertnotify so you are notified of problems;
-for example: alertnotify=echo %%s | mail -s &quot;NewEnglandcoin Alert&quot; admin@foo.com
+for example: alertnotify=echo %%s | mail -s &quot;Nengcoin Alert&quot; admin@foo.com
 </source>
-        <translation>%s has de establir una contrasenya RPC a l&apos;arxiu de configuració:\n%s\nEs recomana que useu la següent constrasenya aleatòria:\nrpcuser=newenglandcoinrpc\nrpcpassword=%s\n(no necesiteu recordar aquesta contrsenya)\nEl nom d&apos;usuari i contrasenya NO HAN de ser els mateixos.\nSi l&apos;arxiu no existeix, crea&apos;l amb els permisos d&apos;arxiu de només lectura per al propietari.\nTambé es recomana establir la notificació d&apos;alertes i així seràs notificat de les incidències;\nper exemple: alertnotify=echo %%s | mail -s &quot;NewEnglandcoin Alert&quot; admin@foo.com</translation>
+        <translation>%s has de establir una contrasenya RPC a l&apos;arxiu de configuració:\n%s\nEs recomana que useu la següent constrasenya aleatòria:\nrpcuser=nengcoinrpc\nrpcpassword=%s\n(no necesiteu recordar aquesta contrsenya)\nEl nom d&apos;usuari i contrasenya NO HAN de ser els mateixos.\nSi l&apos;arxiu no existeix, crea&apos;l amb els permisos d&apos;arxiu de només lectura per al propietari.\nTambé es recomana establir la notificació d&apos;alertes i així seràs notificat de les incidències;\nper exemple: alertnotify=echo %%s | mail -s &quot;Nengcoin Alert&quot; admin@foo.com</translation>
     </message>
     <message>
         <location line="+17"/>
@@ -2313,8 +2313,8 @@ for example: alertnotify=echo %%s | mail -s &quot;NewEnglandcoin Alert&quot; adm
     </message>
     <message>
         <location line="+3"/>
-        <source>Cannot obtain a lock on data directory %s. NewEnglandcoin is probably already running.</source>
-        <translation>No es pot bloquejar el directori de dades %s. Probablement NewEnglandcoin ja estigui en execució.</translation>
+        <source>Cannot obtain a lock on data directory %s. Nengcoin is probably already running.</source>
+        <translation>No es pot bloquejar el directori de dades %s. Probablement Nengcoin ja estigui en execució.</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -2358,8 +2358,8 @@ for example: alertnotify=echo %%s | mail -s &quot;NewEnglandcoin Alert&quot; adm
     </message>
     <message>
         <location line="+3"/>
-        <source>Warning: Please check that your computer&apos;s date and time are correct! If your clock is wrong NewEnglandcoin will not work properly.</source>
-        <translation>Advertència: Si us plau comprovi que la data i hora del seu computador siguin correctes! Si el seu rellotge està mal configurat, NewEnglandcoin no funcionará de manera apropiada.</translation>
+        <source>Warning: Please check that your computer&apos;s date and time are correct! If your clock is wrong Nengcoin will not work properly.</source>
+        <translation>Advertència: Si us plau comprovi que la data i hora del seu computador siguin correctes! Si el seu rellotge està mal configurat, Nengcoin no funcionará de manera apropiada.</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -2608,8 +2608,8 @@ for example: alertnotify=echo %%s | mail -s &quot;NewEnglandcoin Alert&quot; adm
     </message>
     <message>
         <location line="+5"/>
-        <source>SSL options: (see the NewEnglandcoin Wiki for SSL setup instructions)</source>
-        <translation>Opcions SSL: (veure la Wiki de NewEnglandcoin per a instruccions de configuració SSL)</translation>
+        <source>SSL options: (see the Nengcoin Wiki for SSL setup instructions)</source>
+        <translation>Opcions SSL: (veure la Wiki de Nengcoin per a instruccions de configuració SSL)</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -2798,13 +2798,13 @@ for example: alertnotify=echo %%s | mail -s &quot;NewEnglandcoin Alert&quot; adm
     </message>
     <message>
         <location line="+1"/>
-        <source>Error loading wallet.dat: Wallet requires newer version of NewEnglandcoin</source>
-        <translation>Error carregant wallet.dat: El moneder requereix una versió de NewEnglandcoin més moderna</translation>
+        <source>Error loading wallet.dat: Wallet requires newer version of Nengcoin</source>
+        <translation>Error carregant wallet.dat: El moneder requereix una versió de Nengcoin més moderna</translation>
     </message>
     <message>
         <location line="+93"/>
-        <source>Wallet needed to be rewritten: restart NewEnglandcoin to complete</source>
-        <translation>El moneder necesita ser re-escrit: re-inicia NewEnglandcoin per a completar la tasca</translation>
+        <source>Wallet needed to be rewritten: restart Nengcoin to complete</source>
+        <translation>El moneder necesita ser re-escrit: re-inicia Nengcoin per a completar la tasca</translation>
     </message>
     <message>
         <location line="-95"/>
@@ -2863,8 +2863,8 @@ for example: alertnotify=echo %%s | mail -s &quot;NewEnglandcoin Alert&quot; adm
     </message>
     <message>
         <location line="-25"/>
-        <source>Unable to bind to %s on this computer. NewEnglandcoin is probably already running.</source>
-        <translation>Impossible d&apos;unir %s en aquest ordinador. Probablement NewEnglandcoin ja estigui en execució.</translation>
+        <source>Unable to bind to %s on this computer. Nengcoin is probably already running.</source>
+        <translation>Impossible d&apos;unir %s en aquest ordinador. Probablement Nengcoin ja estigui en execució.</translation>
     </message>
     <message>
         <location line="+64"/>

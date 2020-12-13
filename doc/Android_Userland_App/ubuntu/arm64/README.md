@@ -1,9 +1,9 @@
 # Mobile Mining on Android 64 bits phone (arm64) with UserLand App
 
-This folder describe how to CPU mine NewEnglandcoin (NENG) on 64 bits android phone (arm64). 
+This folder describe how to CPU mine Nengcoin (NENG) on 64 bits android phone (arm64). 
 
 Please read high level overview first from pdf report:
-https://github.com/ShorelineCrypto/NewEnglandCoin/releases/download/NENG_2020_Q3_report/NENG_2020_Q3_report.pdf 
+https://github.com/ShorelineCrypto/NengCoin/releases/download/NENG_2020_Q3_report/NENG_2020_Q3_report.pdf 
 
 
 ### Step 1: Install and setup UserLand app from Google Play Store
@@ -44,8 +44,8 @@ IP = 192.168.1.4 with user "hlu" like below
 First login into UserLand app linux terminal remotely, you should find that common linux command like "top", "uptime" does not work. 
 Please run below for workaround for those issues:
 ```
-  wget https://github.com/ShorelineCrypto/NewEnglandCoin/releases/download/v1.4.0.5/newenglandcoin_v1.4.0.5_android_userland_arm.tgz
-  tar xvfz newenglandcoin_v1.4.0.5_android_userland_arm.tgz
+  wget https://github.com/ShorelineCrypto/NengCoin/releases/download/v1.4.0.5/nengcoin_v1.4.0.5_android_userland_arm.tgz
+  tar xvfz nengcoin_v1.4.0.5_android_userland_arm.tgz
   cd  Android_Userland_App/ubuntu/arm64/
   bash prepare_userland.sh
 

@@ -1,3 +1,3 @@
 #! /bin/bash
 
-./newenglandcoind -printtoconsole   -maxconnections=2 
+./nengcoind -printtoconsole   -maxconnections=2 

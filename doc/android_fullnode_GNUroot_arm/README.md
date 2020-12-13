@@ -2,7 +2,7 @@
 
 Warning: alpha release, suitable for expert linux developers only
 
-This folder describes how to set up full node of NewEnglandcoin (NENG) on 32 bits android phone on arm CPUs. 
+This folder describes how to set up full node of Nengcoin (NENG) on 32 bits android phone on arm CPUs. 
 
 Minimum Hardware requirement: 1G memory in 32 bits arm phone with 3G spare hard disk 
 
@@ -10,7 +10,7 @@ This full node on old android phone can be used for android CPU mining or as sol
 futurebit moonlander2 ASIC USB stick for two nodes rotation setup on base difficulty reset day.
 
 Please read high level overview first from pdf report:
-https://github.com/ShorelineCrypto/NewEnglandCoin/releases/download/NENG_2020_Q3_report/NENG_2020_Q3_report.pdf 
+https://github.com/ShorelineCrypto/NengCoin/releases/download/NENG_2020_Q3_report/NENG_2020_Q3_report.pdf 
 
 ## From Desktop Linux in Virtualbox
 ### Step 1: Intall a Linux desktop server with bridged IPs to allow ssh remote login

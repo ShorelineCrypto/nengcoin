@@ -1,12 +1,12 @@
 # Mobile Mining on Android phone arm64 or armhf with UserLand App
 
-This folder describe how to CPU mine NewEnglandcoin (NENG) in android phone on 64 bits (arm64) or 32 bits (armhf) through UserLand app inside a linux terminal.  UserLand app is an open-source app that can run linux inside your android phone. 
+This folder describe how to CPU mine Nengcoin (NENG) in android phone on 64 bits (arm64) or 32 bits (armhf) through UserLand app inside a linux terminal.  UserLand app is an open-source app that can run linux inside your android phone. 
 
 - Minimum hardware requirement: 2G memory phone with 3G spare hard disk. 
 - Software Required: UserLand app from Google Play Store or F-Droid
 
 Please read high level overview first from pdf report:
-https://github.com/ShorelineCrypto/NewEnglandCoin/releases/download/NENG_2020_Q3_report/NENG_2020_Q3_report.pdf 
+https://github.com/ShorelineCrypto/NengCoin/releases/download/NENG_2020_Q3_report/NENG_2020_Q3_report.pdf 
 
 For CPU mining steps and optimization with cheetah_Cpuminer, please checkout: 
 https://github.com/ShorelineCrypto/cheetah_cpuminer
@@ -33,7 +33,7 @@ Above information from terminal should give you clear idea whether you have arm6
 
 ## Debian or Ubuntu?
 
-UserLand app offers 4 linux distros (Alpine, Arch, Debian, Ubuntu). Currently for NewEnglandcoin android mining, two distros are supported and tested: Debian and Ubuntu. 
+UserLand app offers 4 linux distros (Alpine, Arch, Debian, Ubuntu). Currently for Nengcoin android mining, two distros are supported and tested: Debian and Ubuntu. 
 
 UserLand Debian runs Debian 10 (buster) on arm64/armhf.  UserLand ubuntu runs Ubuntu 18.04 on arm64/armhf.  The UserLand LXDE or XFCE desktop installation session uses Debian. 
 
@@ -72,7 +72,7 @@ See attached picture in this folder "tab.gif".  Tab key in android is the charac
 
 Here is easier way with tab:
 ```
-   cd  newenglandcoin_v1.4.0_u16_arm64
+   cd  nengcoin_v1.4.0_u16_arm64
 
 ```
   Typing above long word in android phone is close to impossible. An easier way to do is:
@@ -80,7 +80,7 @@ Here is easier way with tab:
 ```
    cd  newe-finger push TAB key
 ```
-After you push TAB afer word "newe" , the android UserLand linux terminal should behave like linux in server/desktop with the full file/folder name "newenglandcoin_v1.4.0_u16_arm64" auto populated for you. 
+After you push TAB afer word "newe" , the android UserLand linux terminal should behave like linux in server/desktop with the full file/folder name "nengcoin_v1.4.0_u16_arm64" auto populated for you. 
 
 #### Arrow up or down key for history
 
@@ -119,16 +119,16 @@ Now you can let the cheetah cpuminer running with the phone cord connected to ch
  "Enable X11 forwarding" for the userland login setting. Save the login session with X11 enabled, start VcXsrv in windows, 
  re-login into phone with putty and type below command lines:
  ```
- hlu@localhost:~$ cd newenglandcoin_v1.4.0_u16_arm64
- hlu@localhost:~/newenglandcoin_v1.4.0_u16_arm64$ ./newenglandcoin-qt &
+ hlu@localhost:~$ cd nengcoin_v1.4.0_u16_arm64
+ hlu@localhost:~/nengcoin_v1.4.0_u16_arm64$ ./nengcoin-qt &
 ```
  Above command inside putty will pop the QT GUI wallet in windows 10 with VcXsrv running. Wait for a while for the QT wallet to fully show up in windows, and then you can control the wallet inside phone from windows 10.
  - macOS with XQuartz. Download, install free software "XQuartz". Log out and re-login. Open up mac terminal:
  ```
  $ ssh -XY hlu@192.168.1.98 -p 2022
  -----login in phone----
- hlu@localhost:~$ cd newenglandcoin_v1.4.0_u16_arm64
- hlu@localhost:~/newenglandcoin_v1.4.0_u16_arm64$ ./newenglandcoin-qt &
+ hlu@localhost:~$ cd nengcoin_v1.4.0_u16_arm64
+ hlu@localhost:~/nengcoin_v1.4.0_u16_arm64$ ./nengcoin-qt &
 ```
 Above in mac terminal will pop up android phone NENG QT GUI wallet in macOS desktop. 
 
@@ -136,8 +136,8 @@ Above in mac terminal will pop up android phone NENG QT GUI wallet in macOS desk
 ```
  honglu@MX $ ssh -XY hlu@192.168.1.98 -p 2022
  -----login in phone----
- hlu@localhost:~$ cd newenglandcoin_v1.4.0_u16_arm64
- hlu@localhost:~/newenglandcoin_v1.4.0_u16_arm64$ ./newenglandcoin-qt &
+ hlu@localhost:~$ cd nengcoin_v1.4.0_u16_arm64
+ hlu@localhost:~/nengcoin_v1.4.0_u16_arm64$ ./nengcoin-qt &
 ```
 Above in linux desktop terminal will pop android phone NENG QT wallet in linux desktop remotely.
 

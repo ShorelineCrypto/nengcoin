@@ -8,7 +8,7 @@ cryptographic software written by Eric Young ([eay@cryptsoft.com](mailto:eay@cry
 
 # Docker Image
 
-A docker file "Dockerfile-ubuntu" for compiling NewEnglandcoin (NENG) in ubuntu 16.04 is provided here. You can pull down a docker image built on this docker file by 
+A docker file "Dockerfile-ubuntu" for compiling Nengcoin (NENG) in ubuntu 16.04 is provided here. You can pull down a docker image built on this docker file by 
 below docker command. 
 
 For x86_64:
@@ -24,8 +24,8 @@ For armhf:
 
 Currently, only Ubuntu 16.04 or Debian 7 (Wheezy) / 8 (Jessie) are described below for compiling wallet from source. 
 
-Newer versions of various linux distros are supported on binary wallet download only. Please check out v1.4.0.3 release ( https://github.com/ShorelineCrypto/NewEnglandCoin/releases/tag/v1.4.0.3 ) or follow web README page at each subfolder under:
-https://github.com/ShorelineCrypto/NewEnglandCoin/tree/master/doc
+Newer versions of various linux distros are supported on binary wallet download only. Please check out v1.4.0.3 release ( https://github.com/ShorelineCrypto/NengCoin/releases/tag/v1.4.0.3 ) or follow web README page at each subfolder under:
+https://github.com/ShorelineCrypto/NengCoin/tree/master/doc
 
 The list of Linux distros currently supported on binary download on x86_64 platform:
 
@@ -134,14 +134,14 @@ symbols, which reduces the executable size by about 90%.
 
 
 
-## NewEnglandcoin Linux BUILD NOTES on Ubuntu 16.04
+## Nengcoin Linux BUILD NOTES on Ubuntu 16.04
 
-Headless newenglandcoin CLI
+Headless nengcoin CLI
 
 ```
 cd src
 make -f makefile.unix USE_UPNP=1
-strip newenglandcoind
+strip nengcoind
 
 ```
 
@@ -159,7 +159,7 @@ in Ubuntu 18.04.  This could be complicated. Without custome method, a simple ap
 
 An easier way is simply using Ubuntu 16.04 compiled binary files, then compile a boost library version 1.58.0 in Ubuntu 18.04
 
-* (1) Download Ubuntu 16.04 binary files from release from https://github.com/ShorelineCrypto/NewEnglandCoin/releases
+* (1) Download Ubuntu 16.04 binary files from release from https://github.com/ShorelineCrypto/NengCoin/releases
 
 * (2) Compile boost v1.58.0 library in Ubuntu 18.04 with below steps:
 
@@ -201,9 +201,9 @@ EOF
 
 For actual NENG core wallet compiling, run below in Debian wheezy or jessie:
 ```
-   cd NewEnglandCoin/src
+   cd NengCoin/src
    make -f makefile.debian USE_UPNP=1
-   strip newenglandcoind
+   strip nengcoind
    
    cd ..
    cp bitcoin-qt.pro.debian  bitcoin-qt.pro

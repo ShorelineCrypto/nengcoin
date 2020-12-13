@@ -24,7 +24,7 @@ Release Process
 
 ##perform gitian builds
 
- From a directory containing the newenglandcoin source, gitian-builder and gitian.sigs
+ From a directory containing the nengcoin source, gitian-builder and gitian.sigs
   
 	export SIGNER=(your gitian key, ie bluematt, sipa, etc)
 	export VERSION=0.8.7
@@ -42,69 +42,69 @@ Release Process
 	wget 'http://downloads.sourceforge.net/project/boost/boost/1.55.0/boost_1_55_0.tar.bz2'
 	wget 'http://download.qt-project.org/official_releases/qt/4.8/4.8.5/qt-everywhere-opensource-src-4.8.5.tar.gz'
 	cd ..
-	./bin/gbuild ../newenglandcoin/contrib/gitian-descriptors/boost-win32.yml
+	./bin/gbuild ../nengcoin/contrib/gitian-descriptors/boost-win32.yml
 	mv build/out/boost-*.zip inputs/
-	./bin/gbuild ../newenglandcoin/contrib/gitian-descriptors/deps-win32.yml
+	./bin/gbuild ../nengcoin/contrib/gitian-descriptors/deps-win32.yml
 	mv build/out/bitcoin*.zip inputs/
-	./bin/gbuild ../newenglandcoin/contrib/gitian-descriptors/qt-win32.yml
+	./bin/gbuild ../nengcoin/contrib/gitian-descriptors/qt-win32.yml
 	mv build/out/qt*.zip inputs/
 
- Build newenglandcoind and newenglandcoin-qt on Linux32, Linux64, and Win32:
+ Build nengcoind and nengcoin-qt on Linux32, Linux64, and Win32:
   
-	./bin/gbuild --commit newenglandcoin=v${VERSION} ../newenglandcoin/contrib/gitian-descriptors/gitian.yml
-	./bin/gsign --signer $SIGNER --release ${VERSION} --destination ../gitian.sigs/ ../newenglandcoin/contrib/gitian-descriptors/gitian.yml
+	./bin/gbuild --commit nengcoin=v${VERSION} ../nengcoin/contrib/gitian-descriptors/gitian.yml
+	./bin/gsign --signer $SIGNER --release ${VERSION} --destination ../gitian.sigs/ ../nengcoin/contrib/gitian-descriptors/gitian.yml
 	pushd build/out
-	zip -r newenglandcoin-${VERSION}-linux.zip *
-	mv newenglandcoin-${VERSION}-linux.zip ../../
+	zip -r nengcoin-${VERSION}-linux.zip *
+	mv nengcoin-${VERSION}-linux.zip ../../
 	popd
-	./bin/gbuild --commit newenglandcoin=v${VERSION} ../newenglandcoin/contrib/gitian-descriptors/gitian-win32.yml
-	./bin/gsign --signer $SIGNER --release ${VERSION}-win32 --destination ../gitian.sigs/ ../newenglandcoin/contrib/gitian-descriptors/gitian-win32.yml
+	./bin/gbuild --commit nengcoin=v${VERSION} ../nengcoin/contrib/gitian-descriptors/gitian-win32.yml
+	./bin/gsign --signer $SIGNER --release ${VERSION}-win32 --destination ../gitian.sigs/ ../nengcoin/contrib/gitian-descriptors/gitian-win32.yml
 	pushd build/out
-	zip -r newenglandcoin-${VERSION}-win32.zip *
-	mv newenglandcoin-${VERSION}-win32.zip ../../
+	zip -r nengcoin-${VERSION}-win32.zip *
+	mv nengcoin-${VERSION}-win32.zip ../../
 	popd
 
   Build output expected:
 
-  1. linux 32-bit and 64-bit binaries + source (newenglandcoin-${VERSION}-linux-gitian.zip)
-  2. windows 32-bit binary, installer + source (newenglandcoin-${VERSION}-win32-gitian.zip)
+  1. linux 32-bit and 64-bit binaries + source (nengcoin-${VERSION}-linux-gitian.zip)
+  2. windows 32-bit binary, installer + source (nengcoin-${VERSION}-win32-gitian.zip)
   3. Gitian signatures (in gitian.sigs/${VERSION}[-win32]/(your gitian key)/
 
 repackage gitian builds for release as stand-alone zip/tar/installer exe
 
 **Linux .tar.gz:**
 
-	unzip newenglandcoin-${VERSION}-linux-gitian.zip -d newenglandcoin-${VERSION}-linux
-	tar czvf newenglandcoin-${VERSION}-linux.tar.gz newenglandcoin-${VERSION}-linux
-	rm -rf newenglandcoin-${VERSION}-linux
+	unzip nengcoin-${VERSION}-linux-gitian.zip -d nengcoin-${VERSION}-linux
+	tar czvf nengcoin-${VERSION}-linux.tar.gz nengcoin-${VERSION}-linux
+	rm -rf nengcoin-${VERSION}-linux
 
 **Windows .zip and setup.exe:**
 
-	unzip newenglandcoin-${VERSION}-win32-gitian.zip -d newenglandcoin-${VERSION}-win32
-	mv newenglandcoin-${VERSION}-win32/newenglandcoin-*-setup.exe .
-	zip -r newenglandcoin-${VERSION}-win32.zip bitcoin-${VERSION}-win32
-	rm -rf newenglandcoin-${VERSION}-win32
+	unzip nengcoin-${VERSION}-win32-gitian.zip -d nengcoin-${VERSION}-win32
+	mv nengcoin-${VERSION}-win32/nengcoin-*-setup.exe .
+	zip -r nengcoin-${VERSION}-win32.zip bitcoin-${VERSION}-win32
+	rm -rf nengcoin-${VERSION}-win32
 
 **Perform Mac build:**
 
   OSX binaries are created on a dedicated 32-bit, OSX 10.6.8 machine.
-  NewEnglandcoin 0.8.x is built with MacPorts.  0.9.x will be Homebrew only.
+  Nengcoin 0.8.x is built with MacPorts.  0.9.x will be Homebrew only.
 
 	qmake RELEASE=1 USE_UPNP=1 USE_QRCODE=1
 	make
 	export QTDIR=/opt/local/share/qt4  # needed to find translations/qt_*.qm files
 	T=$(contrib/qt_translations.py $QTDIR/translations src/qt/locale)
 	python2.7 share/qt/clean_mac_info_plist.py
-	python2.7 contrib/macdeploy/macdeployqtplus NewEnglandcoin-Qt.app -add-qt-tr $T -dmg -fancy contrib/macdeploy/fancy.plist
+	python2.7 contrib/macdeploy/macdeployqtplus Nengcoin-Qt.app -add-qt-tr $T -dmg -fancy contrib/macdeploy/fancy.plist
 
- Build output expected: NewEnglandcoin-Qt.dmg
+ Build output expected: Nengcoin-Qt.dmg
 
 ###Next steps:
 
 * Code-sign Windows -setup.exe (in a Windows virtual machine) and
   OSX Bitcoin-Qt.app (Note: only Gavin has the code-signing keys currently)
 
-* update newenglandcoin.org version
+* update nengcoin.org version
   make sure all OS download links go to the right versions
 
 * update forum version
