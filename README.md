@@ -14,10 +14,11 @@ and decentralize on mining to allow diversified mining rigs across CPUs, GPUs, A
 
 Major releases features:
  - v0.8.7.5 litecoin clone, ASIC dominant mining
- - v1.1.x support CPU Minings on Windows, Linux or MacOS
- - v1.2.x start restrictions on big ASIC rigs
- - v1.3.x scrypt randomSpike release
- - v1.4.x enable mobile mining on chromebooks and android phones (both 64 bits arm64 and 32 bits arm)
+ - v1.1.x Support CPU Minings on Windows, Linux or MacOS
+ - v1.2.x Start restrictions on big ASIC rigs
+ - v1.3.x Scrypt randomSpike release
+ - v1.4.x Enable mobile mining on chromebooks and android phones
+ - v1.5.x Android phone mining 2.0, cheetah diff 10x
 
 Note: all above versions have "0.8.7.5" version tag in QT wallet.  The downloaded files should have correct version on file names.
 
