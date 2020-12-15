@@ -67,7 +67,9 @@ Enable or not, NENG GUI and CLI wallet was tested to be working in MacOS Catalin
 ### Step 5: Install macOs QT wallet and cli wallet
 With typical mac method, drag and drop to install GUI dmg software to application or any other folder. Unzip the CLI software and install it at your preferred location. 
 
-Copy the conf file to your NewEngalndcoin data directory by running below at terminal:
+For first time NENG user only to create data folder. If you have never ran NENG wallet before,  click QT wallet file first, run for a 1 minute, then shut down the wallet.
+
+Copy the conf file to your Nengcoin data directory by running below at terminal:
 
 ```
     cp  nengcoin.conf  ~/Library/'Application Support'/Nengcoin/
