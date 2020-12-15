@@ -1,0 +1,15 @@
+For existing NewEnglandcoin Wallet user
+
+If you are existing NENG user and you want to avoid long wallet syncing time. You can perform 
+the steps on your old wallet files for the v1.5.0 hard fork upgrade. 
+
+Step 1 - Back up your existing wallet file. 
+         Save the wallet file into some where. Use Qt wallet safe method File -> Backup Wallet to do that. 
+
+Step 2 - Open up mac terminal, perform below command to mv your old data folder to new folder. 
+
+         mv  ~/Library/'Application Support'/NewEnglandcoin  ~/Library/'Application Support'/Nengcoin
+         cp  nengcoin.conf  ~/Library/'Application Support'/Nengcoin/
+
+Step 2 - Open up Nengcoin QT or CLI wallet, your old NENG coins should show up in the wallet.
+         
