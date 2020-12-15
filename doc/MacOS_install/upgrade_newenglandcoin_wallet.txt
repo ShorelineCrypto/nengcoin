@@ -1,6 +1,6 @@
 For existing old NewEnglandcoin Wallet user
 
-If you are existing NewEnglandcoin user and you can avoid long wallet syncing time by using old data files. You can perform 
+If you are existing NewEnglandcoin user, you can avoid long wallet syncing time by using old data files. You can perform 
 below steps on your old wallet files for the v1.5.0 hard fork upgrade. 
 
 Step 1 - Back up your existing wallet file. 
