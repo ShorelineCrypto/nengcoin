@@ -24,7 +24,7 @@ Note: all above versions have "0.8.7.5" version tag in QT wallet.  The downloade
 
 Bitcointalk Ann: https://bitcointalk.org/index.php?topic=5027091.0
 
-Reddit: https://www.reddit.com/r/NengCoin/
+Reddit: https://www.reddit.com/r/nengcoin/
 
 DISCORD: https://discordapp.com/invite/UPeBwgs
 
