@@ -10,6 +10,6 @@ Please run below shell script in terminal for installing dependencies and librar
 
 ## Step 2: download the binary wallet and enjoy:
 ```
-  wget https://github.com/ShorelineCrypto/NengCoin/releases/download/v1.5.0.0/nengcoin_v1.5.0.0_ubuntu16.04.tgz
+  wget https://github.com/ShorelineCrypto/nengcoin/releases/download/v1.5.0.0/nengcoin_v1.5.0.0_ubuntu16.04.tgz
   tar xvfz nengcoin_v1.5.0.0_ubuntu16.04.tgz
 ```
