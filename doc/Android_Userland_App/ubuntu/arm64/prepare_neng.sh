@@ -13,7 +13,7 @@ sudo apt -y install git
 sudo apt -y install python-pip
 sudo pip install python-bitcoinrpc
 
-wget https://github.com/ShorelineCrypto/NengCoin/releases/download/v1.4.0/ubuntu16.04_boost1.58_arm64.tgz
+wget https://github.com/ShorelineCrypto/NewEnglandCoin/releases/download/v1.4.0/ubuntu16.04_boost1.58_arm64.tgz
 tar xvfz ubuntu16.04_boost1.58_arm64.tgz
 sudo rm -rf /opt/boost1.58
 sudo mv boost1.58  /opt/
@@ -21,6 +21,6 @@ sudo mv boost1.58.conf  /etc/ld.so.conf.d/
 sudo ldconfig
 
 git clone https://github.com/ShorelineCrypto/cheetah_cpuminer.git
-wget  https://github.com/ShorelineCrypto/NengCoin/releases/download/v1.4.0/nengcoin_v1.4.0_u16_arm64.tgz
-tar xvfz nengcoin_v1.4.0_u16_arm64.tgz
+wget  https://github.com/ShorelineCrypto/nengcoin/releases/download/v1.5.0.2/nengcoin_v1.5.0.2_u16_arm64.tgz
+tar xvfz nengcoin_v1.5.0.2_u16_arm64.tgz 
 
