@@ -2,9 +2,6 @@
 
 This folder describe how to CPU mine Nengcoin (NENG) on 64 bits android phone (arm64). 
 
-Please read high level overview first from pdf report:
-https://github.com/ShorelineCrypto/NengCoin/releases/download/NENG_2020_Q3_report/NENG_2020_Q3_report.pdf 
-
 
 ### Step 1: Install and setup UserLand app from Google Play Store
 
@@ -34,9 +31,9 @@ username/password picked at port 2022
 A screen shot of putty was provided. 
 
 For linux or MacOS,  you can remote login with ssh from command line at port 2022. For example 
-IP = 192.168.1.4 with user "hlu" like below 
+IP = 192.168.1.98 with user "hlu" like below 
 ```
-  ssh hlu@192.168.1.4 -p 2022
+  ssh hlu@192.168.1.98 -p 2022
 ```
 
 ## Now you can run below commands from putty from windows 10 or ssh from MacOS or Linux
@@ -44,8 +41,8 @@ IP = 192.168.1.4 with user "hlu" like below
 First login into UserLand app linux terminal remotely, you should find that common linux command like "top", "uptime" does not work. 
 Please run below for workaround for those issues:
 ```
-  wget https://github.com/ShorelineCrypto/NengCoin/releases/download/v1.4.0.5/nengcoin_v1.4.0.5_android_userland_arm.tgz
-  tar xvfz nengcoin_v1.4.0.5_android_userland_arm.tgz
+  wget https://github.com/ShorelineCrypto/nengcoin/releases/download/v1.5.0.2/nengcoin_v1.5.0.2_android_userland_arm.tgz
+  tar xvfz nengcoin_v1.5.0.2_android_userland_arm.tgz
   cd  Android_Userland_App/ubuntu/arm64/
   bash prepare_userland.sh
 

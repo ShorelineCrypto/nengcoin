@@ -19,7 +19,6 @@ sudo apt-get -y install python-setuptools
 sudo pip install python-bitcoinrpc
 
 sudo apt-get -y install git
-#git clone https://github.com/ShorelineCrypto/NengCoin.git
 git clone https://github.com/ShorelineCrypto/cheetah_cpuminer.git
 
 
@@ -27,29 +26,33 @@ git clone https://github.com/ShorelineCrypto/cheetah_cpuminer.git
 # This can not be compiled and used for NENG wallet
 # we obtained binaries from Ubuntu 18.04 and bundled in one folder
 
-wget https://github.com/ShorelineCrypto/NengCoin/releases/download/v1.4.0.5/ubuntu18_armhf_db-4.8.30.NC.tgz
+wget https://github.com/ShorelineCrypto/NewEnglandCoin/releases/download/v1.4.0.5/ubuntu18_armhf_db-4.8.30.NC.tgz
 tar xvfz ubuntu18_armhf_db-4.8.30.NC.tgz
+sudo rm -rf /opt/db-4.8.30.NC
 sudo mv db-4.8.30.NC  /opt/
 sudo mv bitcoin.conf /etc/ld.so.conf.d/
 
-wget https://github.com/ShorelineCrypto/NengCoin/releases/download/v1.4.0.5/ubuntu18_armhf_miniupnpc.tgz
+wget https://github.com/ShorelineCrypto/NewEnglandCoin/releases/download/v1.4.0.5/ubuntu18_armhf_miniupnpc.tgz
 tar xvfz ubuntu18_armhf_miniupnpc.tgz
+sudo rm -rf /opt/miniupnpc
 sudo mv miniupnpc /opt/
 sudo mv miniupnpc.conf /etc/ld.so.conf.d/ 
 
-wget https://github.com/ShorelineCrypto/NengCoin/releases/download/v1.4.0.5/ubuntu16_armhf_openssl1.0.tgz
+wget https://github.com/ShorelineCrypto/NewEnglandCoin/releases/download/v1.4.0.5/ubuntu16_armhf_openssl1.0.tgz
 tar xvfz ubuntu16_armhf_openssl1.0.tgz
+sudo rm -rf /opt/openssl
 sudo mv openssl  /opt/
 sudo mv openssl.conf /etc/ld.so.conf.d/ 
 
-wget https://github.com/ShorelineCrypto/NengCoin/releases/download/v1.4.0.5/ubuntu16_armhf_boost1.58.tgz 
+wget https://github.com/ShorelineCrypto/NewEnglandCoin/releases/download/v1.4.0.5/ubuntu16_armhf_boost1.58.tgz 
 tar xvfz ubuntu16_armhf_boost1.58.tgz
+sudo rm -rf /opt/boost1.58
 sudo mv boost1.58  /opt/
 sudo mv boost1.58.conf  /etc/ld.so.conf.d/
 ## link all libary files
 sudo ldconfig
 
 ## download the binary wallet and enjoy:
-wget https://github.com/ShorelineCrypto/NengCoin/releases/download/v1.4.0.5/nengcoin_v1.4.0.5_ubuntu16_armhf.tgz
-tar xvfz nengcoin_v1.4.0.5_ubuntu16_armhf.tgz
+wget https://github.com/ShorelineCrypto/nengcoin/releases/download/v1.5.0.2/nengcoin_v1.5.0.2_u16_armhf.tgz
+tar xvfz nengcoin_v1.5.0.2_u16_armhf.tgz
 

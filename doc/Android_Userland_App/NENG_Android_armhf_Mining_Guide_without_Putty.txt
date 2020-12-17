@@ -1,4 +1,4 @@
-NENG Android Mining Guide without Putty for Armhf Platform
+NENG Android Mining Guide without Putty on Armhf Platform
     1. Download Userland App from Google Playstore
     2. Open Userland App and select Ubuntu
     3. Create an account if you do not have
@@ -7,15 +7,15 @@ NENG Android Mining Guide without Putty for Armhf Platform
     6. Enter command line
         a.  sudo apt update
         b. sudo apt install wget ssh
-        c. wget https://github.com/ShorelineCrypto/NengCoin/releases/download/v1.4.0.5/nengcoin_v1.4.0.5_android_userland_arm.tgz
-        d. tar xvfz nengcoin_v1.4.0.5_android_userland_arm.tgz
+        c. wget https://github.com/ShorelineCrypto/nengcoin/releases/download/v1.5.0.2/nengcoin_v1.5.0.2_android_userland_arm.tgz
+        d. tar xvfz nengcoin_v1.5.0.2_android_userland_arm.tgz
         e. cd  Android_Userland_App/ubuntu/armhf/
         f. bash prepare_userland.sh
     7. Relogin Userland Ubuntu
     8. Enter command line
         a. cd  Android_Userland_App/ubuntu/armhf/
         b. bash prepare_neng.sh
-        c. cd nengcoin_v1.4.0.5_ubuntu16_armhf/
+        c. cd nengcoin_v1.5.0.2_u16_armhf/
         d. ./nengcoind (create wallet folder & files)
         e. screen (creates another screen so you can check your wallet and mining at the same time using one ssh)
         f. cd
