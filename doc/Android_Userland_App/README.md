@@ -60,7 +60,7 @@ Android is optimized for mobile GUI on top of linux kernel. GNU or regular linux
 
 Putty is windows 10 software to remote login into android UserLand linux at port 2022.  Below main guide mainly use putty to login into android with big screen to type in those linux command line for installation. Alternatively, those command line can also be done without using putty.
 
-Some members reported that putty does not work either because new android versions have security feature to block UserLand app port or routers block those ports.  Member @Sefia at discord provided this word documents here "NENG_Android_Mining_Guide_without_Putty.docx" on how to do android mining without using putty. 
+Some members reported that putty does not work either because new android versions have security feature to block UserLand app port or routers block those ports.  Member @Sefia at discord provided this word documents "NENG_Android_arm64_Mining_Guide_without_Putty.txt" at current folder on how to do android mining without using putty. 
 
 
 ## FAQ - Linux Terminal Basic Keyboard
