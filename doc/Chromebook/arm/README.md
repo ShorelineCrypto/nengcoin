@@ -39,13 +39,13 @@ By default, Linux (Beta) or Crostini runs a container for Debian 10. Below has b
 ### arm64
 
 ```
-   tar xvfz nengcoin_v1.4.0.5_chromeos_arm.tgz
+   tar xvfz nengcoin_v1.5.0.3_chromeos_arm.tgz
    cd Chromebook/arm/arm64/debian
    bash  prepare_neng.sh
 ```
 ### armhf
 ```
-   tar xvfz nengcoin_v1.4.0.5_chromeos_arm.tgz
+   tar xvfz nengcoin_v1.5.0.3_chromeos_arm.tgz
    cd Chromebook/arm/armhf/debian
    bash  prepare_neng.sh
 ```
@@ -67,9 +67,16 @@ to run a full node and for the purpose of CPU mining.
 
 ## run GUI QT wallet in Chromebook
 
- ```
- hlu@penguin:~$ cd  nengcoin_v1.4.0.5_ubuntu16_armhf
- hlu@penguin:~/nengcoin_v1.4.0.5_ubuntu16_armhf$ ./nengcoin-qt &
+### arm64
+```
+ hlu@penguin:~$ cd  nengcoin_v1.5.0.2_u16_arm64
+ hlu@penguin:~/nengcoin_v1.5.0.2_u16_arm64$ ./nengcoin-qt &
+```
+
+### armhf
+```
+ hlu@penguin:~$ cd  nengcoin_v1.5.0.2_u16_armhf
+ hlu@penguin:~/nengcoin_v1.5.0.2_u16_armhf$ ./nengcoin-qt &
 ```
 
 Above in linux terminal will pop NENG QT wallet in chromebook desktop.
@@ -94,7 +101,7 @@ TAB key is powerful in linux command line.  Typing full word of file or folder n
 
 Here is easier way with tab:
 ```
-   cd  nengcoin_v1.4.0_u16_arm64
+   cd  nengcoin_v1.5.0.2_u16_arm64
 
 ```
   Typing above long word in Chromebook is close to impossible. An easier way to do is:
@@ -102,7 +109,7 @@ Here is easier way with tab:
 ```
    cd  newe-finger push TAB key
 ```
-After you push TAB afer word "newe" , the chromebook linux terminal should behave like linux in server/desktop with the full file/folder name "nengcoin_v1.4.0_u16_arm64" auto populated for you. 
+After you push TAB afer word "nengc" , the chromebook linux terminal should behave like linux in server/desktop with the full file/folder name "nengcoin_v1.5.0.2_u16_arm64" auto populated for you. 
 
 #### Arrow up or down key for history
 
