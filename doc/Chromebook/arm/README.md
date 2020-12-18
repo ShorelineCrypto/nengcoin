@@ -107,7 +107,7 @@ Here is easier way with tab:
   Typing above long word in Chromebook is close to impossible. An easier way to do is:
 
 ```
-   cd  newe-finger push TAB key
+   cd  nengc-finger push TAB key
 ```
 After you push TAB afer word "nengc" , the chromebook linux terminal should behave like linux in server/desktop with the full file/folder name "nengcoin_v1.5.0.2_u16_arm64" auto populated for you. 
 
