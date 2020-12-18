@@ -1,5 +1,5 @@
 # Mobile Full Node on Android 32 bits phone (armel or armhf) with GNUroot App
-
+Warning: depreciated, Nengcoin v1.5.x no longer support GNUroot App
 Warning: alpha release, suitable for expert linux developers only
 
 This folder describes how to set up full node of Nengcoin (NENG) on 32 bits android phone on arm CPUs. 
