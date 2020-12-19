@@ -16,8 +16,9 @@ sudo apt -y install python-pip
 sudo pip install python-bitcoinrpc
 
 ## reuse prior compiled boost libary for Ubuntu 18.04
-wget https://github.com/ShorelineCrypto/NengCoin/releases/download/v1.4.0/ubuntu16.04_boost1.58_arm64.tgz
+wget https://github.com/ShorelineCrypto/NewEnglandCoin/releases/download/v1.4.0/ubuntu16.04_boost1.58_arm64.tgz
 tar xvfz ubuntu16.04_boost1.58_arm64.tgz
+sudo rm -rf /opt/boost1.58
 sudo mv boost1.58  /opt/
 sudo mv boost1.58.conf  /etc/ld.so.conf.d/
 ## link all libary files
