@@ -22,6 +22,8 @@ Major releases features:
 
 Note: all above versions have "0.8.7.5" version tag in QT wallet.  The downloaded files should have correct version on file names.
 
+Web Page: https://nengcoin.org/
+
 Bitcointalk Ann: https://bitcointalk.org/index.php?topic=5027091.0
 
 Reddit: https://www.reddit.com/r/nengcoin/
