@@ -8,7 +8,7 @@ Authors
 * Douglas Huff <dhuff@jrbobdobbs.org>
 * Colin Dean <cad@cad.cx>
 * Gavin Andresen <gavinandresen@gmail.com>
-* Hong Lu <DISCORD/Bitcointalk/Marinecoin Forum ID: honglu69>
+* Hong Lu <DISCORD/Bitcointalk/Reddit Forum ID: honglu69>
 
 License
 -------
