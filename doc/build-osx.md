@@ -68,14 +68,19 @@ Perform below command line steps within terminal
 Follow brew:
 https://brew.sh/
 
+Homebrew version 2.7.0 was major change in that several features of NENG core wallet installation on macOS no longer works. 
+(1) boost@1.55 was deleted from repository
+(2) brew switch is changed to brew link, which itself has limited feature by disabling many cases.
+Below is workaround to fix Homebrew post v2.7.0 version installation for NENG macOS wallet. 
 
 ----------------------
 
 #### Install dependencies using Homebrew
 
 ```
+        brew install wget
         brew install gcc@5
-        brew install boost@1.55 miniupnpc openssl@1.0 berkeley-db4
+        brew install miniupnpc openssl berkeley-db4
         
 ```
 
@@ -85,12 +90,15 @@ openssl default installation  is now version 1.1, incompatible with NENG.
 
  A workaround solution from
  https://stackoverflow.com/questions/59006602/dyld-library-not-loaded-usr-local-opt-openssl-lib-libssl-1-0-0-dylib
+ 
+ post homebrew v2.7.0 equivalent
 
 ```    
      brew install openssl@1.0
-     cd /usr/local/Cellar/openssl@1.1
-     ln -s ../openssl@1.0/1.0.2t
-     brew switch openssl 1.0.2t
+     cd /usr/local/opt
+     rm openssl
+     ln -s ../Cellar/openssl@1.0/1.0.2t openssl
+    
 ```
 
 
@@ -132,12 +140,28 @@ export CPPFLAGS="-I/usr/local/opt/openssl/include"
 miniupnpc 2.1 is default, which is incompatible with NENG.
 
 ```
-   cd /usr/local/Cellar/miniupnpc
-   tar xvfz ~/Downloads/miniupnpc-1.9.20150206.tar.gz
-   mv miniupnpc-1.9.20150206  1.9
-   cd 1.9
+   wget http://miniupnp.free.fr/files/download.php?file=miniupnpc-1.9.20150206.tar.gz
+   tar xvfz "download.php?file=miniupnpc-1.9.20150206.tar.gz"  
+   rm -rf  /usr/local/Cellar/miniupnpc/1.9
+   mv miniupnpc-1.9.20150206  /usr/local/Cellar/miniupnpc/1.9
+   cd /usr/local/Cellar/miniupnpc/1.9
    make upnpc-static
-   brew switch  miniupnpc  1.9
+   cd /usr/local/opt
+   rm miniupnpc 
+   ln -s ../Cellar/miniupnpc/1.9 miniupnpc 
+```
+
+#### Install boost@1.55
+
+```
+   wget https://github.com/ShorelineCrypto/nengcoin/releases/download/v1.5.0.0/boost_1.55.0_osx10.11.tgz
+   tar xvfz  boost_1.55.0_osx10.11.tgz
+   mkdir -p /usr/local/Cellar/boost@1.55/1.55.0_1
+   rm -rf  /usr/local/Cellar/boost@1.55/1.55.0_1
+   mv 1.55.0_1 /usr/local/Cellar/boost@1.55/
+   cd /usr/local/opt
+   rm boost@1.55
+   ln -s ../Cellar/boost@1.55/1.55.0_1 boost@1.55
 ```
 
 ##  for both MacOS Mojave or El Capitan
