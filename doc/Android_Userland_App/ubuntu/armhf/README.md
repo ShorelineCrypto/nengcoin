@@ -67,6 +67,13 @@ You can fix the hardware incompatible issue by removing binary boost1.58 and com
   bash compile_boost1.58.sh
 ```
 
+Note for some old android on armhf, below compiling option is required according to member @DisPlume in discord:
+```
+  DisPlume 01/31/2021 at 8:38 AM
+I do need to add "architecture=arm address-model=64" after the every ./b2 command in compile_boost1.58.sh. Otherwise, it would not compile successfully.
+
+```
+
 ### Step 7: Optimize CPU mining with Cheetah_Cpuminer:
 
 Run below to find cpu info and memory information:
