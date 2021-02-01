@@ -36,6 +36,7 @@ The list of Linux distros currently supported on binary download on x86_64 platf
 -  MX Linux 19.2
 -  Linux Mint 20
 -  openSUSE Tumbleweed
+-  Solus
 -  Ubuntu 20.04/18.04/16.04
 
 The list of Linux distros currently supported on binary download on arm64 platform:
@@ -173,10 +174,10 @@ An easier way is simply using Ubuntu 16.04 compiled binary files, then compile a
     sudo ldconfig 
 ```
 
-Note for some old android on armhf, below compiling option is required according to member @DisPlume in discord:
+Note for some android phone on arm64, below compiling option is required according to member @DisPlume in discord:
 ```
 DisPlume 1/31/2021 at 8:38 AM
-I do need to add "architecture=arm address-model=64" after the every ./b2 command in compile_boost1.58.sh. Otherwise, it would not compile successfully.Today at 8:38 AM
+I do need to add "architecture=arm address-model=64" after the every ./b2 command in compile_boost1.58.sh. Otherwise, it would not compile successfully.
 ```
 
 * (3) Re-run either QT or command line Ubuntu 16.04 files, all should work in Ubuntu 18.04, tested to be good on arm64 cloud vps
