@@ -1145,10 +1145,10 @@ unsigned int static GetNextWorkRequired(const CBlockIndex* pindexLast, const CBl
         {
             // If the new block's timestamp is more than 2 * 1 minutes
             // then allow mining of a cheetah block.
-            // Cheetah difficulty = 0.00244
+            // Cheetah difficulty = 0.0078
                 CBigNum bnCheetah;
                 bnCheetah = bnProofOfWorkLimit;
-                bnCheetah /= 10;
+                bnCheetah /= 32;
                 unsigned int nCheetah = bnCheetah.GetCompact();
 
 
@@ -1164,12 +1164,12 @@ unsigned int static GetNextWorkRequired(const CBlockIndex* pindexLast, const CBl
             }
         
         }
-       // v1.6.0 randomSpike fork after blocks 2427150
-       // fixed big CPU miner timestamp attack on NENG v1.5.x
-        else if (pindex->nHeight > 2427150) {
+       // v1.6.0 randomSpike fork after block 2595420 
+       // fixed big CPU miner timestamp attack
+        else if (pindex->nHeight > 2595420) {
             CBigNum bnCheetah;
             bnCheetah = bnProofOfWorkLimit;
-            bnCheetah /= 10;
+            bnCheetah /= 32;
             unsigned int nCheetah = bnCheetah.GetCompact();
             
             CBigNum bnSpike;
