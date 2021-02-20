@@ -78,9 +78,9 @@ Here is easier way with tab:
   Typing above long word in android phone is close to impossible. An easier way to do is:
 
 ```
-   cd  newe-finger push TAB key
+   cd  neng-finger push TAB key
 ```
-After you push TAB afer word "newe" , the android UserLand linux terminal should behave like linux in server/desktop with the full file/folder name "nengcoin_v1.5.0.2_u16_arm64" auto populated for you. 
+After you push TAB afer word "neng" , the android UserLand linux terminal should behave like linux in server/desktop with the full file/folder name "nengcoin_v1.5.0.2_u16_arm64" auto populated for you. 
 
 #### Arrow up or down key for history
 

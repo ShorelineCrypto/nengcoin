@@ -1,6 +1,9 @@
 #! /bin/bash
 
-   brew switch openssl 1.1.1i
-   brew switch miniupnpc 2.1
+   brew link openssl@1.1
+
+   cd /usr/local/opt
+   rm miniupnpc 
+   ln -s ../Cellar/miniupnpc/2.1 miniupnpc 
 
    openssl version 
