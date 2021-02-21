@@ -1164,9 +1164,9 @@ unsigned int static GetNextWorkRequired(const CBlockIndex* pindexLast, const CBl
             }
         
         }
-       // v1.6.0 randomSpike fork after block 2595420 
+       // v1.6.0 randomSpike fork after block 2655920 
        // fixed big CPU miner timestamp attack
-        else if (pindex->nHeight > 2595420) {
+        else if (pindex->nHeight > 2655920) {
             CBigNum bnCheetah;
             bnCheetah = bnProofOfWorkLimit;
             bnCheetah /= 32;
