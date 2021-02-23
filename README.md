@@ -19,6 +19,7 @@ Major releases features:
  - v1.3.x Scrypt randomSpike release
  - v1.4.x Enable mobile mining on chromebooks and android phones
  - v1.5.x Android phone mining 2.0, cheetah diff 10x
+ - v1.6.x Fix CPU Timestamp Attack, cheetah diff 3x
 
 Note: all above versions have "0.8.7.5" version tag in QT wallet.  The downloaded files should have correct version on file names.
 
