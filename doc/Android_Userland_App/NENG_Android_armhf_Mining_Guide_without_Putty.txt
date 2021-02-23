@@ -4,7 +4,8 @@ NENG Android Mining Guide without Putty
     3. Create a SSH account if you do not have
     4. Log in Ubuntu
     5. Copy and paste all the Linux command lines to your whatsapp / chat app / email and save them to your notes on your mobile phone for easier copy and paste
-    6. Enter command line
+    6. Check for the latest version of the wallet first and replace the link version accordingly
+    7. Enter command line
         a. uname -a (or uname -m : to determine whether your phone is 64bit or 32bit. This guide is using armhf / 32bit folder. For 64bit please install the files in arm64 folder instead of armhf folder)
         b. sudo apt update
         c. sudo apt install wget ssh
@@ -12,8 +13,8 @@ NENG Android Mining Guide without Putty
         e. tar xvfz nengcoin_v1.6.0.2_android_userland_arm.tgz
         f. cd  Android_Userland_App/ubuntu/armhf/
         g. bash prepare_userland.sh
-    7. Relogin Userland Ubuntu
-    8. Enter command line
+    8. Relogin Userland Ubuntu
+    9. Enter command line
         a. cd  Android_Userland_App/ubuntu/armhf/
         b. bash prepare_neng.sh
         c. cd nengcoin_v1.6.0.2_u16_armhf/
