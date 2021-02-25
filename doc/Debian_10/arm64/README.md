@@ -1,6 +1,6 @@
 # Debian 9 (stretch)/ 10 (buster) on arm64
 
-This folder describe a binary support from v1.5.0.3 NENG core release on Debian 9 (stretch) / 10 (buster).
+This folder describe a binary support from v1.6.0.3 NENG core release on Debian 9 (stretch) / 10 (buster).
 
 ## Step 1: Install library files
 Please run below shell script in terminal for installing dependencies and library files:
@@ -12,6 +12,6 @@ Please run below shell script in terminal for installing dependencies and librar
 ```
 # Download NENG wallet and Enjoy!
 
-  wget  https://github.com/ShorelineCrypto/nengcoin/releases/download/v1.5.0.2/nengcoin_v1.5.0.2_u16_arm64.tgz
-  tar xvfz nengcoin_v1.5.0.2_u16_arm64.tgz
+  wget  https://github.com/ShorelineCrypto/nengcoin/releases/download/v1.6.0.2/nengcoin_v1.6.0.2_u16_arm64.tgz
+  tar xvfz nengcoin_v1.6.0.2_u16_arm64.tgz
 ```
