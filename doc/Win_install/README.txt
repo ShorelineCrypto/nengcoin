@@ -11,7 +11,7 @@ Installation Guide of Nengcoin windows 10 Wallet for mining
      Note for CPU/GPU/USB ASIC solo miners: your wallet needs to be fully synced to latest block before you can solo mine NENG. 
 
 
-Installation Guide of Nengcoin windows 10 Wallet for Reserved Wallet
+Installation Guide of Nengcoin windows 10 Wallet for Reserve Wallet
 
 Mining wallet can go bad quickly. It is recommended to transfer your mined coin to reserve wallet for backup daily. 
 The reserve wallet shall have no mining. Put password and backup the reserve wallet regularly. 
