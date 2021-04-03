@@ -20,8 +20,10 @@ Major releases features:
  - v1.4.x Enable mobile mining on chromebooks and android phones
  - v1.5.x Android phone mining 2.0, cheetah diff 10x
  - v1.6.x Fix CPU Timestamp Attack, cheetah diff 3x
+ - v1.7.x Fix CPU/FPGA Timestamp Attack, cheetah diff 3x, spike diff 10x
 
-Note: all above versions have "0.8.7.5" version tag in QT wallet.  The downloaded files should have correct version on file names.
+Current version: v0.8.8.0_randomSpike-v1.7.x (shorthand: v1.7.x)
+Note: all above versions have "0.8.8.0" version tag in QT wallet.  The downloaded files should have correct version on file names.
 
 Web Page: https://nengcoin.org/
 
