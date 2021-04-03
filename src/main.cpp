@@ -1174,7 +1174,7 @@ unsigned int static GetNextWorkRequired(const CBlockIndex* pindexLast, const CBl
             
             CBigNum bnSpike;
             bnSpike = bnProofOfWorkLimit;
-            bnSpike /= 1000000000;
+            bnSpike /= 10000000000;
             unsigned int nSpike = bnSpike.GetCompact();
             
             if (pblock->nTime > pindexLast->nTime + nTargetSpacing*2)
