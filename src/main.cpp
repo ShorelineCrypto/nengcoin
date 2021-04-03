@@ -1187,14 +1187,9 @@ unsigned int static GetNextWorkRequired(const CBlockIndex* pindexLast, const CBl
                     pindex = pindex->pprev;
                 return pindex->nBits;
             }
-            else if  ((pblock->nTime > pindexLast->nTime - 2) && (pblock->nTime < pindexLast->nTime + 2))
-            {
-                // Spike difficulty
-                return nSpike;
-            }
             else
             {
-                // randomSpike difficulty between 2 - 9 seconds
+                // randomSpike difficulty between +- 9 seconds
                                 
                 const CBlockIndex* tmpindex = pindexLast;
                 tmpindex = tmpindex->pprev;
