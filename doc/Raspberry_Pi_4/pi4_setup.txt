@@ -23,36 +23,8 @@
 
 CHTA Wallet & Cheeta CHTA Miner(arm64/arch64)
 
-> wget https://github.com/ShorelineCrypto/cheetahcoin/releases/download/v1.6.0.4/cheetahcoin_v1.6.0.4_debian10_arm64.tgz
-> tar xvzf cheetahcoin_v1.6.0.4_debian10_arm64.tgz
-> cd Debian_10/arm64/
-> bash prepare_neng.sh
-> wget  https://github.com/ShorelineCrypto/cheetahcoin/releases/download/v1.6.0.2/cheetahcoin_v1.6.0.2_u16_arm64.tgz
-> tar xvfz cheetahcoin_v1.6.0.2_u16_arm64.tgz
-> cd cheetahcoin_v1.6.0.2_u16_arm64/
-> ./cheetahcoind (this creates a wallet)
-> screen
-> cd ..
-> cp  -r cheetah_cpuminer  cheetah_cpuminer_chta
-> cd cheetah_cpuminer_chta
-> git pull
-> git checkout chta
-> vi cheetahcoin.conf (press i, change as needed, followed by ESC)
-> :wq
-> cp cheetahcoin.conf  ~/.cheetahcoin/
-> press ctrl + a + d
-> ./cheetahcoind (start wallet)
-> ./cheetahcoind getmininginfo (check up too most recent full block e.g. https://cfpool.eu/explorer/CHTA)
-
-When at the latest block start mining by 
-> screen -r
-> sh cheetah.sh
-> press ctrl+a+d
-
-Good luck (below 2 lines useful)
-./Debian_10/arm64/cheetahcoin_v1.6.0.2_u16_arm64/cheetahcoind getmininginfo
-./Debian_10/arm64/cheetahcoin_v1.6.0.2_u16_arm64/cheetahcoind getbalance
-
+Please checkout Cheetahcoin github below for detailed installation guide:
+https://github.com/ShorelineCrypto/cheetahcoin/blob/master/doc/Raspberry_Pi_4/pi4_setup.txt
 
 NENG Wallet & Cheeta NENG Miner (arm64/arch64)
 > cd ~
