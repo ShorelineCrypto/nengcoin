@@ -1165,7 +1165,7 @@ unsigned int static GetNextWorkRequired(const CBlockIndex* pindexLast, const CBl
         
         }
        // v1.8.0 randomSpike fork after block 3135490
-       // fixed CPU+FPGA miner timestamp attack on shallow reset diff = 0.03 range
+       // hard fork and reverse 51% attack on SXC
         else if (pindex->nHeight > 3135490) {
             CBigNum bnCheetah;
             bnCheetah = bnProofOfWorkLimit;
