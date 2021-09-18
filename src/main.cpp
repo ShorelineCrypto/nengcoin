@@ -1164,9 +1164,9 @@ unsigned int static GetNextWorkRequired(const CBlockIndex* pindexLast, const CBl
             }
         
         }
-       // v1.9.0 randomSpike fork after block 3243882
+       // v1.9.0 randomSpike fork after block 3143888
        // 1st second restriction on ASIC removed
-        else if (pindex->nHeight > 3243882) {
+        else if (pindex->nHeight > 3143888) {
             CBigNum bnCheetah;
             bnCheetah = bnProofOfWorkLimit;
             bnCheetah /= 100;
