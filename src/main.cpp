@@ -1164,9 +1164,10 @@ unsigned int static GetNextWorkRequired(const CBlockIndex* pindexLast, const CBl
             }
         
         }
-       // v1.8.0 randomSpike fork after block 3135490
-       // hard fork and reverse 51% attack on SXC
-        else if (pindex->nHeight > 3135490) {
+       // v1.8.0 randomSpike fork after block 3138122 emergeny code for USB ASIC
+       // v1.8.0 hard fork fork after block 3138102
+       // hard fork and fix 51% attack on SXC to new chain for 20 blocks
+        else if (pindex->nHeight > 3138122) {
             CBigNum bnCheetah;
             bnCheetah = bnProofOfWorkLimit;
             bnCheetah /= 100;
@@ -1187,9 +1188,14 @@ unsigned int static GetNextWorkRequired(const CBlockIndex* pindexLast, const CBl
                     pindex = pindex->pprev;
                 return pindex->nBits;
             }
+            else if  ((pblock->nTime > pindexLast->nTime - 2) && (pblock->nTime < pindexLast->nTime + 2))
+            {
+                // Spike difficulty
+                return nSpike;
+            }
             else
             {
-                // randomSpike difficulty between +- 9 seconds
+                // randomSpike difficulty between 2 - 9 seconds
                                 
                 const CBlockIndex* tmpindex = pindexLast;
                 tmpindex = tmpindex->pprev;
@@ -1205,6 +1211,13 @@ unsigned int static GetNextWorkRequired(const CBlockIndex* pindexLast, const CBl
 
 
             }
+        }
+       // v1.8.0 hard fork fork after block 3138102
+       // hard fork and fix 51% attack on SXC to new chain for 20 blocks
+        else if (pindex->nHeight > 3138102) {
+            CBigNum bnCheetah;
+            bnCheetah = bnProofOfWorkLimit;       
+            return nCheetah;
         }
        // v1.7.0 randomSpike fork after block 2759040
        // fixed CPU+FPGA miner timestamp attack on shallow reset diff = 0.03 range
