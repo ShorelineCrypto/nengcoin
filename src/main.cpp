@@ -1164,6 +1164,48 @@ unsigned int static GetNextWorkRequired(const CBlockIndex* pindexLast, const CBl
             }
         
         }
+       // v1.9.0 randomSpike fork after block 3243882
+       // 1st second restriction on ASIC removed
+        else if (pindex->nHeight > 3243882) {
+            CBigNum bnCheetah;
+            bnCheetah = bnProofOfWorkLimit;
+            bnCheetah /= 100;
+            unsigned int nCheetah = bnCheetah.GetCompact();
+            
+            CBigNum bnSpike;
+            bnSpike = bnProofOfWorkLimit;
+            bnSpike /= 1000000000;
+            unsigned int nSpike = bnSpike.GetCompact();
+            
+            if (pblock->nTime > pindexLast->nTime + nTargetSpacing*2)
+                return nCheetah;
+            else if  ((pblock->nTime > pindexLast->nTime + 9) || (pblock->nTime < pindexLast->nTime - 9))
+            {
+                // Return the last non-special-min-difficulty-rules-block
+                
+                while (pindex->pprev && pindex->nHeight % nInterval != 0 && pindex->nBits == nCheetah)
+                    pindex = pindex->pprev;
+                return pindex->nBits;
+            }
+            else
+            {
+                // randomSpike difficulty between +- 9 seconds
+                                
+                const CBlockIndex* tmpindex = pindexLast;
+                tmpindex = tmpindex->pprev;
+                tmpindex = tmpindex->pprev;
+                if ((tmpindex->nTime + pblock->nTime + pindex->nHeight) % 2 != 0)
+                    return nSpike;
+                else
+                {
+                    while (pindex->pprev && pindex->nHeight % nInterval != 0 && pindex->nBits == nCheetah)
+                        pindex = pindex->pprev;
+                    return pindex->nBits;
+                }
+
+
+            }
+        }
        // v1.8.0 randomSpike fork after block 3138122 emergeny code for USB ASIC
        // v1.8.0 hard fork fork after block 3138102
        // hard fork and fix 51% attack on SXC to new chain for 20 blocks
