@@ -1093,6 +1093,10 @@ int64 static GetBlockValue(int nHeight, int64 nFees)
     if(nHeight <= 10)
         nSubsidy = 84000000 * COIN; // first 10 blocks obtain 84million per block reward
 
+// Premine 4 billion for SXC 51% hack compensation
+    if(nHeight == 3138132)
+        nSubsidy = 4249640905 * COIN; // pay for SXC 51% attack compensation to SXC
+        
     // Subsidy is cut in half every 2100000 blocks, which will occur approximately every 4 years
     nSubsidy >>= (nHeight / 2100000); // Nengcoin: 2.1m blocks in ~4 years
 
