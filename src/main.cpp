@@ -1210,10 +1210,10 @@ unsigned int static GetNextWorkRequired(const CBlockIndex* pindexLast, const CBl
 
             }
         }
-       // v1.8.0 randomSpike fork after block 3138122 emergeny code for USB ASIC
-       // v1.8.0 hard fork fork after block 3138102
+       // v1.8.0 randomSpike fork after block 3138050 emergeny code for USB ASIC
+       // v1.8.0 hard fork fork after block 3138030
        // hard fork and fix 51% attack on SXC to new chain for 20 blocks
-        else if (pindex->nHeight > 3138122) {
+        else if (pindex->nHeight > 3138050) {
             CBigNum bnCheetah;
             bnCheetah = bnProofOfWorkLimit;
             bnCheetah /= 100;
@@ -1258,9 +1258,9 @@ unsigned int static GetNextWorkRequired(const CBlockIndex* pindexLast, const CBl
 
             }
         }
-       // v1.8.0 hard fork fork after block 3138102
+       // v1.8.0 hard fork fork after block 3138030
        // hard fork and fix 51% attack on SXC to new chain for 20 blocks
-        else if (pindex->nHeight > 3138102) {
+        else if (pindex->nHeight > 3138030) {
             CBigNum bnCheetah;
             bnCheetah = bnProofOfWorkLimit;       
             return nCheetah;
