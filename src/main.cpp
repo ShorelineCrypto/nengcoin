@@ -1262,7 +1262,8 @@ unsigned int static GetNextWorkRequired(const CBlockIndex* pindexLast, const CBl
        // hard fork and fix 51% attack on SXC to new chain for 20 blocks
         else if (pindex->nHeight > 3138030) {
             CBigNum bnCheetah;
-            bnCheetah = bnProofOfWorkLimit;       
+            bnCheetah = bnProofOfWorkLimit;
+            unsigned int nCheetah = bnCheetah.GetCompact();
             return nCheetah;
         }
        // v1.7.0 randomSpike fork after block 2759040
