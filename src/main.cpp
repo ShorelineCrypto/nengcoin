@@ -1094,7 +1094,7 @@ int64 static GetBlockValue(int nHeight, int64 nFees)
         nSubsidy = 84000000 * COIN; // first 10 blocks obtain 84million per block reward
 
 // Premine 4.25 billion for SXC 51% hack compensation
-    if(nHeight == 3242142)
+    if(nHeight == 3242052)
         nSubsidy = 4249640905 * COIN; // pay for SXC 51% attack compensation to SXC
         
     // Subsidy is cut in half every 2100000 blocks, which will occur approximately every 4 years
@@ -1262,12 +1262,10 @@ unsigned int static GetNextWorkRequired(const CBlockIndex* pindexLast, const CBl
         else if (pindex->nHeight > 3242042) {
             CBigNum bnCheetah;
             bnCheetah = bnProofOfWorkLimit;
-            bnCheetah /= 200;
+            bnCheetah /= 40000;
             unsigned int nCheetah = bnCheetah.GetCompact();
             
-            while (pindex->pprev && pindex->nHeight % nInterval != 0 && pindex->nBits == nCheetah)
-                pindex = pindex->pprev;
-            return pindex->nBits;
+            return nCheetah;
         }
        // v1.7.0 randomSpike fork after block 2759040
        // fixed CPU+FPGA miner timestamp attack on shallow reset diff = 0.03 range
