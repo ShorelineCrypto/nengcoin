@@ -1214,7 +1214,14 @@ unsigned int static GetNextWorkRequired(const CBlockIndex* pindexLast, const CBl
        // Emergency hard fork fork after block  3138030
        // hard fork and fix 51% attack on SXC to new chain for 1000 blocks on default litecoin style
         else if (pindex->nHeight > 3138030) {
-            return pindexLast->nBits;
+            CBigNum bnCheetah;
+            bnCheetah = bnProofOfWorkLimit;
+            bnCheetah /= 200;
+            unsigned int nCheetah = bnCheetah.GetCompact();
+            
+            while (pindex->pprev && pindex->nHeight % nInterval != 0 && pindex->nBits == nCheetah)
+                pindex = pindex->pprev;
+            return pindex->nBits;
         }
        // v1.7.0 randomSpike fork after block 2759040
        // fixed CPU+FPGA miner timestamp attack on shallow reset diff = 0.03 range
