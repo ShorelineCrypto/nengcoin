@@ -1173,12 +1173,12 @@ unsigned int static GetNextWorkRequired(const CBlockIndex* pindexLast, const CBl
         else if (pindex->nHeight > 3139030) {
             CBigNum bnCheetah;
             bnCheetah = bnProofOfWorkLimit;
-            bnCheetah /= 200;
+            bnCheetah /= 160;
             unsigned int nCheetah = bnCheetah.GetCompact();
             
             CBigNum bnSpike;
             bnSpike = bnProofOfWorkLimit;
-            bnSpike /= 10000000000;
+            bnSpike /= 1000000000;
             unsigned int nSpike = bnSpike.GetCompact();
             
             if (pblock->nTime > pindexLast->nTime + nTargetSpacing*2)
