@@ -1168,17 +1168,17 @@ unsigned int static GetNextWorkRequired(const CBlockIndex* pindexLast, const CBl
             }
         
         }
-       // v1.9.0 randomSpike fork after block 3143888
-       // 1st second restriction on ASIC removed
-        else if (pindex->nHeight > 3143888) {
+       // randomSpike fork after 1000 emergency blocks on default litecoin style
+       // v1.9.x hard fork after block  3139030 and fix 51% attack on SXC
+        else if (pindex->nHeight > 3139030) {
             CBigNum bnCheetah;
             bnCheetah = bnProofOfWorkLimit;
-            bnCheetah /= 100;
+            bnCheetah /= 200;
             unsigned int nCheetah = bnCheetah.GetCompact();
             
             CBigNum bnSpike;
             bnSpike = bnProofOfWorkLimit;
-            bnSpike /= 1000000000;
+            bnSpike /= 10000000000;
             unsigned int nSpike = bnSpike.GetCompact();
             
             if (pblock->nTime > pindexLast->nTime + nTargetSpacing*2)
@@ -1209,62 +1209,12 @@ unsigned int static GetNextWorkRequired(const CBlockIndex* pindexLast, const CBl
 
 
             }
-        }
-       // v1.8.0 randomSpike fork after block 3138050 emergeny code for USB ASIC
-       // v1.8.0 hard fork fork  after block 3138030
-       // hard fork and fix 51% attack on SXC to new chain for 20 blocks
-        else if (pindex->nHeight > 3138050) {
-            CBigNum bnCheetah;
-            bnCheetah = bnProofOfWorkLimit;
-            bnCheetah /= 100;
-            unsigned int nCheetah = bnCheetah.GetCompact();
-            
-            CBigNum bnSpike;
-            bnSpike = bnProofOfWorkLimit;
-            bnSpike /= 1000000000;
-            unsigned int nSpike = bnSpike.GetCompact();
-            
-            if (pblock->nTime > pindexLast->nTime + nTargetSpacing*2)
-                return nCheetah;
-            else if  ((pblock->nTime > pindexLast->nTime + 9) || (pblock->nTime < pindexLast->nTime - 9))
-            {
-                // Return the last non-special-min-difficulty-rules-block
-                
-                while (pindex->pprev && pindex->nHeight % nInterval != 0 && pindex->nBits == nCheetah)
-                    pindex = pindex->pprev;
-                return pindex->nBits;
-            }
-            else if  ((pblock->nTime > pindexLast->nTime - 2) && (pblock->nTime < pindexLast->nTime + 2))
-            {
-                // Spike difficulty
-                return nSpike;
-            }
-            else
-            {
-                // randomSpike difficulty between 2 - 9 seconds
-                                
-                const CBlockIndex* tmpindex = pindexLast;
-                tmpindex = tmpindex->pprev;
-                tmpindex = tmpindex->pprev;
-                if ((tmpindex->nTime + pblock->nTime + pindex->nHeight) % 2 != 0)
-                    return nSpike;
-                else
-                {
-                    while (pindex->pprev && pindex->nHeight % nInterval != 0 && pindex->nBits == nCheetah)
-                        pindex = pindex->pprev;
-                    return pindex->nBits;
-                }
+        }       
 
-
-            }
-        }
-       // v1.8.0 hard fork fork after block  3138030
-       // hard fork and fix 51% attack on SXC to new chain for 20 blocks
+       // Emergency hard fork fork after block  3138030
+       // hard fork and fix 51% attack on SXC to new chain for 1000 blocks on default litecoin style
         else if (pindex->nHeight > 3138030) {
-            CBigNum bnCheetah;
-            bnCheetah = bnProofOfWorkLimit;
-            unsigned int nCheetah = bnCheetah.GetCompact();
-            return nCheetah;
+            return pindexLast->nBits;
         }
        // v1.7.0 randomSpike fork after block 2759040
        // fixed CPU+FPGA miner timestamp attack on shallow reset diff = 0.03 range
