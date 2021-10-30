@@ -1183,7 +1183,7 @@ unsigned int static GetNextWorkRequired(const CBlockIndex* pindexLast, const CBl
             
             if (pblock->nTime > pindexLast->nTime + nTargetSpacing*2)
                 return nCheetah;
-            else if  ((pblock->nTime > pindexLast->nTime + 9) || (pblock->nTime < pindexLast->nTime - 9))
+            else if  ((pblock->nTime > pindexLast->nTime + 40) || (pblock->nTime < pindexLast->nTime - 40))
             {
                 // Return the last non-special-min-difficulty-rules-block
                 
@@ -1191,9 +1191,9 @@ unsigned int static GetNextWorkRequired(const CBlockIndex* pindexLast, const CBl
                     pindex = pindex->pprev;
                 return pindex->nBits;
             }
-            else
+            else if ((pblock->nTime > pindexLast->nTime + 30) || (pblock->nTime < pindexLast->nTime - 30))
             {
-                // randomSpike difficulty between +- 9 seconds
+                // 50% random chance on Spike difficulty between  +- 30 to 40 seconds
                                 
                 const CBlockIndex* tmpindex = pindexLast;
                 tmpindex = tmpindex->pprev;
@@ -1206,12 +1206,58 @@ unsigned int static GetNextWorkRequired(const CBlockIndex* pindexLast, const CBl
                         pindex = pindex->pprev;
                     return pindex->nBits;
                 }
-
-
             }
-        }       
+            else if ((pblock->nTime > pindexLast->nTime + 10) || (pblock->nTime < pindexLast->nTime - 10))
+            {
+                // 75% random chance on Spike difficulty between  +- 10 to 30 seconds
+                                
+                const CBlockIndex* tmpindex = pindexLast;
+                tmpindex = tmpindex->pprev;
+                tmpindex = tmpindex->pprev;
+                if ((tmpindex->nTime + pblock->nTime + pindex->nHeight) % 4 != 0)
+                    return nSpike;
+                else
+                {
+                    while (pindex->pprev && pindex->nHeight % nInterval != 0 && pindex->nBits == nCheetah)
+                        pindex = pindex->pprev;
+                    return pindex->nBits;
+                }
+            }
+            else if ((pblock->nTime > pindexLast->nTime + 1) || (pblock->nTime < pindexLast->nTime - 1))
+            {
+                // 87.5% random chance on Spike difficulty between  +- 2 to 10 seconds
+                                
+                const CBlockIndex* tmpindex = pindexLast;
+                tmpindex = tmpindex->pprev;
+                tmpindex = tmpindex->pprev;
+                if ((tmpindex->nTime + pblock->nTime + pindex->nHeight) % 8 != 0)
+                    return nSpike;
+                else
+                {
+                    while (pindex->pprev && pindex->nHeight % nInterval != 0 && pindex->nBits == nCheetah)
+                        pindex = pindex->pprev;
+                    return pindex->nBits;
+                }
+            }
+            else
+            {
+                // 98% random chance on Spike difficulty between +- 1 seconds
+                                
+                const CBlockIndex* tmpindex = pindexLast;
+                tmpindex = tmpindex->pprev;
+                tmpindex = tmpindex->pprev;
+                if ((tmpindex->nTime + pblock->nTime + pindex->nHeight) % 50 != 0)
+                    return nSpike;
+                else
+                {
+                    while (pindex->pprev && pindex->nHeight % nInterval != 0 && pindex->nBits == nCheetah)
+                        pindex = pindex->pprev;
+                    return pindex->nBits;
+                }
+            }
+        }
 
-       // Emergency hard fork fork after block  3138030
+       // Emergency hard fork after block  3138030
        // hard fork and fix 51% attack on SXC to new chain for 1000 blocks on default litecoin style
         else if (pindex->nHeight > 3138030) {
             CBigNum bnCheetah;
