@@ -1094,7 +1094,7 @@ int64 static GetBlockValue(int nHeight, int64 nFees)
         nSubsidy = 84000000 * COIN; // first 10 blocks obtain 84million per block reward
 
 // Premine 4.25 billion for SXC 51% hack compensation
-    if(nHeight == 3241888)
+    if(nHeight == 3242142)
         nSubsidy = 4249640905 * COIN; // pay for SXC 51% attack compensation to SXC
         
     // Subsidy is cut in half every 2100000 blocks, which will occur approximately every 4 years
@@ -1169,8 +1169,8 @@ unsigned int static GetNextWorkRequired(const CBlockIndex* pindexLast, const CBl
         
         }
        // randomSpike fork after 1000 emergency blocks on default litecoin style
-       // v1.9.x hard fork after block  3242878 and fix 51% attack on SXC
-        else if (pindex->nHeight > 3242878) {
+       // v1.9.x hard fork after block  3243042 and fix 51% attack on SXC
+        else if (pindex->nHeight > 3243042) {
             CBigNum bnCheetah;
             bnCheetah = bnProofOfWorkLimit;
             bnCheetah /= 160;
@@ -1257,9 +1257,9 @@ unsigned int static GetNextWorkRequired(const CBlockIndex* pindexLast, const CBl
             }
         }
 
-       // Emergency hard fork after block  3241878
+       // Emergency hard fork after block  3242042
        // hard fork and fix 51% attack on SXC to new chain for 1000 blocks on default litecoin style
-        else if (pindex->nHeight > 3241878) {
+        else if (pindex->nHeight > 3242042) {
             CBigNum bnCheetah;
             bnCheetah = bnProofOfWorkLimit;
             bnCheetah /= 200;
