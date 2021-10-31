@@ -1,6 +1,6 @@
-# Ubuntu 20.04 / Linux Mint 20 on x86_64
+# Fedora 34 Workstation on x86_64
 
-This folder describe a binary support from v1.9.0.1 NENG core release for Ubuntu 20.04 and Linux Mint 20 on AMD64 platform 
+This folder describe a binary support from v1.9.0.1 NENG core release on Fedora 34 Workstation.
 
 ## Step 1: Install library files
 Please run below shell script in terminal for installing dependencies and library files:
