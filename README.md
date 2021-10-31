@@ -23,8 +23,8 @@ Major releases features:
  - v1.7.x Fix CPU/FPGA Timestamp Attack, cheetah diff 6x, spike diff 10x
  - v1.9.x Fix the 51% attack on SXC, cheetah cut in half, spike diff decrease 10x
 
-Current full version name: "0.8.10.0_randomSpike-v1.9.x" (shorthand: "v1.9.x")
-Note: latest different platform wallets have "0.8.10.0" version tag in QT wallet.  The downloaded files should have correct version on file names supporting different hardware devices and OS.
+Current full version name: "1.9.0.0_randomSpike-v1.9.x" (shorthand: "v1.9.x")
+Note: latest different platform wallets have "1.9.0.0" version tag in QT wallet.  The downloaded files should have correct version on file names supporting different hardware devices and OS.
 
 Web Page: https://nengcoin.org/
 
