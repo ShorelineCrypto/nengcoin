@@ -33,18 +33,18 @@ namespace Checkpoints
     //   (no blocks before with a timestamp after, none after with
     //    timestamp before)
     // + Contains no strange transactions
+    // v1.9.x MinWorkBug fix, checkpoint must be on cheetah block or lowest diff block
     static MapCheckpoints mapCheckpoints =
         boost::assign::map_list_of
         (  0, uint256("0x14683bb988bcb69c74276df315c8de108d990fcff07483d5f2a044a3b4a592d8"))
         (  32, uint256("0x0b92cf051ad399aef6967135185f335385dd2d00702e9d8e740662328d856aaf"))
         (  278008, uint256("0xd998f377deb4f6bf1fdd7e627e40c9c6c7e2a62562935892ddd6def99ac751d9"))
-        (  3130193, uint256("0x4358c414d8dae5f48ff352d1dfb5bee34b806df4b8b933c00b7112355cfa0158"))
-        (  3241637, uint256("0x41864bd3232e184b1caa763b291f4af32c9977e61fab47b9c83fabbb7933f6de"))
+        (  3244063, uint256("0xf0f3a907f7f13d549647049f2263a47f5c8a3c938aa9937b8f8d2d880130cbe3"))
         ;
     static const CCheckpointData data = {
         &mapCheckpoints,
-        1635617295, // * UNIX timestamp of last checkpoint block
-        3241637,    // * total number of transactions between genesis and last checkpoint
+        1635727601, // * UNIX timestamp of last checkpoint block
+        3244063,    // * total number of transactions between genesis and last checkpoint
                     //   (the tx=... number in the SetBestChain debug.log lines)
         100.0     // * estimated number of transactions per day after checkpoint
     };
