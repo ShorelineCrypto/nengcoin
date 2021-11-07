@@ -53,6 +53,6 @@ sudo mv boost1.58.conf  /etc/ld.so.conf.d/
 sudo ldconfig
 
 ## download the binary wallet and enjoy:
-wget https://github.com/ShorelineCrypto/nengcoin/releases/download/v1.9.0.2/nengcoin_v1.9.0.2_u16_armhf.tgz
-tar xvfz nengcoin_v1.9.0.2_u16_armhf.tgz
+wget https://github.com/ShorelineCrypto/nengcoin/releases/download/v1.9.1.2/nengcoin_v1.9.1.2_u16_armhf.tgz
+tar xvfz nengcoin_v1.9.1.2_u16_armhf.tgz
 
