@@ -1,7 +1,7 @@
 For existing old NewEnglandcoin Wallet user
 
 If you are existing NewEnglandcoin user, you can avoid long wallet syncing time by using old data files. You can perform 
-below steps on your old wallet files for the v1.9.0 hard fork upgrade. 
+below steps on your old wallet files for the v1.9.1 hard fork upgrade. 
 
 Step 1 - Transfer the mining coins out or Back up your existing wallet file. 
          if you use tablet wallet for mining, make sure either transfer coins out to a reserve
