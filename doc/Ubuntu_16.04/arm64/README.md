@@ -1,6 +1,6 @@
 # Ubuntu 16.04 on arm64 
 
-This folder describe a binary support from v1.9.0.4 NENG core release on Ubuntu 16.04.
+This folder describe a binary support from v1.9.1.4 NENG core release on Ubuntu 16.04.
 
 ## Step 1: Install library files
 Please run below shell script in terminal for installing dependencies and library files:
@@ -10,6 +10,6 @@ Please run below shell script in terminal for installing dependencies and librar
 
 ## Step 2: download the binary wallet and enjoy:
 ```
-  wget  https://github.com/ShorelineCrypto/nengcoin/releases/download/v1.9.0.2/nengcoin_v1.9.0.2_u16_arm64.tgz
-  tar xvfz nengcoin_v1.9.0.2_u16_arm64.tgz
+  wget  https://github.com/ShorelineCrypto/nengcoin/releases/download/v1.9.1.2/nengcoin_v1.9.1.2_u16_arm64.tgz
+  tar xvfz nengcoin_v1.9.1.2_u16_arm64.tgz
 ```
