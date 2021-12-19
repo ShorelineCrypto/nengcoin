@@ -26,6 +26,8 @@ Major releases features:
 Current full version name: "1.9.1.0_randomSpike-v1.9.x" (shorthand: "v1.9.x")
 Note: latest different platform wallets have "1.9.1.0" version tag in QT wallet.  The downloaded files should have correct version on file names supporting different hardware devices and OS.
 
+Community Whitepaper: https://nengcoin.org/knowledgebase/whitepaper-nengcoin/
+
 Web Page: https://nengcoin.org/
 
 Bitcointalk Ann: https://bitcointalk.org/index.php?topic=5027091.0
