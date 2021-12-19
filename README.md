@@ -5,12 +5,12 @@ Nengcoin
 What is Nengcoin?
 ----------------
 
-Nengcoin is a clone of Bitcoin using scrypt as a proof-of-work algorithm with enhanced features to protect against 51% attack 
+Nengcoin is a clone of Litecoin using scrypt as a proof-of-work algorithm with enhanced features to protect against 51% attack 
 and decentralize on mining to allow diversified mining rigs across CPUs, GPUs, ASICs and Android phones.
  - 1 minute block targets
  - subsidy halves in 2.1m blocks (~ 2 to 4 years)
  - ~84 billion total maximum coins
- - 20000 coins per block
+ - 20000 coins per block at start
 
 Major releases features:
  - v0.8.7.5 litecoin clone, ASIC dominant mining
