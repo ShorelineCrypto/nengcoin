@@ -11,51 +11,29 @@ Install the OS X command line tools:
 
 When the popup appears, click `Install`.
 
-Then install [Homebrew](http://brew.sh).
+Then install [Homebrew](https://brew.sh).
 
-Dependencies
-----------------------
+Base build dependencies
+-----------------------
 
-    brew install automake berkeley-db4 libtool boost --c++11 miniupnpc openssl pkg-config protobuf --c++11 qt5 libevent
+```bash
+brew install automake libtool --c++11 pkg-config
+```
 
-In case you want to build the disk image with `make deploy` (.dmg / optional), you need RSVG
- 
-    brew install librsvg
+If you want to build the disk image with `make deploy` (.dmg / optional), you need RSVG
+```bash
+brew install librsvg
+```
 
-NOTE: Building with Qt4 is still supported, however, could result in a broken UI. Building with Qt5 is recommended.
+Building
+--------
 
-Build Litecoin Core
-------------------------
-
-1. Clone the litecoin source code and cd into `litecoin`
-
-        git clone https://github.com/litecoin-project/litecoin
-        cd litecoin
-
-2.  Build litecoin-core:
-
-    Configure and build the headless litecoin binaries as well as the GUI (if Qt is found).
-
-    You can disable the GUI build by passing `--without-gui` to configure.
-
-    In case you want to build the disk image with `make deploy` (.dmg / optional), by passing `--with-gui` to configure.
-    
-        ./autogen.sh
-        ./configure
-        make
-
-3.  It is recommended to build and run the unit tests:
-
-        make check
-
-4.  You can also create a .dmg that contains the .app bundle (optional):
-
-        make deploy
+Follow the instructions in [build-generic](build-generic.md)
 
 Running
 -------
 
-Litecoin Core is now available at `./src/litecoind`
+Litecoin is now available at `./src/litecoind`
 
 Before running, it's recommended you create an RPC configuration file.
 
@@ -78,7 +56,7 @@ Other commands:
 
 Using Qt Creator as IDE
 ------------------------
-You can use Qt Creator as an IDE, for litecoin development.
+You can use Qt Creator as an IDE, for Litecoin development.
 Download and install the community edition of [Qt Creator](https://www.qt.io/download/).
 Uncheck everything except Qt Creator during the installation process.
 
@@ -92,10 +70,3 @@ Uncheck everything except Qt Creator during the installation process.
 8. Select the default "Desktop" kit and select "Clang (x86 64bit in /usr/bin)" as compiler
 9. Select LLDB as debugger (you might need to set the path to your installation)
 10. Start debugging with Qt Creator
-
-Notes
------
-
-* Tested on OS X 10.8 through 10.12 on 64-bit Intel processors only.
-
-* Building with downloaded Qt binaries is not officially supported. See the notes in [#7714](https://github.com/bitcoin/bitcoin/issues/7714)
