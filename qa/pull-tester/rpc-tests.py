@@ -75,10 +75,10 @@ for arg in sys.argv[1:]:
         opts.add(arg)
 
 #Set env vars
-if "LITECOIND" not in os.environ:
-    os.environ["LITECOIND"] = BUILDDIR + '/src/litecoind' + EXEEXT
-if "LITECOINCLI" not in os.environ:
-    os.environ["LITECOINCLI"] = BUILDDIR + '/src/litecoin-cli' + EXEEXT
+if "NENGCOIND" not in os.environ:
+    os.environ["NENGCOIND"] = BUILDDIR + '/src/nengcoind' + EXEEXT
+if "NENGCOINCLI" not in os.environ:
+    os.environ["NENGCOINCLI"] = BUILDDIR + '/src/nengcoin-cli' + EXEEXT
 
 if EXEEXT == ".exe" and "-win" not in opts:
     # https://github.com/bitcoin/bitcoin/commit/d52802551752140cf41f0d9a225a43e84404d3e9

@@ -21,12 +21,12 @@ Before every major release:
 Check out the source code in the following directory hierarchy.
 
     cd /path/to/your/toplevel/build
-    git clone https://github.com/litecoin-project/gitian.sigs.ltc.git
-    git clone https://github.com/litecoin-project/litecoin-detached-sigs.git
+    git clone https://github.com/nengcoin-project/gitian.sigs.ltc.git
+    git clone https://github.com/nengcoin-project/nengcoin-detached-sigs.git
     git clone https://github.com/devrandom/gitian-builder.git
-    git clone https://github.com/litecoin-project/litecoin.git
+    git clone https://github.com/nengcoin-project/nengcoin.git
 
-### Litecoin maintainers/release engineers, update version in sources
+### Nengcoin maintainers/release engineers, update version in sources
 
 Update the following:
 
@@ -63,7 +63,7 @@ Tag version (or release candidate) in git
 
 Setup Gitian descriptors:
 
-    pushd ./litecoin
+    pushd ./nengcoin
     export SIGNER=(your Gitian key, ie bluematt, sipa, etc)
     export VERSION=(new version, e.g. 0.8.0)
     git fetch
@@ -97,7 +97,7 @@ Create the OS X SDK tarball, see the [OS X readme](README_osx.md) for details, a
 By default, Gitian will fetch source files as needed. To cache them ahead of time:
 
     pushd ./gitian-builder
-    make -C ../litecoin/depends download SOURCES_PATH=`pwd`/cache/common
+    make -C ../nengcoin/depends download SOURCES_PATH=`pwd`/cache/common
     popd
 
 Only missing files will be fetched, so this is safe to re-run for each build.
@@ -105,49 +105,49 @@ Only missing files will be fetched, so this is safe to re-run for each build.
 NOTE: Offline builds must use the --url flag to ensure Gitian fetches only from local URLs. For example:
 
     pushd ./gitian-builder
-    ./bin/gbuild --url litecoin=/path/to/litecoin,signature=/path/to/sigs {rest of arguments}
+    ./bin/gbuild --url nengcoin=/path/to/nengcoin,signature=/path/to/sigs {rest of arguments}
     popd
 
 The gbuild invocations below <b>DO NOT DO THIS</b> by default.
 
-### Build and sign Litecoin Core for Linux, Windows, and OS X:
+### Build and sign Nengcoin Core for Linux, Windows, and OS X:
 
     pushd ./gitian-builder
-    ./bin/gbuild --memory 3000 --commit litecoin=v${VERSION} ../litecoin/contrib/gitian-descriptors/gitian-linux.yml
-    ./bin/gsign --signer $SIGNER --release ${VERSION}-linux --destination ../gitian.sigs.ltc/ ../litecoin/contrib/gitian-descriptors/gitian-linux.yml
-    mv build/out/litecoin-*.tar.gz build/out/src/litecoin-*.tar.gz ../
+    ./bin/gbuild --memory 3000 --commit nengcoin=v${VERSION} ../nengcoin/contrib/gitian-descriptors/gitian-linux.yml
+    ./bin/gsign --signer $SIGNER --release ${VERSION}-linux --destination ../gitian.sigs.ltc/ ../nengcoin/contrib/gitian-descriptors/gitian-linux.yml
+    mv build/out/nengcoin-*.tar.gz build/out/src/nengcoin-*.tar.gz ../
 
-    ./bin/gbuild --memory 3000 --commit litecoin=v${VERSION} ../litecoin/contrib/gitian-descriptors/gitian-win.yml
-    ./bin/gsign --signer $SIGNER --release ${VERSION}-win-unsigned --destination ../gitian.sigs.ltc/ ../litecoin/contrib/gitian-descriptors/gitian-win.yml
-    mv build/out/litecoin-*-win-unsigned.tar.gz inputs/litecoin-win-unsigned.tar.gz
-    mv build/out/litecoin-*.zip build/out/litecoin-*.exe ../
+    ./bin/gbuild --memory 3000 --commit nengcoin=v${VERSION} ../nengcoin/contrib/gitian-descriptors/gitian-win.yml
+    ./bin/gsign --signer $SIGNER --release ${VERSION}-win-unsigned --destination ../gitian.sigs.ltc/ ../nengcoin/contrib/gitian-descriptors/gitian-win.yml
+    mv build/out/nengcoin-*-win-unsigned.tar.gz inputs/nengcoin-win-unsigned.tar.gz
+    mv build/out/nengcoin-*.zip build/out/nengcoin-*.exe ../
 
-    ./bin/gbuild --memory 3000 --commit litecoin=v${VERSION} ../litecoin/contrib/gitian-descriptors/gitian-osx.yml
-    ./bin/gsign --signer $SIGNER --release ${VERSION}-osx-unsigned --destination ../gitian.sigs.ltc/ ../litecoin/contrib/gitian-descriptors/gitian-osx.yml
-    mv build/out/litecoin-*-osx-unsigned.tar.gz inputs/litecoin-osx-unsigned.tar.gz
-    mv build/out/litecoin-*.tar.gz build/out/litecoin-*.dmg ../
+    ./bin/gbuild --memory 3000 --commit nengcoin=v${VERSION} ../nengcoin/contrib/gitian-descriptors/gitian-osx.yml
+    ./bin/gsign --signer $SIGNER --release ${VERSION}-osx-unsigned --destination ../gitian.sigs.ltc/ ../nengcoin/contrib/gitian-descriptors/gitian-osx.yml
+    mv build/out/nengcoin-*-osx-unsigned.tar.gz inputs/nengcoin-osx-unsigned.tar.gz
+    mv build/out/nengcoin-*.tar.gz build/out/nengcoin-*.dmg ../
     popd
 
 Build output expected:
 
-  1. source tarball (`litecoin-${VERSION}.tar.gz`)
-  2. linux 32-bit and 64-bit dist tarballs (`litecoin-${VERSION}-linux[32|64].tar.gz`)
-  3. windows 32-bit and 64-bit unsigned installers and dist zips (`litecoin-${VERSION}-win[32|64]-setup-unsigned.exe`, `litecoin-${VERSION}-win[32|64].zip`)
-  4. OS X unsigned installer and dist tarball (`litecoin-${VERSION}-osx-unsigned.dmg`, `litecoin-${VERSION}-osx64.tar.gz`)
+  1. source tarball (`nengcoin-${VERSION}.tar.gz`)
+  2. linux 32-bit and 64-bit dist tarballs (`nengcoin-${VERSION}-linux[32|64].tar.gz`)
+  3. windows 32-bit and 64-bit unsigned installers and dist zips (`nengcoin-${VERSION}-win[32|64]-setup-unsigned.exe`, `nengcoin-${VERSION}-win[32|64].zip`)
+  4. OS X unsigned installer and dist tarball (`nengcoin-${VERSION}-osx-unsigned.dmg`, `nengcoin-${VERSION}-osx64.tar.gz`)
   5. Gitian signatures (in `gitian.sigs.ltc/${VERSION}-<linux|{win,osx}-unsigned>/(your Gitian key)/`)
 
 ### Verify other gitian builders signatures to your own. (Optional)
 
 Add other gitian builders keys to your gpg keyring
 
-    gpg --import litecoin/contrib/gitian-keys/*.pgp
+    gpg --import nengcoin/contrib/gitian-keys/*.pgp
 
 Verify the signatures
 
     pushd ./gitian-builder
-    ./bin/gverify -v -d ../gitian.sigs.ltc/ -r ${VERSION}-linux ../litecoin/contrib/gitian-descriptors/gitian-linux.yml
-    ./bin/gverify -v -d ../gitian.sigs.ltc/ -r ${VERSION}-win-unsigned ../litecoin/contrib/gitian-descriptors/gitian-win.yml
-    ./bin/gverify -v -d ../gitian.sigs.ltc/ -r ${VERSION}-osx-unsigned ../litecoin/contrib/gitian-descriptors/gitian-osx.yml
+    ./bin/gverify -v -d ../gitian.sigs.ltc/ -r ${VERSION}-linux ../nengcoin/contrib/gitian-descriptors/gitian-linux.yml
+    ./bin/gverify -v -d ../gitian.sigs.ltc/ -r ${VERSION}-win-unsigned ../nengcoin/contrib/gitian-descriptors/gitian-win.yml
+    ./bin/gverify -v -d ../gitian.sigs.ltc/ -r ${VERSION}-osx-unsigned ../nengcoin/contrib/gitian-descriptors/gitian-osx.yml
     popd
 
 ### Next steps:
@@ -165,25 +165,25 @@ Commit your signature to gitian.sigs.ltc:
 Wait for Windows/OS X detached signatures:
 
 - Once the Windows/OS X builds each have 3 matching signatures, they will be signed with their respective release keys.
-- Detached signatures will then be committed to the [litecoin-detached-sigs](https://github.com/litecoin-project/litecoin-detached-sigs) repository, which can be combined with the unsigned apps to create signed binaries.
+- Detached signatures will then be committed to the [nengcoin-detached-sigs](https://github.com/nengcoin-project/nengcoin-detached-sigs) repository, which can be combined with the unsigned apps to create signed binaries.
 
 Create (and optionally verify) the signed OS X binary:
 
     pushd ./gitian-builder
-    ./bin/gbuild -i --commit signature=v${VERSION} ../litecoin/contrib/gitian-descriptors/gitian-osx-signer.yml
-    ./bin/gsign --signer $SIGNER --release ${VERSION}-osx-signed --destination ../gitian.sigs.ltc/ ../litecoin/contrib/gitian-descriptors/gitian-osx-signer.yml
-    ./bin/gverify -v -d ../gitian.sigs.ltc/ -r ${VERSION}-osx-signed ../litecoin/contrib/gitian-descriptors/gitian-osx-signer.yml
-    mv build/out/litecoin-osx-signed.dmg ../litecoin-${VERSION}-osx.dmg
+    ./bin/gbuild -i --commit signature=v${VERSION} ../nengcoin/contrib/gitian-descriptors/gitian-osx-signer.yml
+    ./bin/gsign --signer $SIGNER --release ${VERSION}-osx-signed --destination ../gitian.sigs.ltc/ ../nengcoin/contrib/gitian-descriptors/gitian-osx-signer.yml
+    ./bin/gverify -v -d ../gitian.sigs.ltc/ -r ${VERSION}-osx-signed ../nengcoin/contrib/gitian-descriptors/gitian-osx-signer.yml
+    mv build/out/nengcoin-osx-signed.dmg ../nengcoin-${VERSION}-osx.dmg
     popd
 
 Create (and optionally verify) the signed Windows binaries:
 
     pushd ./gitian-builder
-    ./bin/gbuild -i --commit signature=v${VERSION} ../litecoin/contrib/gitian-descriptors/gitian-win-signer.yml
-    ./bin/gsign --signer $SIGNER --release ${VERSION}-win-signed --destination ../gitian.sigs.ltc/ ../litecoin/contrib/gitian-descriptors/gitian-win-signer.yml
-    ./bin/gverify -v -d ../gitian.sigs.ltc/ -r ${VERSION}-win-signed ../litecoin/contrib/gitian-descriptors/gitian-win-signer.yml
-    mv build/out/litecoin-*win64-setup.exe ../litecoin-${VERSION}-win64-setup.exe
-    mv build/out/litecoin-*win32-setup.exe ../litecoin-${VERSION}-win32-setup.exe
+    ./bin/gbuild -i --commit signature=v${VERSION} ../nengcoin/contrib/gitian-descriptors/gitian-win-signer.yml
+    ./bin/gsign --signer $SIGNER --release ${VERSION}-win-signed --destination ../gitian.sigs.ltc/ ../nengcoin/contrib/gitian-descriptors/gitian-win-signer.yml
+    ./bin/gverify -v -d ../gitian.sigs.ltc/ -r ${VERSION}-win-signed ../nengcoin/contrib/gitian-descriptors/gitian-win-signer.yml
+    mv build/out/nengcoin-*win64-setup.exe ../nengcoin-${VERSION}-win64-setup.exe
+    mv build/out/nengcoin-*win32-setup.exe ../nengcoin-${VERSION}-win32-setup.exe
     popd
 
 Commit your signature for the signed OS X/Windows binaries:
@@ -205,23 +205,23 @@ sha256sum * > SHA256SUMS
 
 The list of files should be:
 ```
-litecoin-${VERSION}-aarch64-linux-gnu.tar.gz
-litecoin-${VERSION}-arm-linux-gnueabihf.tar.gz
-litecoin-${VERSION}-i686-pc-linux-gnu.tar.gz
-litecoin-${VERSION}-x86_64-linux-gnu.tar.gz
-litecoin-${VERSION}-osx64.tar.gz
-litecoin-${VERSION}-osx.dmg
-litecoin-${VERSION}.tar.gz
-litecoin-${VERSION}-win32-setup.exe
-litecoin-${VERSION}-win32.zip
-litecoin-${VERSION}-win64-setup.exe
-litecoin-${VERSION}-win64.zip
+nengcoin-${VERSION}-aarch64-linux-gnu.tar.gz
+nengcoin-${VERSION}-arm-linux-gnueabihf.tar.gz
+nengcoin-${VERSION}-i686-pc-linux-gnu.tar.gz
+nengcoin-${VERSION}-x86_64-linux-gnu.tar.gz
+nengcoin-${VERSION}-osx64.tar.gz
+nengcoin-${VERSION}-osx.dmg
+nengcoin-${VERSION}.tar.gz
+nengcoin-${VERSION}-win32-setup.exe
+nengcoin-${VERSION}-win32.zip
+nengcoin-${VERSION}-win64-setup.exe
+nengcoin-${VERSION}-win64.zip
 ```
 The `*-debug*` files generated by the gitian build contain debug symbols
 for troubleshooting by developers. It is assumed that anyone that is interested
 in debugging can run gitian to generate the files for themselves. To avoid
 end-user confusion about which file to pick, as well as save storage
-space *do not upload these to the litecoin.org server, nor put them in the torrent*.
+space *do not upload these to the nengcoin.org server, nor put them in the torrent*.
 
 - GPG-sign it, delete the unsigned file:
 ```
@@ -231,23 +231,23 @@ rm SHA256SUMS
 (the digest algorithm is forced to sha256 to avoid confusion of the `Hash:` header that GPG adds with the SHA256 used for the files)
 Note: check that SHA256SUMS itself doesn't end up in SHA256SUMS, which is a spurious/nonsensical entry.
 
-- Upload zips and installers, as well as `SHA256SUMS.asc` from last step, to the litecoin.org server.
+- Upload zips and installers, as well as `SHA256SUMS.asc` from last step, to the nengcoin.org server.
 
-- Update litecoin.org version
+- Update nengcoin.org version
 
 - Announce the release:
 
-  - litecoin-dev mailing list
+  - nengcoin-dev mailing list
 
-  - Litecoin Core announcements list https://groups.google.com/forum/#!forum/litecoin-dev
+  - Nengcoin Core announcements list https://groups.google.com/forum/#!forum/nengcoin-dev
 
-  - blog.litecoin.org blog post
+  - blog.nengcoin.org blog post
 
-  - litecointalk.io forum announcement
+  - nengcointalk.io forum announcement
 
-  - Update title of #litecoin on Freenode IRC
+  - Update title of #nengcoin on Freenode IRC
 
-  - Optionally twitter, reddit /r/Litecoin, ... but this will usually sort out itself
+  - Optionally twitter, reddit /r/Nengcoin, ... but this will usually sort out itself
 
   - Add release notes for the new version to the directory `doc/release-notes` in git master
 

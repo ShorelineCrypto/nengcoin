@@ -56,10 +56,10 @@ static int AppInitRawTx(int argc, char* argv[])
     if (argc<2 || mapArgs.count("-?") || mapArgs.count("-h") || mapArgs.count("-help"))
     {
         // First part of help message is specific to this utility
-        std::string strUsage = strprintf(_("%s litecoin-tx utility version"), _(PACKAGE_NAME)) + " " + FormatFullVersion() + "\n\n" +
+        std::string strUsage = strprintf(_("%s nengcoin-tx utility version"), _(PACKAGE_NAME)) + " " + FormatFullVersion() + "\n\n" +
             _("Usage:") + "\n" +
-              "  litecoin-tx [options] <hex-tx> [commands]  " + _("Update hex-encoded litecoin transaction") + "\n" +
-              "  litecoin-tx [options] -create [commands]   " + _("Create hex-encoded litecoin transaction") + "\n" +
+              "  nengcoin-tx [options] <hex-tx> [commands]  " + _("Update hex-encoded nengcoin transaction") + "\n" +
+              "  nengcoin-tx [options] -create [commands]   " + _("Create hex-encoded nengcoin transaction") + "\n" +
               "\n";
 
         fprintf(stdout, "%s", strUsage.c_str());
