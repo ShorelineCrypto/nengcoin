@@ -27,9 +27,9 @@ unsigned int GetNextWorkRequired(const CBlockIndex* pindexLast, const CBlockHead
         // If the new block's timestamp is more than 2* 10 minutes
         // then allow mining of a cheetah block for CPU/mobile miners on PC or android phones
         
-        // dynamically adjust network difficulty when miners suddenly left
         const CBlockIndex* pindex = pindexLast;
         const int64_t nInterval = params.DifficultyAdjustmentInterval();
+        const int64_t nTargetSpacing = params.nPowTargetSpacing;
 
         // randomSpike fork after 1000 emergency blocks on default litecoin style
         // v1.9.x hard fork after block  3244060 and fix 51% attack on SXC
