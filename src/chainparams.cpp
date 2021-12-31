@@ -105,10 +105,10 @@ public:
          * The characters are rarely used upper ASCII, not valid as UTF-8, and produce
          * a large 32-bit integer with any alignment.
          */
-        pchMessageStart[0] = 0xfb;
-        pchMessageStart[1] = 0xc0;
-        pchMessageStart[2] = 0xb6;
-        pchMessageStart[3] = 0xdb;
+        pchMessageStart[0] = 0xf6;
+        pchMessageStart[1] = 0xcb;
+        pchMessageStart[2] = 0xb1;
+        pchMessageStart[3] = 0xd2;
         nDefaultPort = 6377;
         nPruneAfterHeight = 100000;
 
@@ -204,10 +204,10 @@ public:
         // The best chain should have at least this much work.
         consensus.nMinimumChainWork = uint256S("0x00000000000000000000000000000000000000000000000000000000872d04d7");
 
-        pchMessageStart[0] = 0xfd;
-        pchMessageStart[1] = 0xd2;
-        pchMessageStart[2] = 0xc8;
-        pchMessageStart[3] = 0xf1;
+        pchMessageStart[0] = 0xf8;
+        pchMessageStart[1] = 0xd5;
+        pchMessageStart[2] = 0xc7;
+        pchMessageStart[3] = 0xd1;
         nDefaultPort = 16379;
         nPruneAfterHeight = 1000;
 
@@ -284,10 +284,10 @@ public:
         // The best chain should have at least this much work.
         consensus.nMinimumChainWork = uint256S("0x00");
 
-        pchMessageStart[0] = 0xfa;
-        pchMessageStart[1] = 0xbf;
-        pchMessageStart[2] = 0xb5;
-        pchMessageStart[3] = 0xda;
+        pchMessageStart[0] = 0xfb;
+        pchMessageStart[1] = 0xb6;
+        pchMessageStart[2] = 0xc8;
+        pchMessageStart[3] = 0xd4;
         nDefaultPort = 19444;
         nPruneAfterHeight = 1000;
 
