@@ -14,7 +14,8 @@
 unsigned int GetNextWorkRequired(const CBlockIndex* pindexLast, const CBlockHeader *pblock, const Consensus::Params& params)
 {
     unsigned int nProofOfWorkLimit = UintToArith256(params.powLimit).GetCompact();
-
+    arith_uint256 bnProofOfWorkLimit = UintToArith256(params.powLimit);
+    
     // Genesis block
     if (pindexLast == NULL)
         return nProofOfWorkLimit;
@@ -29,12 +30,12 @@ unsigned int GetNextWorkRequired(const CBlockIndex* pindexLast, const CBlockHead
         // randomSpike fork after 1000 emergency blocks on default litecoin style
         // v1.9.x hard fork after block  3244060 and fix 51% attack on SXC
         if (pindex->nHeight > 3244060) {
-            CBigNum bnCheetah;
+            arith_uint256 bnCheetah;
             bnCheetah = bnProofOfWorkLimit;
             bnCheetah /= 160;
             unsigned int nCheetah = bnCheetah.GetCompact();
             
-            CBigNum bnSpike;
+            arith_uint256 bnSpike;
             bnSpike = bnProofOfWorkLimit;
             bnSpike /= 1000000000;
             unsigned int nSpike = bnSpike.GetCompact();
@@ -118,7 +119,7 @@ unsigned int GetNextWorkRequired(const CBlockIndex* pindexLast, const CBlockHead
        // Emergency hard fork after block  3243060
        // hard fork and fix 51% attack on SXC to new chain for 1000 blocks on default litecoin style
         else if (pindex->nHeight > 3243060) {
-            CBigNum bnCheetah;
+            arith_uint256 bnCheetah;
             bnCheetah = bnProofOfWorkLimit;
             bnCheetah /= 40000;
             unsigned int nCheetah = bnCheetah.GetCompact();
@@ -128,12 +129,12 @@ unsigned int GetNextWorkRequired(const CBlockIndex* pindexLast, const CBlockHead
        // v1.7.0 randomSpike fork after block 2759040
        // fixed CPU+FPGA miner timestamp attack on shallow reset diff = 0.03 range
         else if (pindex->nHeight > 2759040) {
-            CBigNum bnCheetah;
+            arith_uint256 bnCheetah;
             bnCheetah = bnProofOfWorkLimit;
             bnCheetah /= 200;
             unsigned int nCheetah = bnCheetah.GetCompact();
             
-            CBigNum bnSpike;
+            arith_uint256 bnSpike;
             bnSpike = bnProofOfWorkLimit;
             bnSpike /= 10000000000;
             unsigned int nSpike = bnSpike.GetCompact();
@@ -170,12 +171,12 @@ unsigned int GetNextWorkRequired(const CBlockIndex* pindexLast, const CBlockHead
        // v1.6.0 randomSpike fork after block 2655920 
        // fixed big CPU miner timestamp attack
         else if (pindex->nHeight > 2655920) {
-            CBigNum bnCheetah;
+            arith_uint256 bnCheetah;
             bnCheetah = bnProofOfWorkLimit;
             bnCheetah /= 32;
             unsigned int nCheetah = bnCheetah.GetCompact();
             
-            CBigNum bnSpike;
+            arith_uint256 bnSpike;
             bnSpike = bnProofOfWorkLimit;
             bnSpike /= 1000000000;
             unsigned int nSpike = bnSpike.GetCompact();
@@ -216,12 +217,12 @@ unsigned int GetNextWorkRequired(const CBlockIndex* pindexLast, const CBlockHead
         }
         // v1.5.0 hard fork after blocks 2354920
         else if (pindex->nHeight > 2354920) {
-            CBigNum bnCheetah;
+            arith_uint256 bnCheetah;
             bnCheetah = bnProofOfWorkLimit;
             bnCheetah /= 10;
             unsigned int nCheetah = bnCheetah.GetCompact();
             
-            CBigNum bnSpike;
+            arith_uint256 bnSpike;
             bnSpike = bnProofOfWorkLimit;
             bnSpike /= 1000000000;
             unsigned int nSpike = bnSpike.GetCompact();
@@ -275,7 +276,7 @@ unsigned int GetNextWorkRequired(const CBlockIndex* pindexLast, const CBlockHead
             else if  ((pblock->nTime > pindexLast->nTime - 2) && (pblock->nTime < pindexLast->nTime + 2))
             {
                 // Spike difficulty
-                CBigNum bnSpike;
+                arith_uint256 bnSpike;
                 bnSpike = bnProofOfWorkLimit;
                 bnSpike /= 1000000000;
                 return bnSpike.GetCompact();
@@ -283,7 +284,7 @@ unsigned int GetNextWorkRequired(const CBlockIndex* pindexLast, const CBlockHead
             else
             {
                 // randomSpike difficulty between 2 - 9 seconds
-                CBigNum bnSpike;
+                arith_uint256 bnSpike;
                 bnSpike = bnProofOfWorkLimit;
                 bnSpike /= 1000000000;
                                 
@@ -319,7 +320,7 @@ unsigned int GetNextWorkRequired(const CBlockIndex* pindexLast, const CBlockHead
             else
             {
                 // Spike difficulty
-                CBigNum bnSpike;
+                arith_uint256 bnSpike;
                 bnSpike = bnProofOfWorkLimit;
                 bnSpike /= 1000000000;
                 return bnSpike.GetCompact();
