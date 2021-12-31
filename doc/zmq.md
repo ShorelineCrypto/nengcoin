@@ -66,7 +66,7 @@ address. The same address can be used in more than one notification.
 
 For instance:
 
-    $ nengcoind -zmqpubhashtx=tcp://127.0.0.1:29332 \
+    $ nengcoind -zmqpubhashtx=tcp://127.0.0.1:26376 \
                -zmqpubrawtx=ipc:///tmp/nengcoind.tx.raw
 
 Each PUB notification has a topic and body, where the header
