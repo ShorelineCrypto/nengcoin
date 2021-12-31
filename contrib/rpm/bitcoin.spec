@@ -339,7 +339,7 @@ done
 %{_sbindir}/semanage port -a -t bitcoin_port_t -p tcp 6376
 %{_sbindir}/semanage port -a -t bitcoin_port_t -p tcp 6377
 %{_sbindir}/semanage port -a -t bitcoin_port_t -p tcp 16376
-%{_sbindir}/semanage port -a -t bitcoin_port_t -p tcp 19335
+%{_sbindir}/semanage port -a -t bitcoin_port_t -p tcp 16379
 %{_sbindir}/fixfiles -R bitcoin-server restore &> /dev/null || :
 %{_sbindir}/restorecon -R %{_localstatedir}/lib/bitcoin || :
 fi
@@ -358,7 +358,7 @@ if [ $1 -eq 0 ]; then
 	%{_sbindir}/semanage port -d -p tcp 6376
 	%{_sbindir}/semanage port -d -p tcp 6377
 	%{_sbindir}/semanage port -d -p tcp 16376
-	%{_sbindir}/semanage port -d -p tcp 19335
+	%{_sbindir}/semanage port -d -p tcp 16379
 	for selinuxvariant in %{selinux_variants}; do
 		%{_sbindir}/semodule -s ${selinuxvariant} -r bitcoin &> /dev/null || :
 	done

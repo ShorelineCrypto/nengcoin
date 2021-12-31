@@ -43,7 +43,7 @@ config file):
 
 	HiddenServiceDir /var/lib/tor/nengcoin-service/
 	HiddenServicePort 6377 127.0.0.1:6377
-	HiddenServicePort 19335 127.0.0.1:19335
+	HiddenServicePort 16379 127.0.0.1:16379
 
 The directory can be different of course, but (both) port numbers should be equal to
 your nengcoind's P2P listen port (6377 by default).
