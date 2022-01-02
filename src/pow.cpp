@@ -420,17 +420,14 @@ bool CheckProofOfWork(uint256 hash, unsigned int nBits, const Consensus::Params&
 
 bool CheckProofOfWorkRandomSpike(uint256 hash, unsigned int nBits, const Consensus::Params& params)
 {
-    bool fNegative;
-    bool fOverflow;
-
     // v1.9.x randomSpike parameters
     arith_uint256 bnCheetah;
-    bnCheetah = UintToArith256(params.powLimit));
+    bnCheetah = UintToArith256(params.powLimit);
     bnCheetah /= 160;
     unsigned int nCheetah = bnCheetah.GetCompact();
             
     arith_uint256 bnSpike;
-    bnSpike = UintToArith256(params.powLimit));
+    bnSpike = UintToArith256(params.powLimit);
     bnSpike /= 1000000000;
     unsigned int nSpike = bnSpike.GetCompact();
             
