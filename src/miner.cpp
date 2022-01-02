@@ -772,7 +772,7 @@ void static BitcoinMiner(const CChainParams& chainparams)
                            // so that we can use the correct time.
                 if (chainparams.GetConsensus().fPowAllowMinDifficultyBlocks)
                 {
-                    // Changing pblock->nTime can change work required on testnet:
+                    // Changing pblock->nTime can change work required on mainnet and testnet:
                     hashTarget.SetCompact(pblock->nBits);
                 }
             }
