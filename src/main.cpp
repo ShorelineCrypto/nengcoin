@@ -3395,14 +3395,8 @@ bool FindUndoPos(CValidationState &state, int nFile, CDiskBlockPos &pos, unsigne
 
 bool CheckBlockHeader(const CBlockHeader& block, CValidationState& state, const Consensus::Params& consensusParams, bool fCheckPOW)
 {
-    // TDDO: Changing pblock->nTime can change work required on mainnet and testnet.
-    // radomSpike parameters also changes on hard fork versions based on block height
-    // for now just pass to allow mining on cheetah/spike blocks on v1.9.x randomSpike
-    if (fCheckPOW && CheckProofOfWorkRandomSpike(block.GetPoWHash(), block.nBits, consensusParams))
-        return true;
-                    
     // Check proof of work matches claimed amount
-    else if (fCheckPOW && !CheckProofOfWork(block.GetPoWHash(), block.nBits, consensusParams))
+    if (fCheckPOW && !CheckProofOfWork(block.GetPoWHash(), block.nBits, consensusParams))
         return state.DoS(50, false, REJECT_INVALID, "high-hash", false, "proof of work failed");
 
     return true;

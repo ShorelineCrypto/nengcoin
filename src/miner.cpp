@@ -711,9 +711,10 @@ void static BitcoinMiner(const CChainParams& chainparams)
                         LogPrintf("proof-of-work found  \n  powhash: %s  \ntarget: %s\n", thash.GetHex(), hashTarget.GetHex());
                         ProcessBlockFound(pblock, chainparams);
                         SetThreadPriority(THREAD_PRIORITY_LOWEST);
+                        coinbaseScript->KeepScript();
 
                         // In regression test mode, stop mining after a block is found.
-                        if (Params().MineBlocksOnDemand())
+                        if (chainparams.MineBlocksOnDemand())
                             throw boost::thread_interrupted();
 
                         break;
