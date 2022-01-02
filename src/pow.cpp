@@ -417,27 +417,3 @@ bool CheckProofOfWork(uint256 hash, unsigned int nBits, const Consensus::Params&
 
     return true;
 }
-
-bool CheckProofOfWorkRandomSpike(uint256 hash, unsigned int nBits, const Consensus::Params& params)
-{
-    // v1.9.x randomSpike parameters
-    arith_uint256 bnCheetah;
-    bnCheetah = UintToArith256(params.powLimit);
-    bnCheetah /= 160;
-    unsigned int nCheetah = bnCheetah.GetCompact();
-            
-    arith_uint256 bnSpike;
-    bnSpike = UintToArith256(params.powLimit);
-    bnSpike /= 1000000000;
-    unsigned int nSpike = bnSpike.GetCompact();
-            
-    unsigned int hashnbits = UintToArith256(hash).GetCompact();
-    // Check if nbits match cheetah block
-    if (hashnbits == nCheetah)
-        return true;
-    // Check if nbits match spike block
-    else if (hashnbits == nSpike)
-        return true;
-
-    return false;
-}
