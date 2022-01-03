@@ -703,7 +703,7 @@ void static BitcoinMiner(const CChainParams& chainparams)
                 while(true)
                 {
                     scrypt_1024_1_1_256_sp(BEGIN(pblock->nVersion), BEGIN(thash), scratchpad);
-                    if (thash <= hashTarget)
+                    if (thash <= ArithToUint256(hashTarget))
                     {
                         // Found a solution
                         SetThreadPriority(THREAD_PRIORITY_NORMAL);
