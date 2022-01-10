@@ -73,12 +73,12 @@ public:
         consensus.nSubsidyHalvingInterval = 2100000;
         consensus.BIP34Height = 3900000;
         consensus.BIP34Hash = uint256S("");
-        consensus.BIP65Height = 5100000;
-        consensus.BIP66Height = 4500000;
+        consensus.BIP65Height = 4500000;
+        consensus.BIP66Height = 4200000;
         consensus.powLimit = uint256S("00000fffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"); 
         consensus.nPowTargetTimespan = 1 * 24 * 60 * 60; // 1 days
         consensus.nPowTargetSpacing = 1 * 60;
-        consensus.fPowAllowMinDifficultyBlocks = true;
+        consensus.fPowAllowMinDifficultyBlocks = true;  // minimum work bug fix
         consensus.fPowNoRetargeting = false;
         consensus.nRuleChangeActivationThreshold = 4320; // 75% of 5760
         consensus.nMinerConfirmationWindow = 5760; // nPowTargetTimespan / nPowTargetSpacing * 4
@@ -136,7 +136,7 @@ public:
         fRequireStandard = true;
         fMineBlocksOnDemand = false;
 
-        // v1.9.x MinWorkBug fix, checkpoint must be on cheetah block or lowest diff block
+        // v1.9.x MinWorkBug fix, checkpoint must be on cheetah block or lowest diff block,  minimum work bug fix
         checkpointData = (CCheckpointData) {
             boost::assign::map_list_of
             (  0, uint256S("0x14683bb988bcb69c74276df315c8de108d990fcff07483d5f2a044a3b4a592d8"))
