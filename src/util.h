@@ -33,6 +33,11 @@ static const bool DEFAULT_LOGTIMEMICROS = false;
 static const bool DEFAULT_LOGIPS        = false;
 static const bool DEFAULT_LOGTIMESTAMPS = true;
 
+#ifdef __linux__
+static const int THREAD_PRIORITY_LOWEST = 19;
+static const int THREAD_PRIORITY_NORMAL = 0;
+#endif
+
 /** Signals for translation. */
 class CTranslationInterface
 {
@@ -67,6 +72,7 @@ inline std::string _(const char* psz)
 
 void SetupEnvironment();
 bool SetupNetworking();
+void SetThreadPriority(int nPriority);
 
 /** Return true if log accepts specified category */
 bool LogAcceptCategory(const char* category);
