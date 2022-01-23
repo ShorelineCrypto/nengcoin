@@ -31,8 +31,7 @@ sudo apt-get install imagemagick
 sudo apt-get install libtiff-tools
 ```
 
-dmg file is popular mac installation method for mac QT wallet. You can build dmg file with macdeploy. After successfully compiled wallet files with "make -j3"   (4 is CPU number of Ubuntu 18.04),
-you can run one command extra to generate dmg file:
+dmg file is popular mac installation method for mac QT wallet. You can build dmg file with macdeploy. After successfully compiled wallet files with "make -j3"   (3 is CPU number of Ubuntu 18.04 to be used for compiling), you can run one command extra to generate dmg file:
 
 ```
 make deploy
