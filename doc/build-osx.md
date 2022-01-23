@@ -1,72 +1,40 @@
 Mac OS X Build Instructions and Notes
 ====================================
-The commands in this guide should be executed in a Terminal application.
-The built-in one is located in `/Applications/Utilities/Terminal.app`.
+
+Standalone compiling method in MacOS machine is depreciated.  The staticaly linked binary Mac wallet core files were cross compiled in ubuntu 18.04 inside x86_64 docker container.
+Below are the steps that you can follow to compile similar wallet binary files from source
 
 Preparation
 -----------
-Install the OS X command line tools:
 
-`xcode-select --install`
+Prepare a Ubuntu 18.04 x84_64 machine,  either standalone PC, or in virtualbox, or in WSL2 of windows 10 machine. This is same linux machine where you can compile
+or cross compile Linux x64/arm or windows 10 wallet.
 
-When the popup appears, click `Install`.
 
-Then install [Homebrew](https://brew.sh).
+Cross Compile
+-------------
 
-Base build dependencies
------------------------
 
-```bash
-brew install automake libtool --c++11 pkg-config
+Follow the guide in [build-generic](build-generic.md)  and in [build-cross](build-cross.md) to compile statically linked macOS binary wallet
+for CLI and QT wallet files.
+
+
+Mac Deploy
+----------
+
+Below additional depency are required to build dmg file with macdeploy:
+
+```
+pip install ds_store mac_alias
+sudo apt-get install librsvg2-bin
+sudo apt-get install imagemagick
+sudo apt-get install libtiff-tools
 ```
 
-If you want to build the disk image with `make deploy` (.dmg / optional), you need RSVG
-```bash
-brew install librsvg
+dmg file is popular mac installation method for mac QT wallet. You can build dmg file with macdeploy. After successfully compiled wallet files with "make -j3"   (3 is CPU number of Ubuntu 18.04 to be used for compiling), you can run one command extra to generate dmg file:
+
+```
+make deploy
+
 ```
 
-Building
---------
-
-Follow the instructions in [build-generic](build-generic.md)
-
-Running
--------
-
-Nengcoin is now available at `./src/nengcoind`
-
-Before running, it's recommended you create an RPC configuration file.
-
-    echo -e "rpcuser=nengcoinrpc\nrpcpassword=$(xxd -l 16 -p /dev/urandom)" > "/Users/${USER}/Library/Application Support/Nengcoin/nengcoin.conf"
-
-    chmod 600 "/Users/${USER}/Library/Application Support/Nengcoin/nengcoin.conf"
-
-The first time you run nengcoind, it will start downloading the blockchain. This process could take several hours.
-
-You can monitor the download process by looking at the debug.log file:
-
-    tail -f $HOME/Library/Application\ Support/Nengcoin/debug.log
-
-Other commands:
--------
-
-    ./src/nengcoind -daemon # Starts the nengcoin daemon.
-    ./src/nengcoin-cli --help # Outputs a list of command-line options.
-    ./src/nengcoin-cli help # Outputs a list of RPC commands when the daemon is running.
-
-Using Qt Creator as IDE
-------------------------
-You can use Qt Creator as an IDE, for Nengcoin development.
-Download and install the community edition of [Qt Creator](https://www.qt.io/download/).
-Uncheck everything except Qt Creator during the installation process.
-
-1. Make sure you installed everything through Homebrew mentioned above
-2. Do a proper ./configure --enable-debug
-3. In Qt Creator do "New Project" -> Import Project -> Import Existing Project
-4. Enter "nengcoin-qt" as project name, enter src/qt as location
-5. Leave the file selection as it is
-6. Confirm the "summary page"
-7. In the "Projects" tab select "Manage Kits..."
-8. Select the default "Desktop" kit and select "Clang (x86 64bit in /usr/bin)" as compiler
-9. Select LLDB as debugger (you might need to set the path to your installation)
-10. Start debugging with Qt Creator
