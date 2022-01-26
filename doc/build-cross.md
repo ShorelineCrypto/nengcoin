@@ -74,12 +74,32 @@ $ ./configure --prefix `pwd`/depends/x86_64-w64-mingw32
 These commands will build for Windows 64bit. If you want to compile for 32bit,
 replace `x86_64-w64-mingw32` with `i686-w64-mingw32`.
 
-ARM-Linux Cross-compilation
+64 bits ARM-Linux (arm64) Cross-compilation
 -------------------
 Cross-compiling to ARM-Linux requires a few additional packages to be installed:
 
 ```bash
-$ sudo apt-get install g++-arm-linux-gnueabihf
+$ sudo apt-get install g++-aarch64-linux-gnu gcc-aarch64-linux-gnu binutils-aarch64-linux-gnu
+```
+
+When building the dependencies, as described in [build-generic](build-generic.md), use
+
+```bash
+$ make HOST=aarch64-linux-gnu -j4
+```
+
+When building Nengcoin, use
+
+```bash
+$ ./configure --prefix `pwd`/depends/aarch64-linux-gnu
+```
+
+32 bits ARM-Linux (armhf) Cross-compilation
+-------------------
+Cross-compiling to ARM-Linux requires a few additional packages to be installed:
+
+```bash
+$ sudo apt-get install g++-arm-linux-gnueabihf gcc-arm-linux-gnueabi binutils-arm-linux-gnueabi
 ```
 
 When building the dependencies, as described in [build-generic](build-generic.md), use
@@ -92,4 +112,24 @@ When building Nengcoin, use
 
 ```bash
 $ ./configure --prefix `pwd`/depends/arm-linux-gnueabihf
+```
+
+32 bits x86 Linux (i686) Cross-compilation
+-------------------
+Cross-compiling to ARM-Linux requires a few additional packages to be installed:
+
+```bash
+$ sudo apt-get install gcc-multilib g++-multilib
+```
+
+When building the dependencies, as described in [build-generic](build-generic.md), use
+
+```bash
+$ make HOST=i686-pc-linux-gnu -j4
+```
+
+When building Nengcoin, use
+
+```bash
+$ ./configure --prefix `pwd`/depends/i686-pc-linux-gnu
 ```

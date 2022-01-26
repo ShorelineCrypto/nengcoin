@@ -1,7 +1,7 @@
 UNIX BUILD NOTES
 ====================
 Some notes on how to build Nengcoin in Unix.  The officially released x64 binary linux core files were compiled inside Ubuntu 18.04 (x86_64) docker container. 
-Arm linux binary core wallet released files were cross compiled in the same Ubuntu 18.04 (x86_64) docker container.
+Arm linux binary core wallet released files were cross compiled in the same Ubuntu 18.04 (x86_64) docker container.  i686 32 bits linux was cross compiled in the same Ubuntu 18.04 (x86_64) docker container. 
 
 (for OpenBSD specific instructions, see [build-openbsd.md](build-openbsd.md))
 
