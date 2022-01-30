@@ -28,7 +28,7 @@ packages:
 - "ca-certificates"
 - "python"
 remotes:
-- "url": "https://github.com/nengcoin-project/nengcoin.git"
+- "url": "https://github.com/ShorelineCrypto/nengcoin.git"
   "dir": "nengcoin"
 files: []
 script: |

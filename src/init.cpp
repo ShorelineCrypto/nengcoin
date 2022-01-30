@@ -483,7 +483,7 @@ std::string HelpMessage(HelpMessageMode mode)
 
 std::string LicenseInfo()
 {
-    const std::string URL_SOURCE_CODE = "<https://github.com/nengcoin-project/nengcoin>";
+    const std::string URL_SOURCE_CODE = "<https://github.com/ShorelineCrypto/nengcoin>";
     const std::string URL_WEBSITE = "<https://nengcoin.org>";
     // todo: remove urls from translations on next change
     return CopyrightHolders(strprintf(_("Copyright (C) %i-%i"), 2011, COPYRIGHT_YEAR) + " ") + "\n" +

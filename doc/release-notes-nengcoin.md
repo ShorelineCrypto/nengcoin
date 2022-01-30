@@ -7,7 +7,7 @@ It is recommended to upgrade to this version.
 
 Please report bugs using the issue tracker at github:
 
-  <https://github.com/nengcoin-project/nengcoin/issues>
+  <https://github.com/ShorelineCrypto/nengcoin/issues>
 
 Compatibility
 ==============
@@ -64,7 +64,7 @@ Testnet faucets can be located at:
 - http://testnet.nengcointools.com
 - http://testnet.thrasher.io
 
-Developers who require the new testnet blockchain paramaters can find them [here](https://github.com/nengcoin-project/nengcoin/blob/0.13/src/chainparams.cpp#L214).
+Developers who require the new testnet blockchain paramaters can find them [here](https://github.com/ShorelineCrypto/nengcoin/blob/0.13/src/chainparams.cpp#L214).
 
 Credits
 =======
