@@ -7,7 +7,7 @@ architectures:
 packages:
 - "faketime"
 remotes:
-- "url": "https://github.com/nengcoin-project/nengcoin-detached-sigs.git"
+- "url": "https://github.com/ShorelineCrypto/nengcoin-detached-sigs.git"
   "dir": "signature"
 files:
 - "nengcoin-osx-unsigned.tar.gz"

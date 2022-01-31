@@ -1,7 +1,7 @@
 Nengcoin Core integration/staging tree
 =====================================
 
-[![Build Status](https://travis-ci.org/nengcoin-project/nengcoin.svg?branch=master)](https://travis-ci.org/nengcoin-project/nengcoin)
+[![Build Status](https://travis-ci.org/ShorelineCrypto/nengcoin.svg?branch=master)](https://travis-ci.org/ShorelineCrypto/nengcoin)
 
 https://nengcoin.org
 
@@ -27,7 +27,7 @@ Development Process
 -------------------
 
 The `master` branch is regularly built and tested, but is not guaranteed to be
-completely stable. [Tags](https://github.com/nengcoin-project/nengcoin/tags) are created
+completely stable. [Tags](https://github.com/ShorelineCrypto/nengcoin/tags) are created
 regularly to indicate new official, stable release versions of Nengcoin Core.
 
 The contribution workflow is described in [CONTRIBUTING.md](CONTRIBUTING.md).
