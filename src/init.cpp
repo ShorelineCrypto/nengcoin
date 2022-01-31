@@ -486,7 +486,7 @@ std::string LicenseInfo()
     const std::string URL_SOURCE_CODE = "<https://github.com/ShorelineCrypto/nengcoin>";
     const std::string URL_WEBSITE = "<https://nengcoin.org>";
     // todo: remove urls from translations on next change
-    return CopyrightHolders(strprintf(_("Copyright (C) %i-%i"), 2011, COPYRIGHT_YEAR) + " ") + "\n" +
+    return CopyrightHolders(strprintf(_("Copyright (C) %i-%i"), 2018, COPYRIGHT_YEAR) + " ") + "\n" +
            "\n" +
            strprintf(_("Please contribute if you find %s useful. "
                        "Visit %s for further information about the software."),
