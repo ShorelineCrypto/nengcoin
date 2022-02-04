@@ -27,7 +27,7 @@ Every month or two when the mining wallet goes bad, empty it, then delete the wa
 
 To setup a reserve wallet, below are the steps
 
-Step 1:  copy the data folder from '~/Library/'Application Support'/Nengcoin/'  to  '~/Library/'Application Support'/Nengcoin2/'. 
+Step 1:  copy the data folder from ~/Library/'Application Support'/Nengcoin/  to  ~/Library/'Application Support'/Nengcoin2/. 
 Delete the "wallet.dat"  in the Nengcoin2 folder so that you get a new wallet file. 
 Step 2:  Modify the batch script "reserve_neng.sh" with your proper username in conf file.
 Step 3:  Run "reserve_neng.sh". You should have second reserve QT wallet running in macOS
