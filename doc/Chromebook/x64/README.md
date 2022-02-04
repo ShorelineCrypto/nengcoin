@@ -3,7 +3,7 @@
 This folder describe how to run a full node of Nengcoin (NENG) and to CPU mine NENG in Chromebook as Linux App.  Chrome OS v89 on x64 platform was tested. 
 Any Chrome OS version v69 or later on x64 CPU should all work. 
 
-Chrome OS Linux (Beta) runs Debian 10 (Buster) in embedded linux in a container with close to full feature of linux for both CLI and GUI. 
+Chrome OS Linux (Beta) runs Debian 11 (Bullseye) Debian 10 (Buster) in embedded linux in a container with close to full feature of linux for both CLI and GUI. 
 Older version of Chrome OS run Debian 9 (Stretch). The below script and method was also tested on Debian 9 successfully and should all just work on Debian 9.
    
 
