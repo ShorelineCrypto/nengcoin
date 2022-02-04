@@ -1,0 +1,32 @@
+NENG Android 64bit Wallet Upgrade Guide without Putty
+    1. Open Userland App and select Debian
+    2. Log in Debian
+    3. cd  Android_Userland_App/debian/arm64/
+    4. wget https://github.com/ShorelineCrypto/nengcoin/releases/download/v1.9.1.2/nengcoin_v1.9.1.2_u16_arm64.tgz
+    5. tar xvfz nengcoin_v1.9.1.2_u16_arm64.tgz
+    6. rm -rf nengcoin_v1.7.0.2_u16_arm64 (remove previous nengcoin qt folder)
+    7. rm nengcoin_v1.7.0.2_u16_arm64.tgz (remove previous nengcoin tgz file if exist)
+    8. rm nengcoin_v1.9.1.2_u16_arm64.tgz (remove current nengcoin tgz file)
+
+NENG Android 32bit Wallet Upgrade Guide without Putty
+    1. Open Userland App and select Debian
+    2. Log in Debian
+    3. cd  Android_Userland_App/debian/armhf/
+    4. wget https://github.com/ShorelineCrypto/nengcoin/releases/download/v1.9.1.2/nengcoin_v1.9.1.2_u16_armhf.tgz
+    5. tar xvfz nengcoin_v1.9.1.2_u16_armhf.tgz
+    6. rm -rf nengcoin_v1.7.0.2_u16_armhf (remove previous nengcoin qt folder)
+    7. rm nengcoin_v1.7.0.2_u16_armhf.tgz (remove previous nengcoin tgz file if exist)
+    8. rm nengcoin_v1.9.1.2_u16_armhf.tgz (remove current nengcoin tgz file)
+
+
+
+
+
+
+
+
+
+
+
+
+
