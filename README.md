@@ -22,9 +22,11 @@ Major releases features:
  - v1.6.x Fix CPU Timestamp Attack, cheetah diff 3x
  - v1.7.x Fix CPU/FPGA Timestamp Attack, cheetah diff 6x, spike diff 10x
  - v1.9.x Fix the 51% attack on SXC, cheetah diff drop 20%, spike diff decrease 10x
+ - v2.0.0 rebased off litecoin core v0.13.3 on v1.9.x randomSpike
 
-Current full version name: "1.9.1.0_randomSpike-v1.9.x" (shorthand: "v1.9.x")
-Note: latest different platform wallets have "1.9.1.0" version tag in QT wallet.  The downloaded files should have correct version on file names supporting different hardware devices and OS.
+Current full version name: "v2.0.0_randomSpike-1.9.x" or "v1.9.1.0-randomSpike-v1.9.x"
+Note: All users/miners are recommended to use v2.0.0 while solo miners on USB ASIC/ASIC are still recommended to use v1.9.1.
+Because now v2.0.0 are built with static linked wallet, macOS are fully supported (x86_64 wallet, but should work too for M1 chip)
 
 Community Whitepaper: https://nengcoin.org/knowledgebase/whitepaper-nengcoin/
 
