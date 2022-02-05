@@ -6,7 +6,7 @@ This folder describe how to CPU mine Nengcoin (NENG) on 64 bits android phone (a
 ### Step 1: Install and setup UserLand app from Google Play Store
 
 First install free "UserLand" app from google play store.  After installation, click Distribution 
-"Ubuntu", pick a username, password, and VNC password (which could be same password). You will enter 
+"Ubuntu" or "Debian", pick a username, password, and VNC password (which could be same password). You will enter 
 a linux terminal inside UserLand app, which runs arm64 version of Ubuntu 18.04. 
 
 Here we are recommending running through SSH (linux terminal) only, not VNC.  For linux GUI, it is much better to run remotely 
@@ -41,9 +41,9 @@ IP = 192.168.1.98 with user "hlu" like below
 First login into UserLand app linux terminal remotely, you should find that common linux command like "top", "uptime" does not work. 
 Please run below for workaround for those issues:
 ```
-  wget https://github.com/ShorelineCrypto/nengcoin/releases/download/v1.9.1.2/nengcoin_v1.9.1.2_android_userland_arm.tgz
-  tar xvfz nengcoin_v1.9.1.2_android_userland_arm.tgz
-  cd  Android_Userland_App/ubuntu/arm64/
+  wget https://github.com/ShorelineCrypto/nengcoin/releases/download/v2.0.0/nengcoin_v2.0.0_android_userland_arm.tgz
+  tar xvfz nengcoin_v2.0.0_android_userland_arm.tgz
+  cd  Android_Userland_App/arm64/
   bash prepare_userland.sh
 
 ```
@@ -59,25 +59,12 @@ Please run below shell script in Userland Ubuntu for installing dependencies and
 ```
 The above step automatically download binary NENG wallet file and cheetah_cpuminer in current folder.
 
-### Optional Step 6: compile boost 1.58 from source
-The above should work for most of arm64 android phones/chromebook. However it may fail in rare phone/chromebook cases.
-
-You can fix the hardware incompatible issue by removing binary boost1.58 and compile boost 1.58 library in the machine from source as replacement:
-```
-  bash compile_boost1.58.sh
-```
-
-Note for some android phone on arm64, below compiling option is required according to member @DisPlume in discord:
-```
-DisPlume 1/31/2021 at 8:38 AM
-I do need to add "architecture=arm address-model=64" after the every ./b2 command in compile_boost1.58.sh. Otherwise, it would not compile successfully.
-```
-
-### Step 7: Optimize CPU mining with Cheetah_Cpuminer:
+### Step 6: Optimize CPU mining with Cheetah_Cpuminer:
 
 Run below to find cpu info and memory information:
 
 ```
+  lscpu
   more /proc/cpuinfo
   top
 ```
