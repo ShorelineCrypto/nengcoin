@@ -1,13 +1,5 @@
-Nengcoin 0.8.x BETA
-
-Copyright (c) 2009-2014 Bitcoin Developers
-Copyright (c) 2011-2014 Nengcoin Developers
-Distributed under the MIT/X11 software license, see the accompanying
-file COPYING or http://www.opensource.org/licenses/mit-license.php.
-This product includes software developed by the OpenSSL Project for use in
-the OpenSSL Toolkit (http://www.openssl.org/).  This product includes
-cryptographic software written by Eric Young (eay@cryptsoft.com).
-
+Nengcoin Core 0.13.2
+=====================
 
 Intro
 -----
@@ -21,8 +13,11 @@ Setup
 -----
 Unpack the files into a directory and run nengcoin-qt.exe.
 
-Nengcoin-Qt is the original Nengcoin client and it builds the backbone of the network.
+Nengcoin Core is the original Nengcoin client and it builds the backbone of the network.
 However, it downloads and stores the entire history of Nengcoin transactions;
 depending on the speed of your computer and network connection, the synchronization
 process can take anywhere from a few hours to a day or more.
 
+See the nengcoin wiki at:
+  https://nengcoin.info/
+for more help and information.

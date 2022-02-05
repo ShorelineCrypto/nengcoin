@@ -1,222 +1,145 @@
-Copyright (c) 2009-2013 Bitcoin Developers
+UNIX BUILD NOTES
+====================
+Some notes on how to build Nengcoin in Unix.  The officially released x64 binary linux core files were compiled inside Ubuntu 18.04 (x86_64) docker container. 
+Arm linux binary core wallet released files were cross compiled in the same Ubuntu 18.04 (x86_64) docker container.  i686 32 bits linux was cross compiled in the same Ubuntu 18.04 (x86_64) docker container. 
 
-Distributed under the MIT/X11 software license, see the accompanying
-file COPYING or http://www.opensource.org/licenses/mit-license.php.
-This product includes software developed by the OpenSSL Project for use in the [OpenSSL Toolkit](http://www.openssl.org/). This product includes
-cryptographic software written by Eric Young ([eay@cryptsoft.com](mailto:eay@cryptsoft.com)), and UPnP software written by Thomas Bernard.
+(for OpenBSD specific instructions, see [build-openbsd.md](build-openbsd.md))
 
+Base build dependencies
+-----------------------
+Building the dependencies and Nengcoin requires some essential build tools and libraries to be installed before.
 
-# Docker Image
+Run the following commands to install required packages:
 
-A docker file "Dockerfile-ubuntu" for compiling Nengcoin (NENG) in ubuntu 16.04 is provided here. You can pull down a docker image built on this docker file by 
-below docker command. 
-
-For x86_64:
-```
- docker pull shorelinecrypto/neng_ubuntu16_x86_64:v1.3.0.1
-```
-For armhf:
-```
- docker pull shorelinecrypto/neng_ubuntu16_armhf:v1.4.0.5
+##### Debian/Ubuntu:
+```bash
+$ sudo apt-get install curl build-essential libtool autotools-dev automake pkg-config python3 bsdmainutils cmake
 ```
 
-# Linux Distros supported on binary wallet only
-
-Currently, only Ubuntu 16.04 or Debian 7 (Wheezy) / 8 (Jessie) are described below for compiling wallet from source. 
-
-Newer versions of various linux distros are supported on binary wallet download only. Please check out v1.4.0.3 release ( https://github.com/ShorelineCrypto/NengCoin/releases/tag/v1.4.0.3 ) or follow web README page at each subfolder under:
-https://github.com/ShorelineCrypto/NengCoin/tree/master/doc
-
-The list of Linux distros currently supported on binary download on x86_64 platform:
-
--  Arch Linux
--  Debian 9 (stretch) / 10 (buster)
--  Fedora 32
--  Manjaro 20.0.3
--  MX Linux 19.2
--  Linux Mint 20
--  openSUSE Tumbleweed
--  Solus
--  Ubuntu 20.04/18.04/16.04
-
-The list of Linux distros currently supported on binary download on arm64 platform:
--  Ubuntu 16.04
--  Ubuntu 18.04
--  Debian 9
--  Debian 10
-
-The list of Linux distros currently supported on binary download on armhf platform:
--  Ubuntu 16.04
--  Ubuntu 18.04
--  Debian 9
--  Debian 10
-
-
-# Ubuntu 16.04 on x86_64 or arm64/armhf
-
-Ubuntu 16.04 NENG wallet can be compiled from source on x86_64 or arm64/armhf hardware.
-
-## Dependencies for Ubuntu 16.04
-
-
- Library     Purpose           Description
- -------     -------           -----------
- libssl      SSL Support       Secure communications
- libdb4.8    Berkeley DB       Blockchain & wallet storage
- libboost    Boost             C++ Library
- miniupnpc   UPnP Support      Optional firewall-jumping support
-
-[miniupnpc](http://miniupnp.free.fr/) may be used for UPnP port mapping.  It can be downloaded from [here](
-http://miniupnp.tuxfamily.org/files/).  UPnP support is compiled in and
-turned off by default.  Set USE_UPNP to a different value to control this:
-
-	USE_UPNP=     No UPnP support miniupnp not required
-	USE_UPNP=0    (the default) UPnP support turned off by default at runtime
-	USE_UPNP=1    UPnP support turned on by default at runtime
-
-IPv6 support may be disabled by setting:
-
-	USE_IPV6=0    Disable IPv6 support
-
-
-Linux Compilcation Guide
-
-Licenses of statically linked libraries:
- Berkeley DB   New BSD license with additional requirement that linked
-               software must be free open source
- Boost         MIT-like license
- miniupnpc     New (3-clause) BSD license
-
-
-### Versions used in this release in Ubuntu 16.04
-
--  GCC           5.4
--  OpenSSL       1.0.2g
--  Berkeley DB   4.8.30.NC
--  Boost         1.58.0
--  miniupnpc     1.9
--  Qt 4.8
-
-## Dependency Build Instructions: Ubuntu 16.04 / Ubuntu 18.04
-
-
-Build requirements:
-
-```
-sudo apt-get install build-essential g++ libtool autotools-dev automake pkg-config libssl-dev libevent-dev bsdmainutils  libboost-all-dev
-
-sudo apt-get install software-properties-common
-
-sudo add-apt-repository ppa:bitcoin/bitcoin
-
-sudo apt-get update
-
-sudo apt-get install libdb4.8-dev libdb4.8++-dev
-
-sudo apt-get install libzmq3-dev libbz2-dev 
-
-sudo apt-get install libqt4-dev libprotobuf-dev protobuf-compiler
+##### Fedora:
+```bash
+$ sudo dnf install gcc-c++ libtool make autoconf automake python3 cmake libstdc++-static patch
 ```
 
-## sometimes zlib will generate error, reinstall this
-
-sudo apt-get install --reinstall zlib1g
-
-Optional, but recommended:
-
-	sudo apt-get install libminiupnpc-dev (see USE_UPNP compile flag)
-
-	sudo apt-get install libqt5gui5 libqt5core5a libqt5dbus5 qttools5-dev qttools5-dev-tools libprotobuf-dev protobuf-compiler 
-
-Notes
------
-The release is built with GCC and then "strip bitcoind" to strip the debug
-symbols, which reduces the executable size by about 90%.
-
-
-
-## Nengcoin Linux BUILD NOTES on Ubuntu 16.04
-
-Headless nengcoin CLI
-
-```
-cd src
-make -f makefile.unix USE_UPNP=1
-strip nengcoind
-
+##### Arch Linux:
+```bash
+$ pacman -S base-devel python3 cmake
 ```
 
- Qt GUI Wallet
-```
-   cd ..
-   qmake USE_UPNP=1 
-   make
-``` 
-
-# Ubuntu 18.04
-
-There are two ways to obtain Ubuntu 18.04 compatible binary. The first approach is to follow similar steps above to compile everything
-in Ubuntu 18.04.  This could be complicated. Without custome method, a simple apt-get and same steps like Ubuntu 16.04 will fail on boost.
-
-An easier way is simply using Ubuntu 16.04 compiled binary files, then compile a boost library version 1.58.0 in Ubuntu 18.04
-
-* (1) Download Ubuntu 16.04 binary files from release from https://github.com/ShorelineCrypto/NengCoin/releases
-
-* (2) Compile boost v1.58.0 library in Ubuntu 18.04 with below steps:
-
-```
-    wget -O boost_1_58_0.tar.bz2 http://sourceforge.net/projects/boost/files/boost/1.58.0/boost_1_58_0.tar.bz2/download
-    tar xvfj boost_1_58_0.tar.bz2
-    cd boost_1_58_0
-    ./bootstrap.sh --with-libraries=all --with-toolset=gcc 
-    ./b2 toolset=gcc 
-    sudo ./b2 install --prefix=/usr
-    sudo ldconfig 
+##### FreeBSD/OpenBSD:
+```bash
+pkg_add gmake cmake libtool
+pkg_add autoconf # (select highest version, e.g. 2.69)
+pkg_add automake # (select highest version, e.g. 1.15)
+pkg_add python # (select highest version, e.g. 3.5)
 ```
 
-Note for some android phone on arm64, below compiling option is required according to member @DisPlume in discord:
+Building
+--------
+
+Follow the instructions in [build-generic](build-generic.md)
+
+Security
+--------
+To help make your Nengcoin installation more secure by making certain attacks impossible to
+exploit even if a vulnerability is found, binaries are hardened by default.
+This can be disabled with:
+
+Hardening Flags:
+
+	./configure --prefix=<prefix> --enable-hardening
+	./configure --prefix=<prefix> --disable-hardening
+
+
+Hardening enables the following features:
+
+* Position Independent Executable
+    Build position independent code to take advantage of Address Space Layout Randomization
+    offered by some kernels. Attackers who can cause execution of code at an arbitrary memory
+    location are thwarted if they don't know where anything useful is located.
+    The stack and heap are randomly located by default but this allows the code section to be
+    randomly located as well.
+
+    On an AMD64 processor where a library was not compiled with -fPIC, this will cause an error
+    such as: "relocation R_X86_64_32 against `......' can not be used when making a shared object;"
+
+    To test that you have built PIE executable, install scanelf, part of paxutils, and use:
+
+    	scanelf -e ./nengcoind
+
+    The output should contain:
+
+     TYPE
+    ET_DYN
+
+* Non-executable Stack
+    If the stack is executable then trivial stack based buffer overflow exploits are possible if
+    vulnerable buffers are found. By default, Nengcoin should be built with a non-executable stack
+    but if one of the libraries it uses asks for an executable stack or someone makes a mistake
+    and uses a compiler extension which requires an executable stack, it will silently build an
+    executable without the non-executable stack protection.
+
+    To verify that the stack is non-executable after compiling use:
+    `scanelf -e ./nengcoind`
+
+    the output should contain:
+	STK/REL/PTL
+	RW- R-- RW-
+
+    The STK RW- means that the stack is readable and writeable but not executable.
+
+Disable-wallet mode
+--------------------
+When the intention is to run only a P2P node without a wallet, Nengcoin may be compiled in
+disable-wallet mode with:
+
+    ./configure --prefix=<prefix> --disable-wallet
+
+In this case there is no dependency on Berkeley DB 4.8.
+
+Mining is also possible in disable-wallet mode, but only using the `getblocktemplate` RPC
+call not `getwork`.
+
+Additional Configure Flags
+--------------------------
+A list of additional configure flags can be displayed with:
+
+    ./configure --help
+
+Building on FreeBSD
+--------------------
+
+(TODO, this is untested, please report if it works and if changes to this documentation are needed)
+
+Building on FreeBSD is basically the same as on Linux based systems, with the difference that you have to use `gmake`
+instead of `make`.
+
+*Note on debugging*: The version of `gdb` installed by default is [ancient and considered harmful](https://wiki.freebsd.org/GdbRetirement).
+It is not suitable for debugging a multi-threaded C++ program, not even for getting backtraces. Please install the package `gdb` and
+use the versioned gdb command e.g. `gdb7111`.
+
+Building on OpenBSD
+-------------------
+
+(TODO, this is untested, please report if it works and if changes to this documentation are needed)
+(TODO, clang might also be an option. Old documentation reported it to to not work due to linking errors, but we're building all dependencies now as part of the depends system, so this might have changed)
+
+Building on OpenBSD might require installation of a newer GCC version. If needed, do this with:
+
+```bash
+$ pkg_add g++ # (select newest 6.x version)
 ```
-DisPlume 1/31/2021 at 8:38 AM
-I do need to add "architecture=arm address-model=64" after the every ./b2 command in compile_boost1.58.sh. Otherwise, it would not compile successfully.
+
+This compiler will not overwrite the system compiler, it will be installed as `egcc` and `eg++` in `/usr/local/bin`.
+
+Add `CC=egcc CXX=eg++ CPP=ecpp` to the dependencies build and the Nengcoin build:
+```bash
+$ cd depends
+$ make CC=egcc CXX=eg++ CPP=ecpp # do not use -jX, this is broken
+$ cd ..
+$ export AUTOCONF_VERSION=2.69 # replace this with the autoconf version that you installed
+$ export AUTOMAKE_VERSION=1.15 # replace this with the automake version that you installed
+$ ./autogen.sh
+$ ./configure --prefix=<prefix> CC=egcc CXX=eg++ CPP=ecpp
+$ gmake # do not use -jX, this is broken
 ```
-
-* (3) Re-run either QT or command line Ubuntu 16.04 files, all should work in Ubuntu 18.04, tested to be good on arm64 cloud vps
-
-# Debian Wheezy or Jessie
-
-NENG core wallet can be compiled in Debian 7 (wheezy) or Debian 8 (jessie).  The dependencies are actually mostly same as Ubuntu 16.04 except for berkley DB shown below.  Please check out the android arm subfolder for more information on debian platform on library dependencies compiling and installation.
-
-```
-sudo apt-get -y install qt4-default
-
-cd /opt
-wget http://download.oracle.com/berkeley-db/db-4.8.30.NC.tar.gz
-tar xvfz db-4.8.30.NC.tar.gz
-cd db-4.8.30.NC/build_unix
-../dist/configure --enable-cxx --disable-shared --disable-replication
-make
-
-cat >> ~/.bashrc  << EOF
-
-export LDFLAGS="-L/opt/db-4.8.30.NC/build_unix"
-export CPPFLAGS="-I/opt/db-4.8.30.NC/build_unix"
-
-EOF
-```
-
-
-
-For actual NENG core wallet compiling, run below in Debian wheezy or jessie:
-```
-   cd NengCoin/src
-   make -f makefile.debian USE_UPNP=1
-   strip nengcoind
-   
-   cd ..
-   cp bitcoin-qt.pro.debian  bitcoin-qt.pro
-   qmake USE_UPNP=1 
-   make
-   
-```
-
-

@@ -2,8 +2,8 @@
 
 This folder describe how to run a full node of Nengcoin (NENG) and to CPU mine NENG in arm based Chromebook as Linux App.  Chrome OS on arm64 or armhf platform was tested. Any Chrome OS version v69 or later on 64 bits arm64 or 32 bits armhf  with linux either in linux beta (Crostini) or Android UserLand app should all work. 
 
-Chrome OS v89 Linux (Beta) runs Debian 10 (Buster) in embedded linux in a container with close to full feature of linux for both CLI and GUI. 
-Older version of Chrome OS run Debian 9 (Stretch). The below script and method was also tested on Debian 9 successfully and should all just work on Debian 9.
+Chrome OS v89 Linux (Beta) runs Debian 11 (bullseye) Debian 10 (Buster) in embedded linux in a container with close to full feature of linux for both CLI and GUI. 
+Older version of Chrome OS run Debian 9 (Stretch). The below script and method was also tested on Debian 11 successfully and should all just work on Debian 10 or 9.
    
 
 - Minimum hardware requirement: 2G memory chromebook with 3G additonal spare hard disk. 
@@ -26,7 +26,7 @@ Inside terminal, this file will be at your home directory.
 
 ## Determine your Platform is 64 bits arm64 or 32 bits armhf
 
-In newest arm chromebook, we expect 64 bits arm64 should be the norm. In older chromebook such as chromebook or chromebit with only 2G memory, it may be armhf platform. 
+In newest arm chromebook, we expect 64 bits arm64 (aarch64)  should be the norm. In older chromebook such as chromebook or chromebit with only 2G memory, it may be armhf platform. 
 In the rare cases, your chromebook may have 64 bits CPU, but the linux runs on 32 bits armhf.  You can first run below two commands to determine what is your linux architecture
 ```
   uname -a
@@ -34,31 +34,11 @@ In the rare cases, your chromebook may have 64 bits CPU, but the linux runs on 3
 ```
 Above information from terminal should give you clear idea whether you have arm64 (aarch64) or armhf platform in linux. 
 
-By default, Linux (Beta) or Crostini runs a container for Debian 10. Below has been tested to be working in both Debian 10 and Debian 9.  Run below commands to install all required files. 
+By default, Linux (Beta) or Crostini runs a container for Debian 11. Below has been tested to be working in both Debian 11 and Debian 10. Because v2.0.0 wallet is static linked, it should work directly in linux beta with proper hardware versions. 
 
-### arm64
 
-```
-   tar xvfz nengcoin_v1.9.1.3_chromeos_arm.tgz
-   cd Chromebook/arm/arm64/debian
-   bash  prepare_neng.sh
-```
-### armhf
-```
-   tar xvfz nengcoin_v1.9.1.3_chromeos_arm.tgz
-   cd Chromebook/arm/armhf/debian
-   bash  prepare_neng.sh
-```
+After successfully downloading NENG wallet file at your current folder. You can move these files to whatever best location inside your "Linux files" folder by using either linux command line or Chromebook GUI drag and drop. 
 
-After successfully completing above commands, NENG wallet file and Cheetah_Cpuminer will be downloaded at your current folder. You can move these files to whatever best location inside your "Linux files" folder by using either linux command line or Chromebook GUI drag and drop. 
-
-## Ubuntu 18.04 Alternative to Fix Potential Hardware Issue
-
-Arm hardware may have hardware compatibility issues. This situation is worse on 32 bits arm platform. You can suspect a hardware issue if you run into error like "error while loading shared libraries: libboost_system.so.1.58.0".  Or NENG wallet may run, but crash within 1 or 2 hours.  
-
-Here we provide a Ubuntu 18.04 NENG wallet method where you can compile Boost library from source. With self-compiled boost library from source together with NENG binary wallet file, the hardware compatibility issue should be fixed. 
-
-You can setup arm64/armhf penguin container using Ubuntu 18.04 to replace Debian 10 for Crostini. Or you can install ubuntu with Android Userland app from Google Play Store, then compile boost from source using README file as guideline there. 
 
 ## Linux Terminal CLI or Desktop GUI wallet for mining? 
 
@@ -69,14 +49,14 @@ to run a full node and for the purpose of CPU mining.
 
 ### arm64
 ```
- hlu@penguin:~$ cd  nengcoin_v1.9.1.2_u16_arm64
- hlu@penguin:~/nengcoin_v1.9.1.2_u16_arm64$ ./nengcoin-qt &
+ hlu@penguin:~$ cd nengcoin_2.0.0_arm64_linux-gnu
+ hlu@penguin:~/nengcoin_2.0.0_arm64_linux-gnu$ ./nengcoin-qt &
 ```
 
 ### armhf
 ```
- hlu@penguin:~$ cd  nengcoin_v1.9.1.2_u16_armhf
- hlu@penguin:~/nengcoin_v1.9.1.2_u16_armhf$ ./nengcoin-qt &
+ hlu@penguin:~$ cd nengcoin_2.0.0_armhf_linux-gnu 
+ hlu@penguin:~/nengcoin_2.0.0_armhf_linux-gnu$ ./nengcoin-qt &
 ```
 
 Above in linux terminal will pop NENG QT wallet in chromebook desktop.
@@ -101,7 +81,7 @@ TAB key is powerful in linux command line.  Typing full word of file or folder n
 
 Here is easier way with tab:
 ```
-   cd  nengcoin_v1.9.1.2_u16_arm64
+   cd nengcoin_2.0.0_arm64_linux-gnu 
 
 ```
   Typing above long word in Chromebook is close to impossible. An easier way to do is:
@@ -109,7 +89,7 @@ Here is easier way with tab:
 ```
    cd  nengc-finger push TAB key
 ```
-After you push TAB afer word "nengc" , the chromebook linux terminal should behave like linux in server/desktop with the full file/folder name "nengcoin_v1.9.1.2_u16_arm64" auto populated for you. 
+After you push TAB afer word "nengc" , the chromebook linux terminal should behave like linux in server/desktop with the full file/folder name "nengcoin_2.0.0_arm64_linux-gnu" auto populated for you. 
 
 #### Arrow up or down key for history
 
