@@ -3,7 +3,7 @@ Nengcoin Core 2.0.0
 
 Setup
 ---------------------
-[Nengcoin Core](http://nengcoin.org/en/download) is the original Nengcoin client and it builds the backbone of the network. However, it downloads and stores the entire history of Nengcoin transactions (which is currently several GBs); depending on the speed of your computer and network connection, the synchronization process can take anywhere from a few hours to a day or more.
+[Nengcoin Core](http://nengcoin.org/) is the original Nengcoin client and it builds the backbone of the network. However, it downloads and stores the entire history of Nengcoin transactions (which is currently several GBs); depending on the speed of your computer and network connection, the synchronization process can take anywhere from a few hours to a day or more.
 
 Running
 ---------------------
