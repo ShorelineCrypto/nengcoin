@@ -130,7 +130,7 @@ unsigned int GetNextWorkRequired(const CBlockIndex* pindexLast, const CBlockHead
         }
         // randomSpike fork after 1000 emergency blocks on default litecoin style
         // v1.9.x hard fork after block  3244060 and fix 51% attack on SXC
-        if (pindex->nHeight > 3244060) {
+        else if (pindex->nHeight > 3244060) {
             arith_uint256 bnCheetah;
             bnCheetah = bnPowLimit;
             bnCheetah /= 160;
