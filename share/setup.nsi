@@ -5,7 +5,7 @@ SetCompressor /SOLID lzma
 
 # General Symbol Definitions
 !define REGKEY "SOFTWARE\$(^Name)"
-!define VERSION 1.9.1.0
+!define VERSION 1.10.1.0
 !define COMPANY "Nengcoin project"
 !define URL http://www.nengcoin.org/
 
