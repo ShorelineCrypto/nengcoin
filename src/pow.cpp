@@ -32,8 +32,105 @@ unsigned int GetNextWorkRequired(const CBlockIndex* pindexLast, const CBlockHead
         const int64_t nTargetSpacing = params.nPowTargetSpacing;
 
         // randomSpike fork after 1000 emergency blocks on default litecoin style
+        // v1.10.x hard fork after block  3537500 and fix 51% attack on SXC
+        if (pindex->nHeight > 3537500) {
+            arith_uint256 bnCheetah;
+            bnCheetah = bnPowLimit;
+            bnCheetah /= 20;
+            unsigned int nCheetah = bnCheetah.GetCompact();
+            
+            arith_uint256 bnSpike;
+            bnSpike = bnPowLimit;
+            bnSpike /= 500000000;
+            unsigned int nSpike = bnSpike.GetCompact();
+            
+            if (pblock->nTime > pindexLast->nTime + nTargetSpacing*2)
+                return nCheetah;
+            else if  ((pblock->nTime > pindexLast->nTime + 40) || (pblock->nTime < pindexLast->nTime - 40))
+            {
+                // Return the last non-special-min-difficulty-rules-block
+                
+                while (pindex->pprev && pindex->nHeight % nInterval != 0 && pindex->nBits == nCheetah)
+                    pindex = pindex->pprev;
+                return pindex->nBits;
+            }
+            else if ((pblock->nTime > pindexLast->nTime + 30) || (pblock->nTime < pindexLast->nTime - 30))
+            {
+                // 50% random chance on Spike difficulty between  +- 30 to 40 seconds
+                                
+                const CBlockIndex* tmpindex = pindexLast;
+                tmpindex = tmpindex->pprev;
+                tmpindex = tmpindex->pprev;
+                if ((tmpindex->nTime + pblock->nTime + pindex->nHeight) % 2 != 0)
+                    return nSpike;
+                else
+                {
+                    while (pindex->pprev && pindex->nHeight % nInterval != 0 && pindex->nBits == nCheetah)
+                        pindex = pindex->pprev;
+                    return pindex->nBits;
+                }
+            }
+            else if ((pblock->nTime > pindexLast->nTime + 10) || (pblock->nTime < pindexLast->nTime - 10))
+            {
+                // 75% random chance on Spike difficulty between  +- 10 to 30 seconds
+                                
+                const CBlockIndex* tmpindex = pindexLast;
+                tmpindex = tmpindex->pprev;
+                tmpindex = tmpindex->pprev;
+                if ((tmpindex->nTime + pblock->nTime + pindex->nHeight) % 4 != 0)
+                    return nSpike;
+                else
+                {
+                    while (pindex->pprev && pindex->nHeight % nInterval != 0 && pindex->nBits == nCheetah)
+                        pindex = pindex->pprev;
+                    return pindex->nBits;
+                }
+            }
+            else if ((pblock->nTime > pindexLast->nTime + 1) || (pblock->nTime < pindexLast->nTime - 1))
+            {
+                // 87.5% random chance on Spike difficulty between  +- 2 to 10 seconds
+                                
+                const CBlockIndex* tmpindex = pindexLast;
+                tmpindex = tmpindex->pprev;
+                tmpindex = tmpindex->pprev;
+                if ((tmpindex->nTime + pblock->nTime + pindex->nHeight) % 8 != 0)
+                    return nSpike;
+                else
+                {
+                    while (pindex->pprev && pindex->nHeight % nInterval != 0 && pindex->nBits == nCheetah)
+                        pindex = pindex->pprev;
+                    return pindex->nBits;
+                }
+            }
+            else
+            {
+                // 98% random chance on Spike difficulty between +- 1 seconds
+                                
+                const CBlockIndex* tmpindex = pindexLast;
+                tmpindex = tmpindex->pprev;
+                tmpindex = tmpindex->pprev;
+                if ((tmpindex->nTime + pblock->nTime + pindex->nHeight) % 50 != 0)
+                    return nSpike;
+                else
+                {
+                    while (pindex->pprev && pindex->nHeight % nInterval != 0 && pindex->nBits == nCheetah)
+                        pindex = pindex->pprev;
+                    return pindex->nBits;
+                }
+            }
+        }        
+       // Emergency hard fork after block  3536500
+       // hard fork and fix 51% attack on SXC to new chain for 1000 blocks on default litecoin style
+        else if (pindex->nHeight > 3536500) {
+            arith_uint256 bnCheetah;
+            bnCheetah = bnPowLimit;
+            unsigned int nCheetah = bnCheetah.GetCompact();
+            
+            return nCheetah;
+        }
+        // randomSpike fork after 1000 emergency blocks on default litecoin style
         // v1.9.x hard fork after block  3244060 and fix 51% attack on SXC
-        if (pindex->nHeight > 3244060) {
+        else if (pindex->nHeight > 3244060) {
             arith_uint256 bnCheetah;
             bnCheetah = bnPowLimit;
             bnCheetah /= 160;
