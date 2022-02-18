@@ -34,7 +34,7 @@ In the rare cases, your chromebook may have 64 bits CPU, but the linux runs on 3
 ```
 Above information from terminal should give you clear idea whether you have arm64 (aarch64) or armhf platform in linux. 
 
-By default, Linux (Beta) or Crostini runs a container for Debian 11. Below has been tested to be working in both Debian 11 and Debian 10. Because v2.0.0 wallet is static linked, it should work directly in linux beta with proper hardware versions. 
+By default, Linux (Beta) or Crostini runs a container for Debian 11. Below has been tested to be working in both Debian 11 and Debian 10. Because v2.1.0 wallet is static linked, it should work directly in linux beta with proper hardware versions. 
 
 
 After successfully downloading NENG wallet file at your current folder. You can move these files to whatever best location inside your "Linux files" folder by using either linux command line or Chromebook GUI drag and drop. 
@@ -49,14 +49,14 @@ to run a full node and for the purpose of CPU mining.
 
 ### arm64
 ```
- hlu@penguin:~$ cd nengcoin_2.0.0_arm64_linux-gnu
- hlu@penguin:~/nengcoin_2.0.0_arm64_linux-gnu$ ./nengcoin-qt &
+ hlu@penguin:~$ cd nengcoin_2.1.0_arm64_linux-gnu
+ hlu@penguin:~/nengcoin_2.1.0_arm64_linux-gnu$ ./nengcoin-qt &
 ```
 
 ### armhf
 ```
- hlu@penguin:~$ cd nengcoin_2.0.0_armhf_linux-gnu 
- hlu@penguin:~/nengcoin_2.0.0_armhf_linux-gnu$ ./nengcoin-qt &
+ hlu@penguin:~$ cd nengcoin_2.1.0_armhf_linux-gnu 
+ hlu@penguin:~/nengcoin_2.1.0_armhf_linux-gnu$ ./nengcoin-qt &
 ```
 
 Above in linux terminal will pop NENG QT wallet in chromebook desktop.
@@ -81,7 +81,7 @@ TAB key is powerful in linux command line.  Typing full word of file or folder n
 
 Here is easier way with tab:
 ```
-   cd nengcoin_2.0.0_arm64_linux-gnu 
+   cd nengcoin_2.1.0_arm64_linux-gnu 
 
 ```
   Typing above long word in Chromebook is close to impossible. An easier way to do is:
@@ -89,7 +89,7 @@ Here is easier way with tab:
 ```
    cd  nengc-finger push TAB key
 ```
-After you push TAB afer word "nengc" , the chromebook linux terminal should behave like linux in server/desktop with the full file/folder name "nengcoin_2.0.0_arm64_linux-gnu" auto populated for you. 
+After you push TAB afer word "nengc" , the chromebook linux terminal should behave like linux in server/desktop with the full file/folder name "nengcoin_2.1.0_arm64_linux-gnu" auto populated for you. 
 
 #### Arrow up or down key for history
 

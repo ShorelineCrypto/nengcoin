@@ -1,4 +1,4 @@
-Nengcoin core 2.0.0 is rebased off bitcoin/litecoin core 0.13.3
+Nengcoin core 2.1.0 is rebased off bitcoin/litecoin core 0.13.3
 
 This is a new major version release, including new features, various bugfixes and performance improvements, as well as updated translations.
 It is recommended to upgrade to this version.
