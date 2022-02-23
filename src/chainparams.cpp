@@ -98,7 +98,7 @@ public:
         consensus.vDeployments[Consensus::DEPLOYMENT_SEGWIT].nTimeout = 1751380513; // July 1, 2025 
 
         // The best chain should have at least this much work.
-        consensus.nMinimumChainWork = uint256S("0x000000000000000000000000000000000000000000000000011e2024b37d2779");
+        consensus.nMinimumChainWork = uint256S("0x000000000000000000000000000000000000000000000000012ad0d7c04752dd");
 
         /**
          * The message start string is designed to be unlikely to occur in normal data.
@@ -144,7 +144,7 @@ public:
 			( 3244063, uint256S("0xf0f3a907f7f13d549647049f2263a47f5c8a3c938aa9937b8f8d2d880130cbe3"))
 			( 3244189, uint256S("0x29a936ffb34341d4fee4d29bb59890442ddb4893eadd5a8f1c8f7a7e6b2ca583"))
 			( 3251189, uint256S("0x5956c5280370bb2812314d38a2de987f9fa33aa628276d97344761e244b1a3bf"))
-            ( 3539846, uint256S("0x75ca0749a1975ce38f17a2ccf919c2478e8bcd1fc6c107642cff3a3e63878502")),
+			( 3539846, uint256S("0x75ca0749a1975ce38f17a2ccf919c2478e8bcd1fc6c107642cff3a3e63878502")),
 			1645574876, // * UNIX timestamp of last checkpoint block
 			4512019,   // * total number of transactions between genesis and last checkpoint
 			//   (the tx=... number in the SetBestChain debug.log lines)
