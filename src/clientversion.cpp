@@ -19,7 +19,7 @@ const std::string CLIENT_NAME("Nengster");
  * Client version number
  */
 
-#define CLIENT_VERSION_SUFFIX "-1.10.x"
+#define CLIENT_VERSION_SUFFIX "-1.11.x"
 
 
 
