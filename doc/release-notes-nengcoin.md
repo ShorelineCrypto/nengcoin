@@ -48,7 +48,7 @@ Old and new addresses can be used interchangeably.
 miniupnp CVE-2017-8798
 ----------------------
 
-Bundled miniupnpc was updated to 2.0.20170509. This fixes an integer signedness error (present in MiniUPnPc v1.4.20101221 through v2.0) that allows remote attackers (within the LAN) to cause a denial of service or possibly have unspecified other impact.
+Bundled miniupnpc was updated to 2.0.2.2.0509. This fixes an integer signedness error (present in MiniUPnPc v1.4.20101221 through v2.0) that allows remote attackers (within the LAN) to cause a denial of service or possibly have unspecified other impact.
 
 This only affects users that have explicitly enabled UPnP through the GUI setting or through the -upnp option, as since the last UPnP vulnerability (in Nengcoin Core 0.10.4) it has been disabled by default.
 
