@@ -2724,6 +2724,10 @@ bool CBlock::AcceptBlock(CValidationState &state, CDiskBlockPos *dbp)
         if (GetBlockTime() <= pindexPrev->GetMedianTimePast())
             return state.Invalid(error("AcceptBlock() : block's timestamp is too early"));
 
+        // Check timestamp - Enforce future timestamp 30 seconds rule after v1.12.x hard fork
+        if ((nHeight > 3744500) && (GetBlockTime() > GetAdjustedTime() + 1 * 1 * 30))
+            return state.Invalid(error("AcceptBlock() : block timestamp >30 sec in the future"));
+        
         // Check that all transactions are finalized
         BOOST_FOREACH(const CTransaction& tx, vtx)
             if (!tx.IsFinal(nHeight, GetBlockTime()))
