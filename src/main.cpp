@@ -3556,7 +3556,7 @@ bool ContextualCheckBlockHeader(const CBlockHeader& block, CValidationState& sta
      
     // Check timestamp - Enforce future timestamp 30 seconds rule after v1.12.x hard fork  
     if ((nHeight > 3744500) && (block.GetBlockTime() > nAdjustedTime + 1 * 1 * 30))
-        return state.Invalid(false, REJECT_INVALID, "time-too-new", "block timestamp too far in the future");
+        return state.Invalid(false, REJECT_INVALID, "time-too-new", "block timestamp >30 sec in the future");
  
     bool enforceV2 = false;
     if (block.nVersion < 2) {
