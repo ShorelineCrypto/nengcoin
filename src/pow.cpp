@@ -35,7 +35,7 @@ unsigned int GetNextWorkRequired(const CBlockIndex* pindexLast, const CBlockHead
         if (pindex->nHeight > 3744500) {
             arith_uint256 bnCheetah;
             bnCheetah = bnPowLimit;
-            bnCheetah /= 21;
+            bnCheetah /= 20;
             unsigned int nCheetah = bnCheetah.GetCompact();
 
             arith_uint256 bnSpike;
