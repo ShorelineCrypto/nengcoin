@@ -1172,8 +1172,8 @@ unsigned int static GetNextWorkRequired(const CBlockIndex* pindexLast, const CBl
             }
         
         }
-       // v1.12.x hard fork after block  3744500
-        else if (pindex->nHeight > 3744500) {
+       // v1.12.x hard fork after block  3800810
+        else if (pindex->nHeight > 3800810) {
             CBigNum bnCheetah;
             bnCheetah = bnProofOfWorkLimit;
             bnCheetah /= 20;
@@ -2812,7 +2812,7 @@ bool CBlock::AcceptBlock(CValidationState &state, CDiskBlockPos *dbp)
             return state.Invalid(error("AcceptBlock() : block's timestamp is too early"));
 
         // Check timestamp - Enforce future timestamp 30 seconds rule after v1.12.x hard fork
-        if ((nHeight > 3744500) && (GetBlockTime() > GetAdjustedTime() + 1 * 1 * 30))
+        if ((nHeight > 3800810) && (GetBlockTime() > GetAdjustedTime() + 1 * 1 * 30))
             return state.Invalid(error("AcceptBlock() : block timestamp >30 sec in the future"));
         
         // Check that all transactions are finalized
