@@ -89,8 +89,8 @@ public:
 
         // Deployment of BIP68, BIP112, and BIP113.
         consensus.vDeployments[Consensus::DEPLOYMENT_CSV].bit = 0;
-        consensus.vDeployments[Consensus::DEPLOYMENT_CSV].nStartTime = 1751121313; // June 28, 2025 
-        consensus.vDeployments[Consensus::DEPLOYMENT_CSV].nTimeout = 1751380513; // July 1, 2025 
+        consensus.vDeployments[Consensus::DEPLOYMENT_CSV].nStartTime = 1656637837; // July 1, 2022 
+        consensus.vDeployments[Consensus::DEPLOYMENT_CSV].nTimeout = 1688173837; // July 1, 2023 
 
         // Deployment of SegWit (BIP141, BIP143, and BIP147)
         consensus.vDeployments[Consensus::DEPLOYMENT_SEGWIT].bit = 1;
@@ -145,7 +145,7 @@ public:
 			( 3244189, uint256S("0x29a936ffb34341d4fee4d29bb59890442ddb4893eadd5a8f1c8f7a7e6b2ca583"))
 			( 3251189, uint256S("0x5956c5280370bb2812314d38a2de987f9fa33aa628276d97344761e244b1a3bf"))
 			( 3539846, uint256S("0x75ca0749a1975ce38f17a2ccf919c2478e8bcd1fc6c107642cff3a3e63878502"))
-            ( 3744303, uint256S("0x3e012d140a2604b7852a78790d94de23c1f834a283c444da4f1db02925e37078")),
+			( 3744303, uint256S("0x3e012d140a2604b7852a78790d94de23c1f834a283c444da4f1db02925e37078")),
 			1654393137, // * UNIX timestamp of last checkpoint block
 			4728419,   // * total number of transactions between genesis and last checkpoint
 			//   (the tx=... number in the SetBestChain debug.log lines)
