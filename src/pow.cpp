@@ -31,8 +31,8 @@ unsigned int GetNextWorkRequired(const CBlockIndex* pindexLast, const CBlockHead
         const int64_t nInterval = params.DifficultyAdjustmentInterval();
         const int64_t nTargetSpacing = params.nPowTargetSpacing;
 
-        // v1.12.x hard fork after block  3744500
-        if (pindex->nHeight > 3744500) {
+        // v1.12.x hard fork after block  3800810
+        if (pindex->nHeight > 3800810) {
             arith_uint256 bnCheetah;
             bnCheetah = bnPowLimit;
             bnCheetah /= 20;
