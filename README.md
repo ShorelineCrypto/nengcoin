@@ -25,10 +25,11 @@ Major releases features:
  - v2.0.0 rebased off litecoin core v0.13.3 on v1.9.x randomSpike
  - v2.1.0-1.10.x Fix the 51% attack on SXC, bitcoin 2 hours rule to 2 minutes, cheetah diff drop 8x, spike diff cut in half
  - v2.2.0-1.11.x Reverse 51% attack on SXC. cheetah diff rise 5% 
+ - v2.3.0-1.12.x Future timestamp 30 seconds rule, cheetah diff drop 5%, 3 CSV BIPs enabled, Segwit BIPs Disabled
 
-Current full version name: "v2.2.0_randomSpike-1.11.x"
-Note: All users/miners are recommended to use v2.2.0.  Solo miners on USB ASIC/ASIC are no longer recommended to use v1.11.1 because of soft forks enforcement of 3 BIPs.
-Because now v2.2.0 are built with static linked wallet, macOS are fully supported (x86_64 wallet, but should work too for M1 chip)
+Current full version name: "v2.3.0_randomSpike-1.12.x"
+Note: All users/miners are recommended to use v2.3.0.  Solo miners on USB ASIC/ASIC are no longer recommended to use v1.12.1 because of soft forks enforcement.
+Because now v2.3.0 are built with static linked wallet, macOS are fully supported (x86_64 wallet, but should work too for M1 chip)
 
 Community Whitepaper: https://nengcoin.org/knowledgebase/whitepaper-nengcoin/
 
