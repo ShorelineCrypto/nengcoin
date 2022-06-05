@@ -24,9 +24,10 @@ Major releases features:
  - v1.9.x Fix the 51% attack on SXC, cheetah diff drop 20%, spike diff decrease 10x
  - v1.10.x Fix the 51% attack on SXC, bitcoin 2 hours rule to 2 minutes, cheetah diff drop 8x, spike diff cut in half 
  - v1.11.x Fix the 51% attack on SXC, cheetah diff rise 5% 
+ - v1.12.x future timestamp 30 seconds rule, cheetah diff drop 5%
 
-Current full version name: "1.11.1.0_randomSpike-v1.11.x" (shorthand: "v1.11.x")
-Note: latest different platform wallets have "1.11.1.0" version tag in QT wallet.  The downloaded files should have correct version on file names supporting different hardware devices and OS.
+Current full version name: "1.12.1.0_randomSpike-v1.12.x" (shorthand: "v1.12.x")
+Note: latest different platform wallets have "1.12.1.0" version tag in QT wallet.  The downloaded files should have correct version on file names supporting different hardware devices and OS.
 
 Community Whitepaper: https://nengcoin.org/knowledgebase/whitepaper-nengcoin/
 
