@@ -3553,6 +3553,11 @@ bool ContextualCheckBlockHeader(const CBlockHeader& block, CValidationState& sta
 
     // Nengcoin: Reject block.nVersion=1 blocks (mainnet >= 710000, testnet >= 400000, regtest uses supermajority)
     const int nHeight = pindexPrev->nHeight+1;    
+     
+    // Check timestamp - Enforce future timestamp 30 seconds rule after v1.12.x hard fork  
+    if ((nHeight > 3744500) && (block.GetBlockTime() > nAdjustedTime + 1 * 1 * 30))
+        return state.Invalid(false, REJECT_INVALID, "time-too-new", "block timestamp too far in the future");
+ 
     bool enforceV2 = false;
     if (block.nVersion < 2) {
         if (consensusParams.BIP34Height != -1) {
@@ -3601,10 +3606,6 @@ bool ContextualCheckBlock(const CBlock& block, CValidationState& state, CBlockIn
                               ? pindexPrev->GetMedianTimePast()
                               : block.GetBlockTime();
 
-    // Check timestamp - Enforce future timestamp 30 seconds rule after v1.12.x hard fork  
-    if ((nHeight > 3744500) && (block.GetBlockTime() > nAdjustedTime + 1 * 1 * 30))
-        return state.Invalid(false, REJECT_INVALID, "time-too-new", "block timestamp too far in the future");
-    
     // Check that all transactions are finalized
     BOOST_FOREACH(const CTransaction& tx, block.vtx) {
         if (!IsFinalTx(tx, nHeight, nLockTimeCutoff)) {
