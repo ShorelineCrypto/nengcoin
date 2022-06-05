@@ -3601,6 +3601,10 @@ bool ContextualCheckBlock(const CBlock& block, CValidationState& state, CBlockIn
                               ? pindexPrev->GetMedianTimePast()
                               : block.GetBlockTime();
 
+    // Check timestamp - Enforce future timestamp 30 seconds rule after v1.12.x hard fork  
+    if ((nHeight > 3744500) && (block.GetBlockTime() > nAdjustedTime + 1 * 1 * 30))
+        return state.Invalid(false, REJECT_INVALID, "time-too-new", "block timestamp too far in the future");
+    
     // Check that all transactions are finalized
     BOOST_FOREACH(const CTransaction& tx, block.vtx) {
         if (!IsFinalTx(tx, nHeight, nLockTimeCutoff)) {
