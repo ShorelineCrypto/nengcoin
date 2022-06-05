@@ -1,4 +1,4 @@
-Nengcoin Core 2.2.0
+Nengcoin Core 2.3.0
 =====================
 
 Setup

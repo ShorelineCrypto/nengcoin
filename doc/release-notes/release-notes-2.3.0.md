@@ -1,4 +1,4 @@
-Nengcoin core 2.2.0 is rebased off bitcoin/litecoin core 0.13.3
+Nengcoin core 2.3.0 is rebased off bitcoin/litecoin core 0.13.3
 
 This is a new major version release, including new features, various bugfixes and performance improvements, as well as updated translations.
 It is recommended to upgrade to this version.
@@ -333,11 +333,11 @@ and are affected by this change:
 For example, the `scriptSig.asm` property of a transaction input that
 previously showed an assembly representation of:
 
-    304502207fa7a6d1e0ee81132a269ad84e68d695483745cde8b541e3bf630749894e342a02.2.0c1f7ab20e13e22fb95281a870f3dcf38d782e53023ee313d741ad0cfbc0c509001 400000 OP_NOP2
+    304502207fa7a6d1e0ee81132a269ad84e68d695483745cde8b541e3bf630749894e342a02.3.0c1f7ab20e13e22fb95281a870f3dcf38d782e53023ee313d741ad0cfbc0c509001 400000 OP_NOP2
 
 now shows as:
 
-    304502207fa7a6d1e0ee81132a269ad84e68d695483745cde8b541e3bf630749894e342a02.2.0c1f7ab20e13e22fb95281a870f3dcf38d782e53023ee313d741ad0cfbc0c5090[ALL] 400000 OP_CHECKLOCKTIMEVERIFY
+    304502207fa7a6d1e0ee81132a269ad84e68d695483745cde8b541e3bf630749894e342a02.3.0c1f7ab20e13e22fb95281a870f3dcf38d782e53023ee313d741ad0cfbc0c5090[ALL] 400000 OP_CHECKLOCKTIMEVERIFY
 
 Note that the output of the RPC `decodescript` did not change because it is
 configured specifically to process scriptPubKey and not scriptSig scripts.
