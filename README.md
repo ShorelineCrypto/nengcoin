@@ -41,7 +41,7 @@ Reddit: https://www.reddit.com/r/nengcoin/
 
 DISCORD: https://discordapp.com/invite/UPeBwgs
 
-Twitter: https://twitter.com/nengcoin
+Twitter: https://twitter.com/nengcoindev
 
 License
 -------
