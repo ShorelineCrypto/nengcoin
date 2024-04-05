@@ -144,6 +144,12 @@ namespace {
 
     CBlockIndex *pindexBestInvalid;
 
+/**
+ * The best finalized block.
+ * This block cannot be reorged in any way, shape or form.
+ */
+CBlockIndex const *pindexFinalized;
+
     /**
      * The set of all CBlockIndex entries with BLOCK_VALID_TRANSACTIONS (for itself and all ancestors) and
      * as good as our current tip or better. Entries may be failed, though, and pruning nodes may be
