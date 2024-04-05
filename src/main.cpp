@@ -2832,6 +2832,23 @@ static int64_t nTimeFlush = 0;
 static int64_t nTimeChainState = 0;
 static int64_t nTimePostConnect = 0;
 
+static bool FinalizeBlockInternal(CValidationState &state,
+                                  CBlockIndex *pindex) {
+
+    // Check that the request is consistent with current finalization.
+    if (pindexFinalized && !AreOnTheSameFork(pindex, pindexFinalized)) {
+        return state.DoS(
+            20, error("%s: Trying to finalize block %s which conflicts "
+                      "with already finalized block",
+                      __func__, pindex->GetBlockHash().ToString()),
+            REJECT_AGAINST_FINALIZED, "bad-fork-prior-finalized");
+    }
+
+    // Our candidate is valid, finalize it.
+    pindexFinalized = pindex;
+    return true;
+}
+
 /**
  * Connect a new block to chainActive. pblock is either NULL or a pointer to a CBlock
  * corresponding to pindexNew, to bypass loading it again from disk.
@@ -2861,6 +2878,20 @@ bool static ConnectTip(CValidationState& state, const CChainParams& chainparams,
             return error("ConnectTip(): ConnectBlock %s failed", pindexNew->GetBlockHash().ToString());
         }
         mapBlockSource.erase(pindexNew->GetBlockHash());
+        
+        // Update the finalized block.
+        int32_t nHeightToFinalize =
+            pindexNew->nHeight - DEFAULT_MAX_REORG_DEPTH;
+        CBlockIndex *pindexToFinalize =
+            pindexNew->GetAncestor(nHeightToFinalize);
+        if (pindexToFinalize &&
+            !FinalizeBlockInternal(state, pindexToFinalize)) {
+            state.SetCorruptionPossible();
+            return error("ConnectTip(): FinalizeBlock %s failed (%s)",
+                         pindexNew->GetBlockHash().ToString(),
+                         FormatStateMessage(state));
+        }
+
         nTime3 = GetTimeMicros(); nTimeConnectTotal += nTime3 - nTime2;
         LogPrint("bench", "  - Connect total: %.2fms [%.2fs]\n", (nTime3 - nTime2) * 0.001, nTimeConnectTotal * 0.000001);
         assert(view.Flush());
