@@ -154,7 +154,7 @@ struct BlockHasher
 };
 
 /** Default for -maxreorgdepth */
-static const int DEFAULT_MAX_REORG_DEPTH = 10;
+static const int DEFAULT_MAX_REORG_DEPTH = 96;
 
 extern CScript COINBASE_FLAGS;
 extern CCriticalSection cs_main;
