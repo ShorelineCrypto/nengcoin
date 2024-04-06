@@ -2822,6 +2822,11 @@ bool static DisconnectTip(CValidationState& state, const CChainParams& chainpara
         mempool.UpdateTransactionsFromBlock(vHashUpdate);
     }
 
+    // If the tip is finalized, then undo it.
+    if (pindexFinalized == pindexDelete) {
+        pindexFinalized = pindexDelete->pprev;
+    }
+    
     // Update chainActive and related variables.
     UpdateTip(pindexDelete->pprev, chainparams);
     // Let wallets know transactions went from 1-confirmed to
@@ -2840,6 +2845,15 @@ static int64_t nTimePostConnect = 0;
 
 static bool FinalizeBlockInternal(CValidationState &state,
                                   CBlockIndex *pindex) {
+
+    AssertLockHeld(cs_main);                                  
+    if (pindex->nStatus.isInvalid()) {
+        // We try to finalize an invalid block.
+        return state.DoS(100,
+                         error("%s: Trying to finalize invalid block %s",
+                               __func__, pindex->GetBlockHash().ToString()),
+                         REJECT_INVALID, "finalize-invalid-block");
+    }
 
     // Check that the request is consistent with current finalization.
     if (pindexFinalized && !AreOnTheSameFork(pindex, pindexFinalized)) {
@@ -2946,6 +2960,16 @@ static CBlockIndex* FindMostWorkChain() {
             pindexNew = *it;
         }
 
+        // If this block will cause a finalized block to be reorged, then we
+        // mark it as invalid.
+        if (pindexFinalized && !AreOnTheSameFork(pindexNew, pindexFinalized)) {
+            LogPrintf("Mark block %s invalid because it forks prior to the "
+                      "finalization point %d.\n",
+                      pindexNew->GetBlockHash().ToString(),
+                      pindexFinalized->nHeight);
+            pindexNew->nStatus = pindexNew->nStatus.withFailed();
+        }
+        
         // Check whether all blocks on the path between the currently active chain and the candidate are valid.
         // Just going until the active chain is an optimization, as we know all blocks in it are valid already.
         CBlockIndex *pindexTest = pindexNew;
@@ -4385,6 +4409,7 @@ void UnloadBlockIndex()
     LOCK(cs_main);
     setBlockIndexCandidates.clear();
     chainActive.SetTip(NULL);
+    pindexFinalized = NULL;
     pindexBestInvalid = NULL;
     pindexBestHeader = NULL;
     mempool.clear();
