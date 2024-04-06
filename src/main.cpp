@@ -2967,7 +2967,7 @@ static CBlockIndex* FindMostWorkChain() {
                       "finalization point %d.\n",
                       pindexNew->GetBlockHash().ToString(),
                       pindexFinalized->nHeight);
-            pindex->nStatus |= BLOCK_FAILED_VALID;
+            pindexNew->nStatus |= BLOCK_FAILED_VALID;
         }
         
         // Check whether all blocks on the path between the currently active chain and the candidate are valid.
