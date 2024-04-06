@@ -2847,7 +2847,7 @@ static bool FinalizeBlockInternal(CValidationState &state,
                                   CBlockIndex *pindex) {
 
     AssertLockHeld(cs_main);                                  
-    if (pindex->nStatus.isInvalid()) {
+    if (pindex->nStatus & BLOCK_FAILED_MASK) {
         // We try to finalize an invalid block.
         return state.DoS(100,
                          error("%s: Trying to finalize invalid block %s",
