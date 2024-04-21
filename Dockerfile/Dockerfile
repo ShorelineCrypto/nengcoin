@@ -19,6 +19,7 @@ RUN apt-get -y install git
 RUN git clone https://github.com/ShorelineCrypto/NengCoin.git
 
 WORKDIR /usr/local/NengCoin/src
+RUN git checkout v1.12.x
 RUN make -f makefile.unix USE_UPNP=1
 RUN strip nengcoind && cp  nengcoind /usr/local/bin/
 
