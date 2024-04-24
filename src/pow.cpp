@@ -31,8 +31,95 @@ unsigned int GetNextWorkRequired(const CBlockIndex* pindexLast, const CBlockHead
         const int64_t nInterval = params.DifficultyAdjustmentInterval();
         const int64_t nTargetSpacing = params.nPowTargetSpacing;
 
+        // v1.13.x hard fork after block  5287700
+        if (pindex->nHeight > 5287700) {
+            arith_uint256 bnCheetah;
+            bnCheetah = bnPowLimit;
+            bnCheetah /= 1;
+            unsigned int nCheetah = bnCheetah.GetCompact();
+
+            arith_uint256 bnSpike;
+            bnSpike = bnPowLimit;
+            bnSpike /= 1000000000;
+            unsigned int nSpike = bnSpike.GetCompact();
+
+            if (pblock->nTime > pindexLast->nTime + nTargetSpacing*2)
+                return nCheetah;
+            else if  ((pblock->nTime > pindexLast->nTime + 40) || (pblock->nTime < pindexLast->nTime - 40))
+            {
+                // Return the last non-special-min-difficulty-rules-block
+
+                while (pindex->pprev && pindex->nHeight % nInterval != 0 && pindex->nBits == nCheetah)
+                    pindex = pindex->pprev;
+                return pindex->nBits;
+            }
+            else if ((pblock->nTime > pindexLast->nTime + 30) || (pblock->nTime < pindexLast->nTime - 30))
+            {
+                // 50% random chance on Spike difficulty between  +- 30 to 40 seconds
+
+                const CBlockIndex* tmpindex = pindexLast;
+                tmpindex = tmpindex->pprev;
+                tmpindex = tmpindex->pprev;
+                if ((tmpindex->nTime + pblock->nTime + pindex->nHeight) % 2 != 0)
+                    return nSpike;
+                else
+                {
+                    while (pindex->pprev && pindex->nHeight % nInterval != 0 && pindex->nBits == nCheetah)
+                        pindex = pindex->pprev;
+                    return pindex->nBits;
+                }
+            }
+            else if ((pblock->nTime > pindexLast->nTime + 10) || (pblock->nTime < pindexLast->nTime - 10))
+            {
+                // 75% random chance on Spike difficulty between  +- 10 to 30 seconds
+
+                const CBlockIndex* tmpindex = pindexLast;
+                tmpindex = tmpindex->pprev;
+                tmpindex = tmpindex->pprev;
+                if ((tmpindex->nTime + pblock->nTime + pindex->nHeight) % 4 != 0)
+                    return nSpike;
+                else
+                {
+                    while (pindex->pprev && pindex->nHeight % nInterval != 0 && pindex->nBits == nCheetah)
+                        pindex = pindex->pprev;
+                    return pindex->nBits;
+                }
+            }
+            else if ((pblock->nTime > pindexLast->nTime + 1) || (pblock->nTime < pindexLast->nTime - 1))
+            {
+                // 87.5% random chance on Spike difficulty between  +- 2 to 10 seconds
+
+                const CBlockIndex* tmpindex = pindexLast;
+                tmpindex = tmpindex->pprev;
+                tmpindex = tmpindex->pprev;
+                if ((tmpindex->nTime + pblock->nTime + pindex->nHeight) % 8 != 0)
+                    return nSpike;
+                else
+                {
+                    while (pindex->pprev && pindex->nHeight % nInterval != 0 && pindex->nBits == nCheetah)
+                        pindex = pindex->pprev;
+                    return pindex->nBits;
+                }
+            }
+            else
+            {
+                // 98% random chance on Spike difficulty between +- 1 seconds
+
+                const CBlockIndex* tmpindex = pindexLast;
+                tmpindex = tmpindex->pprev;
+                tmpindex = tmpindex->pprev;
+                if ((tmpindex->nTime + pblock->nTime + pindex->nHeight) % 50 != 0)
+                    return nSpike;
+                else
+                {
+                    while (pindex->pprev && pindex->nHeight % nInterval != 0 && pindex->nBits == nCheetah)
+                        pindex = pindex->pprev;
+                    return pindex->nBits;
+                }
+            }
+        }  
         // v1.12.x hard fork after block  3800810
-        if (pindex->nHeight > 3800810) {
+        else if (pindex->nHeight > 3800810) {
             arith_uint256 bnCheetah;
             bnCheetah = bnPowLimit;
             bnCheetah /= 20;
