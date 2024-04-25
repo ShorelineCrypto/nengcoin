@@ -1172,8 +1172,8 @@ unsigned int static GetNextWorkRequired(const CBlockIndex* pindexLast, const CBl
             }
         
         }
-        // v1.13.x hard fork after block  5287700
-        else if (pindex->nHeight > 5287700) {
+        // v1.13.x hard fork after block  5288370
+        else if (pindex->nHeight > 5288370) {
             CBigNum bnCheetah;
             bnCheetah = bnProofOfWorkLimit;
             bnCheetah /= 1;
