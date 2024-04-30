@@ -49,14 +49,14 @@ chain at height prior to the attacking forked height with community consensus su
 Hard fork attempt to reverse the 51% attack on SXC, bitcoin 2 hours rule shortened to 2 minutes rule, cheetah diff drop 8x, spike diff cut in half.
 ### Changed
 - [Hard fork](https://github.com/ShorelineCrypto/nengcoin/commit/c3fa11dd9e3e8af2e192f2b8ccbb7636268d6ddc)
- 1st hard fork attemp to fix the 51% attack on SXC in Feb 2022, bitcoin 2 hours rule to 2 minutes, cheetah diff drop 8x, spike diff cut in half.
+ 1st hard fork attemp to fix the 51% attack on SXC in Feb 2022, bitcoin 2 hours rule changed to 2 minutes rule, cheetah diff drop 8x, spike diff cut in half.
  
 ## [2.0.0] - 2022-02-04
 NENG core code base rebased off litecoin core v0.13.3 on v1.9.x randomSpike
 ### Changed
 - [Rebase Code Swap](https://github.com/ShorelineCrypto/nengcoin/commit/740d62ad86173e75443478059f15b3da2d5d8894)
   Old litecoin v0.8.7.5 code was replaced with new code based off litecoin v0.13.3 code.  The new core wallet can sync with v1.9.1 old wallet on randomSpike v1.9.x. 
-- [MineWork Bug] (https://github.com/ShorelineCrypto/nengcoin/commit/2e8ba0499a9ae027c430af41e30dbf7579fada42)
+- [MinWork Bug](https://github.com/ShorelineCrypto/nengcoin/commit/2e8ba0499a9ae027c430af41e30dbf7579fada42)
  Fix the same minimum work bug on litecoin core v0.13.3 new code base
  
 ## [1.9.1] - 2021-11-07
