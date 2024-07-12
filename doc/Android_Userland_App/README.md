@@ -8,7 +8,7 @@ This folder describe how to CPU mine Nengcoin (NENG) in android phone on 64 bits
 For CPU mining steps and optimization with cheetah_Cpuminer, please checkout: 
 https://github.com/ShorelineCrypto/cheetah_cpuminer
 
-## Confusion on android vs linux on NENG v1.4.x/v1.5.x release
+## Confusion on android vs linux on NENG v1.4.x/v1.5.x release or later
 
 There was some confusion created by android mining release v1.4.0.  Please watch this youtube video from android authority Gary Sims:
 
@@ -30,9 +30,9 @@ Above information from terminal should give you clear idea whether you have arm6
 
 ## Debian or Ubuntu?
 
-UserLand app offers 4 linux distros (Alpine, Arch, Debian, Ubuntu). Currently for Nengcoin android mining, two distros are supported and tested: Debian (version 11 or 10 ) and Ubuntu (version 20.04 or 18.04).  Arch linux is also gnu linux so that Arch may also work, but not tested.  Alpine linux is not supported because Alpine linux is not gnu linux, uses musl libary instead.  
+UserLand app offers 4 linux distros (Alpine, Arch, Debian, Ubuntu). Currently for Nengcoin android mining, two distros are supported and tested: Debian (version 10 or later ) and Ubuntu (version 18.04 or later).  Arch linux is also gnu linux so that Arch may also work, but not tested.  Alpine linux is not supported because Alpine linux is not gnu linux, uses musl libary instead.  
 
-UserLand Debian runs Debian 11 (bullseye) or 10 (buster) on arm64/armhf.  UserLand ubuntu runs Ubuntu 20.04 or 18.04 on arm64/armhf.  The UserLand LXDE or XFCE desktop installation session uses Debian. Debian or ubuntu either distro is fine with similar user experience.
+UserLand Debian runs Debian 12 (bookworm) 11 (bullseye) or 10 (buster) on arm64/armhf.  UserLand ubuntu runs Ubuntu 22.04, 20.04 or 18.04 on arm64/armhf.  The UserLand LXDE or XFCE desktop installation session uses Debian. Debian or ubuntu either distro is fine with similar user experience.
 
 
 ## Linux Terminal (SSH) or Desktop (VNC or XSDL)? 
