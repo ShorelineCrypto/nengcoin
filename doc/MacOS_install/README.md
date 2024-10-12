@@ -19,6 +19,13 @@ let to sync.
      Note for CPU/GPU/USB ASIC solo miners: your wallet needs to be fully synced to latest block before you can solo mine NENG. 
 
 
+## Light Wallet as Reserve Wallet
+
+The current recommended method is to use light wallet such as Komodo Wallet or Electrum-NENG wallet as light wallet
+instead of below full node 2nd wallet method.
+
+
+
 ## Installation Guide of Nengcoin macOS Wallet for Reserve Wallet
 
 Mining wallet can go bad quickly. It is recommended to transfer your mined coin to reserve wallet for backup daily. 
