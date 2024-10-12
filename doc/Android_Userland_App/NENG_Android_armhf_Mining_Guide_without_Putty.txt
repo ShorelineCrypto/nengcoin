@@ -11,17 +11,17 @@ NENG Android Mining Guide without Putty
         c. sudo apt install wget ssh
         d. wget https://github.com/ShorelineCrypto/nengcoin/releases/download/v2.4.0/nengcoin_2.4.0_android_userland_arm.tgz
         e. tar xvfz nengcoin_2.4.0_android_userland_arm.tgz
-        f. cd  Android_Userland_App/armhf/
+        f. cd  nengcoin_2.4.0_android_userland_arm/armhf/
         g. bash prepare_userland.sh
     8. Relogin Userland Ubuntu or Debian
     9. Enter command line
-        a. cd  Android_Userland_App/armhf/
+        a. cd  nengcoin_2.4.0_android_userland_arm/armhf/
         b. bash prepare_neng.sh
         c. cd nengcoin_2.4.0_armhf_linux-gnu/
         d. ./nengcoind (create wallet folder & files)
         e. screen (creates another screen so you can check your wallet and mining at the same time using one ssh)
         f. cd
-        g. cd  Android_Userland_App/debian/armhf/cheetah_cpuminer
+        g. cd  nengcoin_2.4.0_android_userland_arm/debian/armhf/cheetah_cpuminer
         h. mv nengcoin.conf-example nengcoin.conf (rename)
         i. vi nengcoin.conf
         j. Press i and use the arrow keys to navigate to modify your rpc username and password
